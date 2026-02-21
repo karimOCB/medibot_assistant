@@ -1,5 +1,5 @@
 import string
-from lib.search_utils import load_doctors
+from lib.search_utils import load_doctors, get_stopwords
 
 def search_command(query: str) -> list[str]:
     doctors_data = load_doctors()
@@ -18,5 +18,6 @@ def tokenization(text: str) -> list[str]:
     table = str.maketrans("", "", string.punctuation)
     normalized_text = lowered_text.translate(table)
     words = normalized_text.split()
-    tokens = [word for word in words if word]
+    stopwords = set(get_stopwords())
+    tokens = [word for word in words if word and word not in stopwords]
     return tokens
