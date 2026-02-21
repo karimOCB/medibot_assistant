@@ -1,5 +1,22 @@
 import string
+from nltk import pos_tag
+from nltk.corpus import wordnet
+from nltk.stem import WordNetLemmatizer
 from lib.search_utils import load_doctors, get_stopwords
+
+lemmatizer = WordNetLemmatizer()
+
+def get_wordnet_pos(treebank_tag):
+    if treebank_tag.startswith('J'):
+        return wordnet.ADJ
+    elif treebank_tag.startswith('V'):
+        return wordnet.VERB
+    elif treebank_tag.startswith('N'):
+        return wordnet.NOUN
+    elif treebank_tag.startswith('R'):
+        return wordnet.ADV
+    else:
+        return wordnet.NOUN
 
 def search_command(query: str) -> list[str]:
     doctors_data = load_doctors()
@@ -19,5 +36,8 @@ def tokenization(text: str) -> list[str]:
     normalized_text = lowered_text.translate(table)
     words = normalized_text.split()
     stopwords = set(get_stopwords())
-    tokens = [word for word in words if word and word not in stopwords]
+
+    tagged_words = pos_tag(words)
+
+    tokens = [lemmatizer.lemmatize(word, get_wordnet_pos(pos)) for word, pos in tagged_words if word and word not in stopwords]
     return tokens
