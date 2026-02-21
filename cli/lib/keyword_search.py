@@ -1,16 +1,22 @@
+import string
 from lib.search_utils import load_doctors
 
-def search_command(query: str):
+def search_command(query: str) -> list[str]:
     doctors_data = load_doctors()
-    processed_query = text_processing(query)
+    query_tokens = tokenization(query)
     result_names = []
     for _, doctor in enumerate(doctors_data): # {"id": "DR208", "name": "Dr. Frida Kahlo", "age": 42, "specialty": "Pain Rehabilitation", "availability": "Mon-Wed 11:00-16:00", "bio": "Expert in managing..."},
-        doctor_info = f"Name: {doctor["name"]}, age: {doctor["age"]}, specialty: {doctor["specialty"]}, bio: {doctor["bio"]}, availability: {doctor["availability"]}" 
-        processed_doctor_info = text_processing(doctor_info)
-        if query in processed_doctor_info:
-            result_names.append(doctor["name"])
+        doctor_info = f"{doctor["name"]}. {doctor["age"]}. {doctor["specialty"]}. {doctor["bio"]}. {doctor["availability"]}" 
+        processed_doctor_info = tokenization(doctor_info)
+        for token in query_tokens:
+            if token in processed_doctor_info:
+                result_names.append(doctor["name"])
     return result_names
 
-def text_processing(text: str):
-    lowercase_text = text.lower()
-    return lowercase_text
+def tokenization(text: str) -> list[str]:
+    lowered_text = text.lower()
+    table = str.maketrans("", "", string.punctuation)
+    normalized_text = lowered_text.translate(table)
+    words = normalized_text.split()
+    tokens = [word for word in words if word]
+    return tokens
