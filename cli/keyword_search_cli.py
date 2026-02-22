@@ -16,7 +16,7 @@ def main() -> None:
 
     match args.command:
         case "search":
-            print(f"Searching for doctor names: {args.query}")
+            print(f"Searching for doctor info: {args.query}")
             results = search_command(args.query)
             for i, result in enumerate(results, start=1):
                 print(f"{i}. {result}")
