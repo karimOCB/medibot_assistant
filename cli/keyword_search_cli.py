@@ -2,7 +2,7 @@
 
 import argparse
 
-from lib.keyword_search import search_command
+from lib.keyword_search import search_command, build_command
 
 
 def main() -> None:
@@ -12,6 +12,8 @@ def main() -> None:
     search_parser = subparsers.add_parser("search", help="Search movies using BM25")
     search_parser.add_argument("query", type=str, help="Search query")
 
+    build_parser = subparsers.add_parser("build", help="Build Inverted Index and save to disk")
+
     args = parser.parse_args()
 
     match args.command:
@@ -20,8 +22,9 @@ def main() -> None:
             results = search_command(args.query)
             for i, result in enumerate(results, start=1):
                 print(f"{i}. {result}")
+        case "build":
+            build_command()
 
-            # TODO create a bucket of possible keyword search besides the doctor name. 
         case _:
             parser.print_help()
 
