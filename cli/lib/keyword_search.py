@@ -4,7 +4,7 @@ import pickle
 from nltk import pos_tag
 from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
-from lib.search_utils import load_doctors, get_stopwords, cache_path
+from lib.search_utils import load_doctors, get_stopwords, cache_path, DEFAULT_SEARCH_LIMIT
 
 lemmatizer = WordNetLemmatizer()
 # {"id": "DR210", "name": "Dr. Agatha Christie", "age": 45, "specialty": "Forensic Toxicology", "availability": "Mon-Fri 09:00-17:00", "bio": "Expert in identifying chemical agents and drug interactions in complex cases."}
@@ -33,7 +33,7 @@ class InvertedIndex:
             doctor_info = f"{doctor["name"]}. {doctor["age"]}. {doctor["specialty"]}. {doctor["bio"]}. {doctor["availability"]}" 
             self.__add_document(doctor["id"], doctor_info)
 
-    def save(self):
+    def save(self) -> None:
         if not os.path.isdir(cache_path):
             os.mkdir(cache_path)
         
@@ -49,6 +49,19 @@ class InvertedIndex:
         except Exception as e:
             print(f"Error saving hospital data: {e}")
 
+    def load(self) -> None:
+        try:           
+            with open(self.index_path, "rb") as f:
+                self.index = pickle.load(f)
+
+            with open(self.docmap_path, "rb") as f:
+                self.docmap = pickle.load(f)
+            
+            print(f"Successfully loaded hospital data")
+
+        except Exception as e:
+            print(f"Error loading hospital data: {e}")
+
 
 def get_wordnet_pos(treebank_tag: str) -> str:
     if treebank_tag.startswith('J'):
@@ -63,17 +76,20 @@ def get_wordnet_pos(treebank_tag: str) -> str:
         return wordnet.NOUN
 
 
-def search_command(query: str) -> list[str]:
-    doctors_data = load_doctors()
+def search_command(query: str, limit: int = DEFAULT_SEARCH_LIMIT) -> list[str]:
+    idx = InvertedIndex()
+    idx.load()
     query_tokens = tokenization(query)
-    result_names = []
-    for _, doctor in enumerate(doctors_data):
-        doctor_info = f"{doctor["name"]}. {doctor["age"]}. {doctor["specialty"]}. {doctor["bio"]}. {doctor["availability"]}" 
-        processed_doctor_info = tokenization(doctor_info)
-        for token in query_tokens:
-            if token in processed_doctor_info:
-                result_names.append(doctor["name"])
-    return result_names
+    doc_ids = []
+    results = []
+    for q_token in query_tokens:
+        doc_ids.extend(idx.get_document(q_token))
+        if len(doc_ids) >= limit:
+            for doc_id in doc_ids[:limit]:
+                doctor_info = idx.docmap[doc_id]
+                results.append(f"Name: {doctor_info["name"]}. ID: {doc_id}")
+            break
+    return results
 
 
 def tokenization(text: str) -> list[str]:
@@ -93,5 +109,3 @@ def build_command():
     idx = InvertedIndex()
     idx.build()
     idx.save()
-    term_ids = idx.get_document("heart")
-    print(f"First document for token 'heart' = {term_ids[0]}")
