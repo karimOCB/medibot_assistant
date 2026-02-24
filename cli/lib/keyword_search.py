@@ -1,6 +1,8 @@
 import string
 import os
 import pickle
+import math
+
 from collections import Counter, defaultdict
 from nltk import pos_tag
 from nltk.corpus import wordnet
@@ -99,10 +101,20 @@ def search_command(query: str, limit: int = DEFAULT_SEARCH_LIMIT) -> list[str]:
     return results
 
 
-def get_tf_command(doc_id: str, term: str):
+def get_tf_command(doc_id: str, term: str) -> int:
     idx = InvertedIndex()
     idx.load()
     return idx.get_tf(doc_id, term)
+
+
+def get_idf_command(term: str) -> float:
+    idx = InvertedIndex()
+    idx.load()
+    total_doctors = len(idx.docmap)
+    term_match_doctors = len(idx.index[term])
+    idf = math.log((total_doctors + 1) / (term_match_doctors + 1))
+    return idf
+
 
 def tokenization(text: str) -> list[str]:
     lowered_text = text.lower()
