@@ -7,7 +7,7 @@ from collections import Counter, defaultdict
 from nltk import pos_tag
 from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
-from lib.search_utils import load_doctors, get_stopwords, cache_path, DEFAULT_SEARCH_LIMIT
+from lib.search_utils import load_doctors, get_stopwords, cache_path
 
 lemmatizer = WordNetLemmatizer()
 # {"id": "DR210", "name": "Dr. Agatha Christie", "age": 45, "specialty": "Forensic Toxicology", "availability": "Mon-Fri 09:00-17:00", "bio": "Expert in identifying chemical agents and drug interactions in complex cases."}
@@ -73,16 +73,26 @@ class InvertedIndex:
         return ids_of_term
 
     def get_tf(self, doc_id: str, term: int) -> int:
-        tokens = tokenization(term)
-        if len(tokens) != 1:
-            raise ValueError("The term has to be one word.")
-        return self.term_frequencies[doc_id][tokens[0]]
+        token = check_single_term(term)
+        return self.term_frequencies[doc_id][token]
     
     def get_idf(self, term: str) -> float:
+        token = check_single_term(term)
         total_doctors = len(self.docmap)
-        term_match_doctors = len(self.index[term])
+        term_match_doctors = len(self.index[token])
         return math.log((total_doctors + 1) / (term_match_doctors + 1))
-
+    
+    def get_bm25_idf(self, term: str) -> float:
+        token = check_single_term(term)
+        total_doctors = len(self.docmap)
+        term_match_doctors = len(self.index[token])
+        return math.log((total_doctors - term_match_doctors + 0.5) / (term_match_doctors + 0.5) + 1)
+    
+    def get_bm25_tf(self, doc_id: str, term: str, k1: float) -> float:
+        tf = self.get_tf(doc_id, term)
+        bm25_tf = (tf * (k1 + 1)) / (tf + k1)
+        return bm25_tf
+    
 
 def build_command() -> None:
     idx = InvertedIndex()
@@ -90,7 +100,7 @@ def build_command() -> None:
     idx.save()
 
 
-def search_command(query: str, limit: int = DEFAULT_SEARCH_LIMIT) -> list[str]:
+def search_command(query: str, limit: int) -> list[str]:
     idx = InvertedIndex()
     idx.load()
     query_tokens = tokenization(query)
@@ -106,23 +116,37 @@ def search_command(query: str, limit: int = DEFAULT_SEARCH_LIMIT) -> list[str]:
     return results
 
 
-def get_tf_command(doc_id: str, term: str) -> int:
+def tf_command(doc_id: str, term: str) -> int:
     idx = InvertedIndex()
     idx.load()
     return idx.get_tf(doc_id, term)
 
 
-def get_idf_command(term: str) -> float:
+def idf_command(term: str) -> float:
     idx = InvertedIndex()
     idx.load()
     return idx.get_idf(term)
 
-def get_tfidf_command(doc_id: str, term: str) -> float:
+
+def tfidf_command(doc_id: str, term: str) -> float:
     idx = InvertedIndex()
     idx.load()
     tf = idx.get_tf(doc_id, term)
     idf = idx.get_idf(term)
     return tf * idf
+
+
+def bm25idf_command(term: str) -> float:
+    idx = InvertedIndex()
+    idx.load()
+    return idx.get_bm25_idf(term)
+
+
+def bm25tf_command(doc_id: str, term: str, k1: float):
+    idx = InvertedIndex()
+    idx.load()
+    return idx.get_bm25_tf(doc_id, term, k1)
+
 
 def tokenization(text: str) -> list[str]:
     lowered_text = text.lower()
@@ -148,3 +172,10 @@ def get_wordnet_pos(treebank_tag: str) -> str:
         return wordnet.ADV
     else:
         return wordnet.NOUN
+    
+
+def check_single_term(term: str) -> str:
+    tokens = tokenization(term)
+    if len(tokens) != 1:
+        raise ValueError("The term has to be one word.")
+    return tokens[0]
