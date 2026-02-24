@@ -1,6 +1,7 @@
 import string
 import os
 import pickle
+from collections import Counter, defaultdict
 from nltk import pos_tag
 from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
@@ -10,21 +11,12 @@ lemmatizer = WordNetLemmatizer()
 # {"id": "DR210", "name": "Dr. Agatha Christie", "age": 45, "specialty": "Forensic Toxicology", "availability": "Mon-Fri 09:00-17:00", "bio": "Expert in identifying chemical agents and drug interactions in complex cases."}
 class InvertedIndex:
     def __init__(self) -> None:
-        self.index: dict[str, set[int]] = {} # Tokens to doc_ids
+        self.index: defaultdict[str, set[int]] = defaultdict(set) # Tokens to doc_ids
         self.docmap: dict[int, dict] = {} # doc_ids to full_docs
+        self.term_frequencies: defaultdict[int, Counter[str, int]] = defaultdict(Counter)
         self.index_path = os.path.join(cache_path, "index.pkl") 
         self.docmap_path = os.path.join(cache_path, "docmap.pkl")
-
-    def __add_document(self, doc_id: int, text: str) -> None:
-        tokens = tokenization(text)
-        for token in tokens:
-            if not token in self.index:
-                self.index[token] = set()
-            self.index[token].add(doc_id)
-
-    def get_document(self, term: str) -> list[int]:
-        ids_of_term = sorted(self.index[term])
-        return ids_of_term
+        self.term_frequencies_path = os.path.join(cache_path, "term_frequencies.pkl")
 
     def build(self) -> None:
         doctors_data = load_doctors()
@@ -44,6 +36,9 @@ class InvertedIndex:
             with open(self.docmap_path, "wb") as f:
                 pickle.dump(self.docmap, f)
 
+            with open(self.term_frequencies_path, "wb") as f:
+                pickle.dump(self.term_frequencies, f)
+
             print(f"Successfully cached hospital data")
 
         except Exception as e:
@@ -56,24 +51,36 @@ class InvertedIndex:
 
             with open(self.docmap_path, "rb") as f:
                 self.docmap = pickle.load(f)
+
+            with open(self.term_frequencies_path, "rb") as f:
+                self.term_frequencies = pickle.load(f)
             
             print(f"Successfully loaded hospital data")
 
         except Exception as e:
             print(f"Error loading hospital data: {e}")
 
+    def __add_document(self, doc_id: int, text: str) -> None:
+        tokens = tokenization(text)
+        for token in tokens:
+            self.index[token].add(doc_id)
+            self.term_frequencies[doc_id][token] += 1
 
-def get_wordnet_pos(treebank_tag: str) -> str:
-    if treebank_tag.startswith('J'):
-        return wordnet.ADJ
-    elif treebank_tag.startswith('V'):
-        return wordnet.VERB
-    elif treebank_tag.startswith('N'):
-        return wordnet.NOUN
-    elif treebank_tag.startswith('R'):
-        return wordnet.ADV
-    else:
-        return wordnet.NOUN
+    def get_document(self, term: str) -> list[int]:
+        ids_of_term = sorted(self.index[term])
+        return ids_of_term
+
+    def get_tf(self, doc_id: str, term: int) -> int:
+        tokens = tokenization(term)
+        if len(tokens) != 1:
+            raise ValueError("The term has to be one word.")
+        return self.term_frequencies[doc_id][tokens[0]]
+
+
+def build_command() -> None:
+    idx = InvertedIndex()
+    idx.build()
+    idx.save()
 
 
 def search_command(query: str, limit: int = DEFAULT_SEARCH_LIMIT) -> list[str]:
@@ -92,6 +99,11 @@ def search_command(query: str, limit: int = DEFAULT_SEARCH_LIMIT) -> list[str]:
     return results
 
 
+def get_tf_command(doc_id: str, term: str):
+    idx = InvertedIndex()
+    idx.load()
+    return idx.get_tf(doc_id, term)
+
 def tokenization(text: str) -> list[str]:
     lowered_text = text.lower()
     table = str.maketrans("", "", string.punctuation)
@@ -105,7 +117,14 @@ def tokenization(text: str) -> list[str]:
     return tokens
 
 
-def build_command():
-    idx = InvertedIndex()
-    idx.build()
-    idx.save()
+def get_wordnet_pos(treebank_tag: str) -> str:
+    if treebank_tag.startswith('J'):
+        return wordnet.ADJ
+    elif treebank_tag.startswith('V'):
+        return wordnet.VERB
+    elif treebank_tag.startswith('N'):
+        return wordnet.NOUN
+    elif treebank_tag.startswith('R'):
+        return wordnet.ADV
+    else:
+        return wordnet.NOUN
