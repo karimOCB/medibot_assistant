@@ -77,6 +77,11 @@ class InvertedIndex:
         if len(tokens) != 1:
             raise ValueError("The term has to be one word.")
         return self.term_frequencies[doc_id][tokens[0]]
+    
+    def get_idf(self, term: str) -> float:
+        total_doctors = len(self.docmap)
+        term_match_doctors = len(self.index[term])
+        return math.log((total_doctors + 1) / (term_match_doctors + 1))
 
 
 def build_command() -> None:
@@ -110,11 +115,14 @@ def get_tf_command(doc_id: str, term: str) -> int:
 def get_idf_command(term: str) -> float:
     idx = InvertedIndex()
     idx.load()
-    total_doctors = len(idx.docmap)
-    term_match_doctors = len(idx.index[term])
-    idf = math.log((total_doctors + 1) / (term_match_doctors + 1))
-    return idf
+    return idx.get_idf(term)
 
+def get_tfidf_command(doc_id: str, term: str) -> float:
+    idx = InvertedIndex()
+    idx.load()
+    tf = idx.get_tf(doc_id, term)
+    idf = idx.get_idf(term)
+    return tf * idf
 
 def tokenization(text: str) -> list[str]:
     lowered_text = text.lower()

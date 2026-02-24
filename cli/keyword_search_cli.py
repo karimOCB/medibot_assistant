@@ -2,7 +2,7 @@
 
 import argparse
 
-from lib.keyword_search import search_command, build_command, get_tf_command, get_idf_command
+from lib.keyword_search import search_command, build_command, get_tf_command, get_idf_command, get_tfidf_command
 
 
 def main() -> None:
@@ -21,24 +21,38 @@ def main() -> None:
     idf_parser = subparsers.add_parser("idf", help="Get the Inverse Document Frequency of a term")
     idf_parser.add_argument("term", type=str, help="Term to get the idf for")
 
+    tfidf_parser = subparsers.add_parser("tfidf", help="Get tfidf of a doctor")
+    tfidf_parser.add_argument("doc_id", type=str, help="ID for tfidf")
+    tfidf_parser.add_argument("term", type=str, help="term for tfidf")
+
     args = parser.parse_args()
 
+
     match args.command:
+        
         case "build":
             print(f"Building the Inverted Index")
             build_command()
             print(f"Build successful")
+
         case "search":
             print(f"Searching for doctor info: {args.query}")
             results = search_command(args.query)
             for i, result in enumerate(results, start=1):
                 print(f"{i}. {result}")
+
         case "tf":
             t_frequency = get_tf_command(args.doc_id, args.term)
             print(f"The Term Frequency of Doctor ID: {args.doc_id}, is {t_frequency}.")
+
         case "idf":
             idf_frequency = get_idf_command(args.term)
             print(f"Inverse document frequency of '{args.term}': {idf_frequency:.2f}")
+
+        case "tfidf":
+            tfidf_score = get_tfidf_command(args.doc_id, args.term)
+            print(f"TF-IDF score of '{args.term}' in document '{args.doc_id}': {tfidf_score:.2f}")
+
         case _:
             parser.print_help()
 
