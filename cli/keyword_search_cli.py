@@ -2,7 +2,7 @@
 
 import argparse
 
-from lib.keyword_search import search_command, build_command, tf_command, idf_command, tfidf_command, bm25idf_command, bm25tf_command
+from lib.keyword_search import search_command, build_command, tf_command, idf_command, tfidf_command, bm25idf_command, bm25tf_command, bm25_search_command
 from lib.search_utils import DEFAULT_SEARCH_LIMIT, BM25_K1, BM25_B
 
 
@@ -35,6 +35,10 @@ def main() -> None:
     bm25_tf_parser.add_argument("term", type=str, help="Term to get BM25 TF score for")
     bm25_tf_parser.add_argument("--k1", type=float, default=BM25_K1, help="Tunable BM25 K1 parameter")
     bm25_tf_parser.add_argument("--b", type=float, default=BM25_B, help="Tunable BM25 B parameter")
+
+    bm25_search_parser = subparsers.add_parser("bm25search", help="Search doctors using bm25 scoring")
+    bm25_search_parser.add_argument("query", type=str, help="Search query")
+    bm25_search_parser.add_argument("--limit", type=int, default=DEFAULT_SEARCH_LIMIT, help="Optional results limit")
 
     args = parser.parse_args()
 
@@ -71,6 +75,11 @@ def main() -> None:
         case "bm25tf":
             bm25tf_score = bm25tf_command(args.doc_id, args.term, args.k1, args.b)
             print(f"BM25 TF score of '{args.term}' in document '{args.doc_id}': {bm25tf_score:.2f}")
+
+        case "bm25search":
+            results = bm25_search_command(args.query, args.limit)
+            for result in results:
+                print(result)
 
         case _:
             parser.print_help()

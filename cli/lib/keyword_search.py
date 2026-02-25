@@ -7,7 +7,7 @@ from collections import Counter, defaultdict
 from nltk import pos_tag
 from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
-from lib.search_utils import load_doctors, get_stopwords, cache_path
+from lib.search_utils import load_doctors, get_stopwords, cache_path, BM25_K1, BM25_B
 
 lemmatizer = WordNetLemmatizer()
 # {"id": "DR210", "name": "Dr. Agatha Christie", "age": 45, "specialty": "Forensic Toxicology", "availability": "Mon-Fri 09:00-17:00", "bio": "Expert in identifying chemical agents and drug interactions in complex cases."}
@@ -104,14 +104,34 @@ class InvertedIndex:
         term_match_doctors = len(self.index[token])
         return math.log((total_doctors - term_match_doctors + 0.5) / (term_match_doctors + 0.5) + 1)
     
-    def get_bm25_tf(self, doc_id: str, term: str, k1: float, b: float) -> float:
+    def get_bm25_tf(self, doc_id: str, term: str, k1: float = BM25_K1, b: float = BM25_B) -> float:
         tf = self.get_tf(doc_id, term)
         avg_doc_length = self.__get_avg_doc_length()
         doc_length = self.doc_lengths[doc_id]
         lenght_norm = 1 - b + b * (doc_length / avg_doc_length)
         bm25_tf = (tf * (k1 + 1)) / (tf + k1 * lenght_norm)
         return bm25_tf
+
+    def get_bm25(self, doc_id: str, term: str) -> float:
+        bm25_tf = self.get_bm25_tf(doc_id, term)
+        bm25_idf = self.get_bm25_idf(term)
+        return bm25_tf * bm25_idf
     
+    def bm25_search(self, query: str, limit: int) -> list[str]:
+        tokens = tokenization(query)
+        scores = defaultdict(float)
+        for token in tokens:
+            if token in self.index:
+                for doc_id in self.index[token]:
+                    bm25_score = self.get_bm25(doc_id, token)
+                    scores[doc_id] += bm25_score
+        scores_limited = sorted(scores.items(), key=lambda item: item[1], reverse=True)[:limit]
+        results = []
+        for i, score in enumerate(scores_limited, start=1):
+            name = self.docmap[score[0]]["name"]
+            results.append(f"{i}. {score[0]} {name} - Score: {score[1]:.4f}")
+        return results
+
 
 def build_command() -> None:
     idx = InvertedIndex()
@@ -165,6 +185,12 @@ def bm25tf_command(doc_id: str, term: str, k1: float, b: float) -> float:
     idx = InvertedIndex()
     idx.load()
     return idx.get_bm25_tf(doc_id, term, k1, b)
+
+
+def bm25_search_command(query: str, limit: int) -> list[str]:
+    idx = InvertedIndex()
+    idx.load()
+    return idx.bm25_search(query, limit)
 
 
 def tokenization(text: str) -> list[str]:
