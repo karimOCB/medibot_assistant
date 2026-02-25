@@ -3,6 +3,7 @@ import os
 
 DEFAULT_SEARCH_LIMIT = 5
 BM25_K1 = 1.5
+BM25_B = 0.75
 
 current_path = os.path.abspath(__file__) # abs_path of search_utils.py
 project_root_path = os.path.dirname(os.path.dirname(os.path.dirname(current_path)))

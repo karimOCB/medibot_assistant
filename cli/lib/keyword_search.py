@@ -13,12 +13,14 @@ lemmatizer = WordNetLemmatizer()
 # {"id": "DR210", "name": "Dr. Agatha Christie", "age": 45, "specialty": "Forensic Toxicology", "availability": "Mon-Fri 09:00-17:00", "bio": "Expert in identifying chemical agents and drug interactions in complex cases."}
 class InvertedIndex:
     def __init__(self) -> None:
-        self.index: defaultdict[str, set[int]] = defaultdict(set) # Tokens to doc_ids
-        self.docmap: dict[int, dict] = {} # doc_ids to full_docs
-        self.term_frequencies: defaultdict[int, Counter[str, int]] = defaultdict(Counter)
+        self.index: defaultdict[str, set[str]] = defaultdict(set) # Tokens to doc_ids
+        self.docmap: dict[str, dict] = {} # doc_ids to full_docs
+        self.term_frequencies: defaultdict[str, Counter[str, int]] = defaultdict(Counter)
+        self.doc_lengths: dict[str, int] = {}
         self.index_path = os.path.join(cache_path, "index.pkl") 
         self.docmap_path = os.path.join(cache_path, "docmap.pkl")
         self.term_frequencies_path = os.path.join(cache_path, "term_frequencies.pkl")
+        self.doc_lengths_path = os.path.join(cache_path, "doc_lengths.pkl")
 
     def build(self) -> None:
         doctors_data = load_doctors()
@@ -41,6 +43,9 @@ class InvertedIndex:
             with open(self.term_frequencies_path, "wb") as f:
                 pickle.dump(self.term_frequencies, f)
 
+            with open(self.doc_lengths_path, "wb") as f:
+                pickle.dump(self.doc_lengths, f)
+
             print(f"Successfully cached hospital data")
 
         except Exception as e:
@@ -56,6 +61,9 @@ class InvertedIndex:
 
             with open(self.term_frequencies_path, "rb") as f:
                 self.term_frequencies = pickle.load(f)
+
+            with open(self.doc_lengths_path, "rb") as f:
+                self.doc_lengths = pickle.load(f)
             
             print(f"Successfully loaded hospital data")
 
@@ -64,9 +72,17 @@ class InvertedIndex:
 
     def __add_document(self, doc_id: int, text: str) -> None:
         tokens = tokenization(text)
+        self.doc_lengths[doc_id] = len(tokens)
         for token in tokens:
             self.index[token].add(doc_id)
             self.term_frequencies[doc_id][token] += 1
+        
+    def __get_avg_doc_length(self) -> float:
+        if len(self.doc_lengths) == 0:
+            return 0.0
+        length_sum = sum(self.doc_lengths.values())
+        avg_doc_length = length_sum / len(self.doc_lengths)
+        return avg_doc_length
 
     def get_document(self, term: str) -> list[int]:
         ids_of_term = sorted(self.index[term])
@@ -88,9 +104,12 @@ class InvertedIndex:
         term_match_doctors = len(self.index[token])
         return math.log((total_doctors - term_match_doctors + 0.5) / (term_match_doctors + 0.5) + 1)
     
-    def get_bm25_tf(self, doc_id: str, term: str, k1: float) -> float:
+    def get_bm25_tf(self, doc_id: str, term: str, k1: float, b: float) -> float:
         tf = self.get_tf(doc_id, term)
-        bm25_tf = (tf * (k1 + 1)) / (tf + k1)
+        avg_doc_length = self.__get_avg_doc_length()
+        doc_length = self.doc_lengths[doc_id]
+        lenght_norm = 1 - b + b * (doc_length / avg_doc_length)
+        bm25_tf = (tf * (k1 + 1)) / (tf + k1 * lenght_norm)
         return bm25_tf
     
 
@@ -142,10 +161,10 @@ def bm25idf_command(term: str) -> float:
     return idx.get_bm25_idf(term)
 
 
-def bm25tf_command(doc_id: str, term: str, k1: float):
+def bm25tf_command(doc_id: str, term: str, k1: float, b: float) -> float:
     idx = InvertedIndex()
     idx.load()
-    return idx.get_bm25_tf(doc_id, term, k1)
+    return idx.get_bm25_tf(doc_id, term, k1, b)
 
 
 def tokenization(text: str) -> list[str]:

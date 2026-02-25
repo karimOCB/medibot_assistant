@@ -1,302 +1,2402 @@
 [
-  {"id": "DR001", "name": "Dr. Pedro Sanchez", "age": 45, "specialty": "Cardiology", "availability": "Mon-Wed 08:00-12:00", "bio": "Specializes in heart rhythm disorders, hypertension, and cardiovascular health."},
-  {"id": "DR002", "name": "Dr. Elena Rodriguez", "age": 38, "specialty": "Pediatrics", "availability": "Tue-Thu 09:00-15:00", "bio": "Focuses on infant nutrition, childhood vaccinations, and adolescent wellness."},
-  {"id": "DR003", "name": "Dr. Marcus Thorne", "age": 52, "specialty": "Neurology", "availability": "Mon-Fri 10:00-14:00", "bio": "Expert in chronic migraines, seizure disorders, and sleep-related neurological issues."},
-  {"id": "DR004", "name": "Dr. Sarah Jenkins", "age": 41, "specialty": "Dermatology", "availability": "Wed-Fri 08:00-13:00", "bio": "Treats skin conditions like eczema, acne, and performs skin cancer screenings."},
-  {"id": "DR005", "name": "Dr. Victor Wu", "age": 49, "specialty": "Orthopedics", "availability": "Mon-Thu 07:00-11:00", "bio": "Specializes in sports injuries, joint replacements, and bone fractures."},
-  {"id": "DR006", "name": "Dr. Amara Okafor", "age": 36, "specialty": "Psychiatry", "availability": "Tue-Fri 13:00-18:00", "bio": "Focuses on anxiety disorders, depression, and cognitive behavioral therapy."},
-  {"id": "DR007", "name": "Dr. Julian Vance", "age": 55, "specialty": "Gastroenterology", "availability": "Mon-Wed 09:00-14:00", "bio": "Expert in digestive health, IBS, acid reflux, and liver diseases."},
-  {"id": "DR008", "name": "Dr. Sophia Lin", "age": 39, "specialty": "Endocrinology", "availability": "Thu-Sat 10:00-16:00", "bio": "Specializes in diabetes management, thyroid disorders, and hormonal imbalances."},
-  {"id": "DR009", "name": "Dr. Robert Halloway", "age": 60, "specialty": "Oncology", "availability": "Mon-Fri 08:00-12:00", "bio": "Dedicated to cancer diagnosis, chemotherapy protocols, and immunotherapy."},
-  {"id": "DR010", "name": "Dr. Mia Kowalski", "age": 34, "specialty": "Ophthalmology", "availability": "Tue-Thu 11:00-17:00", "bio": "Expert in vision correction, glaucoma, and cataracts."},
-  {"id": "DR011", "name": "Dr. Aaron Brooks", "age": 47, "specialty": "Urology", "availability": "Mon-Wed 08:00-13:00", "bio": "Specializes in kidney stones, prostate health, and urinary tract infections."},
-  {"id": "DR012", "name": "Dr. Lisa Ray", "age": 43, "specialty": "Pulmonology", "availability": "Wed-Fri 09:00-14:00", "bio": "Treats asthma, COPD, sleep apnea, and chronic lung diseases."},
-  {"id": "DR013", "name": "Dr. Kevin Patel", "age": 50, "specialty": "Rheumatology", "availability": "Mon-Tue 10:00-16:00", "bio": "Focuses on arthritis, lupus, and autoimmune inflammatory disorders."},
-  {"id": "DR014", "name": "Dr. Nina Simone", "age": 37, "specialty": "Obstetrics & Gynecology", "availability": "Tue-Fri 08:00-12:00", "bio": "Provides prenatal care, reproductive health services, and menopause management."},
-  {"id": "DR015", "name": "Dr. David Klein", "age": 58, "specialty": "Nephrology", "availability": "Thu-Sat 09:00-13:00", "bio": "Expert in chronic kidney disease, dialysis, and renal transplants."},
-  {"id": "DR016", "name": "Dr. Rachel Green", "age": 35, "specialty": "Internal Medicine", "availability": "Mon-Fri 08:00-17:00", "bio": "General health screenings, chronic disease management, and preventative care."},
-  {"id": "DR017", "name": "Dr. Samuel Jackson", "age": 54, "specialty": "General Surgery", "availability": "Mon-Wed 07:00-15:00", "bio": "Performs appendectomies, hernia repairs, and minimally invasive surgeries."},
-  {"id": "DR018", "name": "Dr. Chloe Zhao", "age": 40, "specialty": "Allergy & Immunology", "availability": "Wed-Fri 10:00-16:00", "bio": "Treats seasonal allergies, food sensitivities, and immune deficiencies."},
-  {"id": "DR019", "name": "Dr. Thomas Wright", "age": 62, "specialty": "Geriatrics", "availability": "Tue-Thu 09:00-14:00", "bio": "Specializes in elderly care, dementia, and age-related mobility issues."},
-  {"id": "DR020", "name": "Dr. Isabel Allende", "age": 44, "specialty": "Infectious Disease", "availability": "Mon-Fri 11:00-15:00", "bio": "Expert in viral infections, antibiotic resistance, and tropical medicine."},
-  {"id": "DR021", "name": "Dr. Henry Ford", "age": 51, "specialty": "Radiology", "availability": "Mon-Sat 08:00-20:00", "bio": "Interprets X-rays, MRIs, and CT scans for diagnostic accuracy."},
-  {"id": "DR022", "name": "Dr. Maria Montessori", "age": 39, "specialty": "Child Psychiatry", "availability": "Mon-Wed 13:00-18:00", "bio": "Focuses on ADHD, autism spectrum disorders, and pediatric behavioral health."},
-  {"id": "DR023", "name": "Dr. Alan Turing", "age": 46, "specialty": "Medical Genetics", "availability": "Thu-Fri 10:00-15:00", "bio": "Diagnoses hereditary disorders and provides genetic counseling."},
-  {"id": "DR024", "name": "Dr. Florence Nightingale", "age": 42, "specialty": "Physical Medicine & Rehab", "availability": "Mon-Thu 08:00-14:00", "bio": "Focuses on post-injury recovery, stroke rehabilitation, and physical therapy."},
-  {"id": "DR025", "name": "Dr. Sigmund Freud", "age": 65, "specialty": "Psychology", "availability": "Mon-Fri 09:00-17:00", "bio": "Provides psychotherapy, counseling for trauma, and mental health support."},
-  {"id": "DR026", "name": "Dr. Jonas Salk", "age": 57, "specialty": "Epidemiology", "availability": "Mon-Fri 08:00-16:00", "bio": "Public health expert focusing on disease outbreaks and vaccination programs."},
-  {"id": "DR027", "name": "Dr. Elizabeth Blackwell", "age": 48, "specialty": "Family Medicine", "availability": "Mon-Fri 08:00-12:00", "bio": "Comprehensive care for all ages, from infants to seniors."},
-  {"id": "DR028", "name": "Dr. Louis Pasteur", "age": 53, "specialty": "Microbiology", "availability": "Tue-Thu 10:00-14:00", "bio": "Diagnoses bacterial and fungal infections through lab analysis."},
-  {"id": "DR029", "name": "Dr. Alexander Fleming", "age": 59, "specialty": "Clinical Pathology", "availability": "Mon-Fri 09:00-17:00", "bio": "Analyzes blood and tissue samples to diagnose various diseases."},
-  {"id": "DR030", "name": "Dr. Rosalind Franklin", "age": 41, "specialty": "Nuclear Medicine", "availability": "Wed-Fri 08:00-13:00", "bio": "Uses radioactive materials for imaging and treating conditions like hyperthyroidism."},
-  {"id": "DR031", "name": "Dr. Gregor Mendel", "age": 44, "specialty": "Reproductive Endocrinology", "availability": "Mon-Tue 09:00-15:00", "bio": "Specializes in fertility treatments, IVF, and hormonal reproductive health."},
-  {"id": "DR032", "name": "Dr. Marie Curie", "age": 50, "specialty": "Radiation Oncology", "availability": "Mon-Thu 08:00-12:00", "bio": "Uses targeted radiation to treat various forms of cancer."},
-  {"id": "DR033", "name": "Dr. Charles Darwin", "age": 61, "specialty": "Evolutionary Medicine", "availability": "Fri 10:00-16:00", "bio": "Researches how human evolution impacts modern health and disease susceptibility."},
-  {"id": "DR034", "name": "Dr. Jane Goodall", "age": 37, "specialty": "Zoonotic Diseases", "availability": "Mon-Wed 09:00-14:00", "bio": "Expert in diseases that spread from animals to humans."},
-  {"id": "DR035", "name": "Dr. Stephen Hawking", "age": 55, "specialty": "Medical Physics", "availability": "Tue-Thu 11:00-15:00", "bio": "Ensures safety and precision in advanced medical imaging and radiotherapy."},
-  {"id": "DR036", "name": "Dr. Nikola Tesla", "age": 49, "specialty": "Electrophysiology", "availability": "Mon-Wed 08:00-12:00", "bio": "Specializes in the electrical activity of the heart and nervous system."},
-  {"id": "DR037", "name": "Dr. Ada Lovelace", "age": 34, "specialty": "Clinical Informatics", "availability": "Mon-Fri 09:00-17:00", "bio": "Optimizes electronic health records and data for better patient outcomes."},
-  {"id": "DR038", "name": "Dr. Isaac Newton", "age": 58, "specialty": "Otolaryngology (ENT)", "availability": "Wed-Fri 10:00-16:00", "bio": "Treats ear, nose, and throat disorders, including hearing loss and sinus issues."},
-  {"id": "DR039", "name": "Dr. Albert Einstein", "age": 63, "specialty": "Theoretical Medicine", "availability": "Tue 13:00-17:00", "bio": "Explores complex medical models and innovative treatment pathways."},
-  {"id": "DR040", "name": "Dr. Leonardo da Vinci", "age": 52, "specialty": "Anatomy & Physiology", "availability": "Mon-Thu 09:00-14:00", "bio": "Expert in the structural and functional aspects of the human body."},
-  {"id": "DR041", "name": "Dr. Galileo Galilei", "age": 56, "specialty": "Sleep Medicine", "availability": "Mon-Wed 20:00-02:00", "bio": "Diagnoses and treats sleep disorders like insomnia and narcolepsy."},
-  {"id": "DR042", "name": "Dr. Katherine Johnson", "age": 40, "specialty": "Bio-Statistics", "availability": "Mon-Fri 09:00-17:00", "bio": "Analyzes clinical trial data to ensure treatment efficacy and safety."},
-  {"id": "DR043", "name": "Dr. Grace Hopper", "age": 47, "specialty": "Telemedicine", "availability": "Mon-Sat 08:00-18:00", "bio": "Provides remote medical consultations and digital health monitoring."},
-  {"id": "DR044", "name": "Dr. Neil Armstrong", "age": 43, "specialty": "Aerospace Medicine", "availability": "Thu-Fri 10:00-15:00", "bio": "Specializes in the health of pilots, crew, and passengers in flight."},
-  {"id": "DR045", "name": "Dr. Yuri Gagarin", "age": 39, "specialty": "Sports Medicine", "availability": "Mon-Wed 07:00-11:00", "bio": "Treats athletic injuries and focuses on peak physical performance."},
-  {"id": "DR046", "name": "Dr. Buzz Aldrin", "age": 41, "specialty": "Emergency Medicine", "availability": "Rotating Shifts 24/7", "bio": "Expert in trauma care, acute illnesses, and life-saving interventions."},
-  {"id": "DR047", "name": "Dr. Valentina Tereshkova", "age": 45, "specialty": "Occupational Medicine", "availability": "Tue-Thu 09:00-14:00", "bio": "Focuses on workplace health, safety, and injury prevention."},
-  {"id": "DR048", "name": "Dr. Sally Ride", "age": 38, "specialty": "Pain Management", "availability": "Wed-Fri 08:00-12:00", "bio": "Helps patients manage chronic pain through various therapies and treatments."},
-  {"id": "DR049", "name": "Dr. Carl Sagan", "age": 54, "specialty": "Palliative Care", "availability": "Mon-Fri 10:00-16:00", "bio": "Focuses on providing relief from symptoms and stress for serious illnesses."},
-  {"id": "DR050", "name": "Dr. Richard Feynman", "age": 42, "specialty": "Hospice Care", "availability": "Mon-Fri 09:00-17:00", "bio": "Provides compassionate end-of-life care and support for families."},
-  {"id": "DR051", "name": "Dr. Alice Hamilton", "age": 50, "specialty": "Toxicology", "availability": "Mon-Wed 09:00-13:00", "bio": "Expert in chemical exposure, poisoning, and industrial health hazards."},
-  {"id": "DR052", "name": "Dr. Gerty Cori", "age": 44, "specialty": "Biochemistry", "availability": "Tue-Thu 10:00-16:00", "bio": "Focuses on metabolic pathways and enzyme-related disorders."},
-  {"id": "DR053", "name": "Dr. Virginia Apgar", "age": 55, "specialty": "Neonatology", "availability": "Mon-Fri 08:00-14:00", "bio": "Expert in newborn health assessment and critical care for premature infants."},
-  {"id": "DR054", "name": "Dr. Gertrude Elion", "age": 48, "specialty": "Pharmacology", "availability": "Wed-Fri 09:00-17:00", "bio": "Specializes in drug development and how medications interact with the body."},
-  {"id": "DR055", "name": "Dr. Rita Levi-Montalcini", "age": 60, "specialty": "Neurobiology", "availability": "Mon-Thu 10:00-15:00", "bio": "Researches nerve growth and treatments for neurodegenerative diseases."},
-  {"id": "DR056", "name": "Dr. Christian Barnard", "age": 58, "specialty": "Transplant Surgery", "availability": "Mon-Wed 07:00-15:00", "bio": "Expert in heart and organ transplantation procedures."},
-  {"id": "DR057", "name": "Dr. Ben Carson", "age": 52, "specialty": "Pediatric Neurosurgery", "availability": "Tue-Fri 08:00-13:00", "bio": "Specializes in complex brain and spinal surgeries for children."},
-  {"id": "DR058", "name": "Dr. Sanjay Gupta", "age": 46, "specialty": "Neurosurgery", "availability": "Mon-Fri 09:00-14:00", "bio": "Treats brain tumors, spine conditions, and neurological trauma."},
-  {"id": "DR059", "name": "Dr. Atul Gawande", "age": 49, "specialty": "Health Systems Engineering", "availability": "Wed 10:00-16:00", "bio": "Focuses on surgery safety, public health policy, and medical efficiency."},
-  {"id": "DR060", "name": "Dr. Siddhartha Mukherjee", "age": 44, "specialty": "Hematology-Oncology", "availability": "Mon-Thu 09:00-13:00", "bio": "Specializes in blood cancers, leukemia, and cellular therapy."},
-  {"id": "DR061", "name": "Dr. Helen Brooke Taussig", "age": 56, "specialty": "Pediatric Cardiology", "availability": "Tue-Thu 08:00-12:00", "bio": "Expert in congenital heart defects in infants and children."},
-  {"id": "DR062", "name": "Dr. William Osler", "age": 62, "specialty": "Clinical Education", "availability": "Mon-Fri 09:00-17:00", "bio": "Focuses on medical diagnostics and the history of medicine."},
-  {"id": "DR063", "name": "Dr. Joseph Lister", "age": 59, "specialty": "Antiseptic Surgery", "availability": "Mon-Wed 08:00-14:00", "bio": "Expert in surgical infection control and wound management."},
-  {"id": "DR064", "name": "Dr. Ignaz Semmelweis", "age": 53, "specialty": "Preventative OBGYN", "availability": "Tue-Fri 10:00-16:00", "bio": "Focuses on maternal health and hygiene in reproductive care."},
-  {"id": "DR065", "name": "Dr. Edward Jenner", "age": 61, "specialty": "Immunology", "availability": "Wed-Sat 09:00-13:00", "bio": "Expert in vaccine development and preventative immunity."},
-  {"id": "DR066", "name": "Dr. Clara Barton", "age": 47, "specialty": "Disaster Medicine", "availability": "On-Call 24/7", "bio": "Specializes in emergency relief and medical care during crises."},
-  {"id": "DR067", "name": "Dr. Margaret Sanger", "age": 51, "specialty": "Family Planning", "availability": "Mon-Thu 10:00-15:00", "bio": "Focuses on reproductive rights, contraception, and maternal wellness."},
-  {"id": "DR068", "name": "Dr. Dorothy Hodgkin", "age": 45, "specialty": "Crystallography", "availability": "Tue-Thu 09:00-14:00", "bio": "Analyzes molecular structures of proteins and drugs for treatment design."},
-  {"id": "DR069", "name": "Dr. Barbara McClintock", "age": 54, "specialty": "Cytogenetics", "availability": "Mon-Wed 11:00-17:00", "bio": "Expert in chromosome analysis and genetic inheritance patterns."},
-  {"id": "DR070", "name": "Dr. Chien-Shiung Wu", "age": 42, "specialty": "Radiotherapy Physics", "availability": "Wed-Fri 08:00-12:00", "bio": "Specializes in the physics of radiation treatment for cancer patients."},
-  {"id": "DR071", "name": "Dr. Tu Youyou", "age": 60, "specialty": "Tropical Medicine", "availability": "Mon-Fri 09:00-13:00", "bio": "Expert in malaria treatment and herbal pharmacology."},
-  {"id": "DR072", "name": "Dr. Françoise Barré-Sinoussi", "age": 58, "specialty": "Virology", "availability": "Tue-Thu 10:00-16:00", "bio": "Expert in retroviruses and the treatment of HIV/AIDS."},
-  {"id": "DR073", "name": "Dr. Linda Buck", "age": 49, "specialty": "Sensory Neuroscience", "availability": "Mon-Wed 09:00-14:00", "bio": "Focuses on smell and taste disorders and neurological sensory pathways."},
-  {"id": "DR074", "name": "Dr. May-Britt Moser", "age": 53, "specialty": "Cognitive Psychology", "availability": "Wed-Fri 10:00-15:00", "bio": "Expert in memory loss, spatial orientation, and Alzheimer's disease."},
-  {"id": "DR075", "name": "Dr. Jennifer Doudna", "age": 46, "specialty": "Gene Therapy", "availability": "Mon-Thu 08:00-12:00", "bio": "Specializes in CRISPR technology and editing genetic defects."},
-  {"id": "DR076", "name": "Dr. Emmanuelle Charpentier", "age": 47, "specialty": "Molecular Biology", "availability": "Tue-Fri 09:00-13:00", "bio": "Researches molecular mechanisms of bacteria and immune defense."},
-  {"id": "DR077", "name": "Dr. Katalin Karikó", "age": 55, "specialty": "RNA Therapeutics", "availability": "Mon-Fri 08:00-16:00", "bio": "Expert in mRNA technology for vaccines and personalized medicine."},
-  {"id": "DR078", "name": "Dr. Anthony Fauci", "age": 65, "specialty": "Public Health Policy", "availability": "Mon-Fri 07:00-19:00", "bio": "Expert in national pandemic response and infectious disease outbreaks."},
-  {"id": "DR079", "name": "Dr. Oz", "age": 52, "specialty": "Integrative Medicine", "availability": "Mon-Wed 09:00-12:00", "bio": "Combines traditional surgery with alternative wellness and lifestyle health."},
-  {"id": "DR080", "name": "Dr. Phil", "age": 60, "specialty": "Behavioral Health", "availability": "Tue-Thu 10:00-14:00", "bio": "Focuses on life coaching, relationship dynamics, and behavioral therapy."},
-  {"id": "DR081", "name": "Dr. Drew", "age": 58, "specialty": "Addiction Medicine", "availability": "Mon-Fri 13:00-18:00", "bio": "Specializes in substance abuse recovery and chemical dependency treatment."},
-  {"id": "DR082", "name": "Dr. Gregory House", "age": 51, "specialty": "Diagnostic Medicine", "availability": "Mon-Fri 09:00-17:00", "bio": "Specializes in solving rare and complex medical cases that others cannot diagnose."},
-  {"id": "DR083", "name": "Dr. Meredith Grey", "age": 44, "specialty": "General Surgery", "availability": "Wed-Sun 08:00-20:00", "bio": "Expert in abdominal surgery and surgical innovation."},
-  {"id": "DR084", "name": "Dr. Derek Shepherd", "age": 48, "specialty": "Neuro-Oncology", "availability": "Mon-Thu 07:00-15:00", "bio": "Expert in brain surgery and treating neurological tumors."},
-  {"id": "DR085", "name": "Dr. Cristina Yang", "age": 43, "specialty": "Cardiothoracic Surgery", "availability": "Tue-Sat 08:00-18:00", "bio": "Specializes in heart transplants and complex valve repairs."},
-  {"id": "DR086", "name": "Dr. Miranda Bailey", "age": 50, "specialty": "Surgery Administration", "availability": "Mon-Fri 08:00-16:00", "bio": "Oversees surgical training and hospital policy implementation."},
-  {"id": "DR087", "name": "Dr. John Watson", "age": 45, "specialty": "Military Medicine", "availability": "Mon-Wed 09:00-13:00", "bio": "Expert in battlefield trauma and acute injury stabilization."},
-  {"id": "DR088", "name": "Dr. Leonard McCoy", "age": 55, "specialty": "Exobiology", "availability": "Tue-Fri 10:00-16:00", "bio": "Expert in advanced diagnostics and frontier medical technology."},
-  {"id": "DR089", "name": "Dr. Beverly Crusher", "age": 52, "specialty": "Cybernetic Medicine", "availability": "Mon-Thu 08:00-14:00", "bio": "Specializes in bionic implants and neuro-prosthetics."},
-  {"id": "DR090", "name": "Dr. Strange", "age": 49, "specialty": "Metaphysical Medicine", "availability": "Mon-Fri 10:00-15:00", "bio": "Explores the intersection of neurology, philosophy, and mind-body healing."},
-  {"id": "DR091", "name": "Dr. Quinn", "age": 46, "specialty": "Frontier Health", "availability": "Mon-Sat 08:00-18:00", "bio": "Expert in rural medicine and community-based health initiatives."},
-  {"id": "DR092", "name": "Dr. Dolittle", "age": 42, "specialty": "Comparative Medicine", "availability": "Mon-Fri 09:00-13:00", "bio": "Researches health similarities between humans and other species."},
-  {"id": "DR093", "name": "Dr. No", "age": 58, "specialty": "Nuclear Radiology", "availability": "Tue-Thu 11:00-17:00", "bio": "Expert in high-energy physics applications in medical imaging."},
-  {"id": "DR094", "name": "Dr. Frankenstein", "age": 54, "specialty": "Regenerative Medicine", "availability": "Mon-Fri 22:00-04:00", "bio": "Researches tissue engineering and organ regrowth technologies."},
-  {"id": "DR095", "name": "Dr. Jekyll", "age": 47, "specialty": "Endocrinology Research", "availability": "Mon-Wed 09:00-14:00", "bio": "Studies hormonal influences on personality and behavior change."},
-  {"id": "DR096", "name": "Dr. Moreau", "age": 53, "specialty": "Transgenics", "availability": "Wed-Fri 10:00-16:00", "bio": "Expert in cross-species genetic modification and experimental health."},
-  {"id": "DR097", "name": "Dr. Banner", "age": 48, "specialty": "Gamma Radiation Health", "availability": "Mon-Fri 08:00-12:00", "bio": "Specializes in cellular mutation and radiation exposure therapy."},
-  {"id": "DR098", "name": "Dr. Xavier", "age": 60, "specialty": "Neuro-Genetics", "availability": "Tue-Thu 09:00-15:00", "bio": "Focuses on genetic mutations in the brain and cognitive evolution."},
-  {"id": "DR099", "name": "Dr. Lecter", "age": 55, "specialty": "Forensic Psychiatry", "availability": "Mon-Fri 13:00-17:00", "bio": "Expert in criminal profiling and complex psychological analysis."},
-  {"id": "DR100", "name": "Dr. Who", "age": 100, "specialty": "Temporal Medicine", "availability": "Available Anytime", "bio": "Specializes in age reversal, longevity research, and the biology of time."},
-  {"id": "DR101", "name": "Dr. James Miller", "age": 42, "specialty": "Cardiology", "availability": "Mon-Wed 08:00-14:00", "bio": "Specializes in preventive cardiology and heart failure management."},
-  {"id": "DR102", "name": "Dr. Mary Wilson", "age": 35, "specialty": "Pediatrics", "availability": "Tue-Fri 09:00-15:00", "bio": "Dedicated to neonatal care and developmental milestones."},
-  {"id": "DR103", "name": "Dr. Robert Garcia", "age": 58, "specialty": "Neurology", "availability": "Mon-Thu 10:00-16:00", "bio": "Focuses on neuro-degenerative diseases and stroke recovery."},
-  {"id": "DR104", "name": "Dr. Patricia Jones", "age": 47, "specialty": "Dermatology", "availability": "Wed-Fri 08:00-13:00", "bio": "Expert in cosmetic dermatology and inflammatory skin conditions."},
-  {"id": "DR105", "name": "Dr. Michael Brown", "age": 52, "specialty": "Orthopedics", "availability": "Mon-Wed 07:00-12:00", "bio": "Specializes in spinal surgery and reconstructive orthopedics."},
-  {"id": "DR106", "name": "Dr. Linda Martinez", "age": 39, "specialty": "Psychiatry", "availability": "Tue-Thu 13:00-18:00", "bio": "Focuses on adolescent mental health and mood disorders."},
-  {"id": "DR107", "name": "Dr. David Hernandez", "age": 44, "specialty": "Gastroenterology", "availability": "Mon-Fri 09:00-14:00", "bio": "Expert in endoscopy and inflammatory bowel disease (IBD)."},
-  {"id": "DR108", "name": "Dr. Elizabeth Taylor", "age": 50, "specialty": "Endocrinology", "availability": "Wed-Sat 10:00-15:00", "bio": "Specializes in metabolic syndrome and pituitary disorders."},
-  {"id": "DR109", "name": "Dr. Richard Moore", "age": 63, "specialty": "Oncology", "availability": "Mon-Thu 08:00-12:00", "bio": "Dedicated to clinical trials in hematologic malignancies."},
-  {"id": "DR110", "name": "Dr. Jennifer Anderson", "age": 37, "specialty": "Ophthalmology", "availability": "Tue-Fri 11:00-17:00", "bio": "Focuses on pediatric ophthalmology and retinal health."},
-  {"id": "DR111", "name": "Dr. William Thomas", "age": 49, "specialty": "Urology", "availability": "Mon-Wed 08:00-13:00", "bio": "Specializes in minimally invasive robotic urological surgery."},
-  {"id": "DR112", "name": "Dr. Barbara White", "age": 55, "specialty": "Pulmonology", "availability": "Wed-Fri 09:00-16:00", "bio": "Expert in cystic fibrosis and pulmonary hypertension."},
-  {"id": "DR113", "name": "Dr. Joseph Harris", "age": 41, "specialty": "Rheumatology", "availability": "Mon-Tue 10:00-15:00", "bio": "Focuses on psoriatic arthritis and vasculitis."},
-  {"id": "DR114", "name": "Dr. Susan Martin", "age": 46, "specialty": "Obstetrics & Gynecology", "availability": "Tue-Fri 08:00-14:00", "bio": "Specializes in high-risk pregnancies and gynecologic surgery."},
-  {"id": "DR115", "name": "Dr. Thomas Thompson", "age": 60, "specialty": "Nephrology", "availability": "Thu-Sat 09:00-13:00", "bio": "Expert in hypertension-related kidney disease and electrolytes."},
-  {"id": "DR116", "name": "Dr. Jessica Jackson", "age": 34, "specialty": "Internal Medicine", "availability": "Mon-Fri 08:00-17:00", "bio": "Focused on primary care and adult wellness screenings."},
-  {"id": "DR117", "name": "Dr. Charles Davis", "age": 53, "specialty": "General Surgery", "availability": "Mon-Wed 07:00-15:00", "bio": "Specializes in bariatric surgery and trauma surgery."},
-  {"id": "DR118", "name": "Dr. Karen Rodriguez", "age": 40, "specialty": "Allergy & Immunology", "availability": "Wed-Fri 10:00-16:00", "bio": "Expert in asthma management and severe food allergies."},
-  {"id": "DR119", "name": "Dr. Christopher Lee", "age": 65, "specialty": "Geriatrics", "availability": "Tue-Thu 09:00-14:00", "bio": "Focuses on polypharmacy and frailty in the elderly."},
-  {"id": "DR120", "name": "Dr. Sarah Walker", "age": 38, "specialty": "Infectious Disease", "availability": "Mon-Fri 11:00-15:00", "bio": "Specializes in HIV care and travel medicine."},
-  {"id": "DR121", "name": "Dr. Daniel Hall", "age": 48, "specialty": "Radiology", "availability": "Mon-Sat 08:00-20:00", "bio": "Expert in interventional radiology and musculoskeletal imaging."},
-  {"id": "DR122", "name": "Dr. Nancy Young", "age": 43, "specialty": "Child Psychiatry", "availability": "Mon-Wed 13:00-18:00", "bio": "Specializes in early childhood trauma and autism."},
-  {"id": "DR123", "name": "Dr. Matthew Allen", "age": 51, "specialty": "Medical Genetics", "availability": "Thu-Fri 10:00-15:00", "bio": "Focuses on metabolic genetic disorders and rare diseases."},
-  {"id": "DR124", "name": "Dr. Lisa King", "age": 45, "specialty": "Physical Medicine & Rehab", "availability": "Mon-Thu 08:00-14:00", "bio": "Expert in spinal cord injury and sports rehabilitation."},
-  {"id": "DR125", "name": "Dr. Anthony Wright", "age": 57, "specialty": "Psychology", "availability": "Mon-Fri 09:00-17:00", "bio": "Specializes in mindfulness-based stress reduction (MBSR)."},
-  {"id": "DR126", "name": "Dr. Betty Scott", "age": 62, "specialty": "Epidemiology", "availability": "Mon-Fri 08:00-16:00", "bio": "Focuses on urban health and chronic disease surveillance."},
-  {"id": "DR127", "name": "Dr. Mark Green", "age": 44, "specialty": "Family Medicine", "availability": "Mon-Fri 08:00-12:00", "bio": "Comprehensive care for rural communities and families."},
-  {"id": "DR128", "name": "Dr. Sandra Adams", "age": 52, "specialty": "Microbiology", "availability": "Tue-Thu 10:00-14:00", "bio": "Researching antimicrobial resistance and fungal pathogens."},
-  {"id": "DR129", "name": "Dr. Steven Baker", "age": 59, "specialty": "Clinical Pathology", "availability": "Mon-Fri 09:00-17:00", "bio": "Specializes in molecular diagnostics and tumor profiling."},
-  {"id": "DR130", "name": "Dr. Ashley Gonzalez", "age": 36, "specialty": "Nuclear Medicine", "availability": "Wed-Fri 08:00-13:00", "bio": "Focuses on PET/CT imaging and molecular radiotherapy."},
-  {"id": "DR131", "name": "Dr. Paul Nelson", "age": 47, "specialty": "Reproductive Endocrinology", "availability": "Mon-Tue 09:00-15:00", "bio": "Expert in PCOS and recurrent pregnancy loss."},
-  {"id": "DR132", "name": "Dr. Kimberly Carter", "age": 50, "specialty": "Radiation Oncology", "availability": "Mon-Thu 08:00-12:00", "bio": "Specializes in brachytherapy and breast cancer radiation."},
-  {"id": "DR133", "name": "Dr. Andrew Mitchell", "age": 41, "specialty": "Emergency Medicine", "availability": "Rotating 24/7", "bio": "Expert in disaster response and emergency airway management."},
-  {"id": "DR134", "name": "Dr. Donna Perez", "age": 49, "specialty": "Sports Medicine", "availability": "Mon-Wed 07:00-11:00", "bio": "Treats elite athletes and focuses on injury prevention."},
-  {"id": "DR135", "name": "Dr. Kenneth Roberts", "age": 54, "specialty": "Pain Management", "availability": "Wed-Fri 08:00-12:00", "bio": "Specializes in interventional pain procedures and neuromodulation."},
-  {"id": "DR136", "name": "Dr. Michelle Turner", "age": 42, "specialty": "Palliative Care", "availability": "Mon-Fri 10:00-16:00", "bio": "Focuses on quality of life for patients with terminal illnesses."},
-  {"id": "DR137", "name": "Dr. Joshua Phillips", "age": 39, "specialty": "Hospice Care", "availability": "Mon-Fri 09:00-17:00", "bio": "Dedicated to home-based end-of-life care and bereavement support."},
-  {"id": "DR138", "name": "Dr. Emily Campbell", "age": 46, "specialty": "Toxicology", "availability": "Mon-Wed 09:00-13:00", "bio": "Expert in occupational poisonings and heavy metal toxicity."},
-  {"id": "DR139", "name": "Dr. Kevin Parker", "age": 51, "specialty": "Neonatology", "availability": "Mon-Fri 08:00-14:00", "bio": "Specializes in extremely low birth weight infants and NICU care."},
-  {"id": "DR140", "name": "Dr. Amanda Evans", "age": 35, "specialty": "Pharmacology", "availability": "Wed-Fri 09:00-17:00", "bio": "Focuses on pharmacogenomics and personalized drug therapy."},
-  {"id": "DR141", "name": "Dr. Brian Edwards", "age": 58, "specialty": "Transplant Surgery", "availability": "Mon-Wed 07:00-15:00", "bio": "Expert in liver and pancreas transplantation."},
-  {"id": "DR142", "name": "Dr. Melissa Collins", "age": 44, "specialty": "Pediatric Neurosurgery", "availability": "Tue-Fri 08:00-13:00", "bio": "Specializes in pediatric epilepsy surgery and hydrocephalus."},
-  {"id": "DR143", "name": "Dr. Ronald Stewart", "age": 60, "specialty": "Neurosurgery", "availability": "Mon-Fri 09:00-14:00", "bio": "Expert in complex skull-base surgery and pituitary tumors."},
-  {"id": "DR144", "name": "Dr. Stephanie Sanchez", "age": 43, "specialty": "Hematology-Oncology", "availability": "Mon-Thu 09:00-13:00", "bio": "Focuses on coagulation disorders and benign hematology."},
-  {"id": "DR145", "name": "Dr. Edward Morris", "age": 55, "specialty": "Pediatric Cardiology", "availability": "Tue-Thu 08:00-12:00", "bio": "Expert in fetal echocardiography and congenital heart disease."},
-  {"id": "DR146", "name": "Dr. Rebecca Rogers", "age": 38, "specialty": "Otolaryngology (ENT)", "availability": "Wed-Fri 10:00-16:00", "bio": "Specializes in voice disorders and laryngology."},
-  {"id": "DR147", "name": "Dr. George Reed", "age": 61, "specialty": "Sleep Medicine", "availability": "Mon-Wed 20:00-02:00", "bio": "Expert in obstructive sleep apnea and restless leg syndrome."},
-  {"id": "DR148", "name": "Dr. Laura Cook", "age": 47, "specialty": "Telemedicine", "availability": "Mon-Sat 08:00-18:00", "bio": "Focuses on digital health access in underserved areas."},
-  {"id": "DR149", "name": "Dr. Gregory Morgan", "age": 53, "specialty": "Aerospace Medicine", "availability": "Thu-Fri 10:00-15:00", "bio": "Specializes in physiological effects of high altitude and spaceflight."},
-  {"id": "DR150", "name": "Dr. Sharon Bell", "age": 41, "specialty": "Occupational Medicine", "availability": "Tue-Thu 09:00-14:00", "bio": "Focuses on ergonomic assessments and workplace wellness programs."},
-  {"id": "DR151", "name": "Dr. Raymond Murphy", "age": 52, "specialty": "Clinical Informatics", "availability": "Mon-Fri 09:00-17:00", "bio": "Expert in clinical decision support systems and health data privacy."},
-  {"id": "DR152", "name": "Dr. Cynthia Bailey", "age": 45, "specialty": "Cardiology", "availability": "Mon-Wed 08:00-12:00", "bio": "Specializes in women's heart health and cardiovascular imaging."},
-  {"id": "DR153", "name": "Dr. Peter Rivera", "age": 49, "specialty": "Pediatrics", "availability": "Tue-Thu 09:00-15:00", "bio": "Focuses on pediatric allergies and infectious diseases."},
-  {"id": "DR154", "name": "Dr. Kathleen Cooper", "age": 56, "specialty": "Neurology", "availability": "Mon-Fri 10:00-14:00", "bio": "Expert in neuromuscular disorders and ALS."},
-  {"id": "DR155", "name": "Dr. Justin Richardson", "age": 39, "specialty": "Dermatology", "availability": "Wed-Fri 08:00-13:00", "bio": "Specializes in Mohs surgery and skin oncology."},
-  {"id": "DR156", "name": "Dr. Shirley Cox", "age": 54, "specialty": "Orthopedics", "availability": "Mon-Thu 07:00-11:00", "bio": "Expert in hand surgery and upper extremity injuries."},
-  {"id": "DR157", "name": "Dr. Terry Howard", "age": 42, "specialty": "Psychiatry", "availability": "Tue-Fri 13:00-18:00", "bio": "Focuses on addiction psychiatry and dual diagnosis."},
-  {"id": "DR158", "name": "Dr. Martha Ward", "age": 60, "specialty": "Gastroenterology", "availability": "Mon-Wed 09:00-14:00", "bio": "Specializes in hepatology and liver transplantation."},
-  {"id": "DR159", "name": "Dr. Arthur Torres", "age": 46, "specialty": "Endocrinology", "availability": "Thu-Sat 10:00-16:00", "bio": "Expert in adrenal disorders and osteoporosis."},
-  {"id": "DR160", "name": "Dr. Kelly Peterson", "age": 37, "specialty": "Oncology", "availability": "Mon-Fri 08:00-12:00", "bio": "Focuses on breast cancer treatment and survivorship care."},
-  {"id": "DR161", "name": "Dr. Jerry Gray", "age": 58, "specialty": "Ophthalmology", "availability": "Tue-Thu 11:00-17:00", "bio": "Specializes in corneal transplants and refractive surgery."},
-  {"id": "DR162", "name": "Dr. Janet Ramirez", "age": 48, "specialty": "Urology", "availability": "Mon-Wed 08:00-13:00", "bio": "Expert in female urology and pelvic floor reconstruction."},
-  {"id": "DR163", "name": "Dr. Walter James", "age": 51, "specialty": "Pulmonology", "availability": "Wed-Fri 09:00-14:00", "bio": "Focuses on critical care medicine and ventilator management."},
-  {"id": "DR164", "name": "Dr. Deborah Watson", "age": 43, "specialty": "Rheumatology", "availability": "Mon-Tue 10:00-16:00", "bio": "Expert in scleroderma and systemic autoimmune diseases."},
-  {"id": "DR165", "name": "Dr. Harold Brooks", "age": 62, "specialty": "Obstetrics & Gynecology", "availability": "Tue-Fri 08:00-12:00", "bio": "Specializes in urogynecology and minimally invasive surgery."},
-  {"id": "DR166", "name": "Dr. Teresa Kelly", "age": 40, "specialty": "Nephrology", "availability": "Thu-Sat 09:00-13:00", "bio": "Focuses on peritoneal dialysis and chronic kidney disease management."},
-  {"id": "DR167", "name": "Dr. Lawrence Sanders", "age": 55, "specialty": "Internal Medicine", "availability": "Mon-Fri 08:00-17:00", "bio": "Specializes in complex chronic disease and geriatric internal medicine."},
-  {"id": "DR168", "name": "Dr. Doris Price", "age": 47, "specialty": "General Surgery", "availability": "Mon-Wed 07:00-15:00", "bio": "Expert in endocrine surgery and thyroidectomy."},
-  {"id": "DR169", "name": "Dr. Joe Bennett", "age": 39, "specialty": "Allergy & Immunology", "availability": "Wed-Fri 10:00-16:00", "bio": "Focuses on primary immunodeficiency and chronic urticaria."},
-  {"id": "DR170", "name": "Dr. Evelyn Wood", "age": 59, "specialty": "Geriatrics", "availability": "Tue-Thu 09:00-14:00", "bio": "Specializes in palliative geriatrics and dementia care."},
-  {"id": "DR171", "name": "Dr. Albert Barnes", "age": 44, "specialty": "Infectious Disease", "availability": "Mon-Fri 11:00-15:00", "bio": "Expert in antibiotic stewardship and hospital-acquired infections."},
-  {"id": "DR172", "name": "Dr. Rose Ross", "age": 52, "specialty": "Radiology", "availability": "Mon-Sat 08:00-20:00", "bio": "Specializes in neuroradiology and advanced neuro-imaging."},
-  {"id": "DR173", "name": "Dr. Wayne Jenkins", "age": 41, "specialty": "Child Psychiatry", "availability": "Mon-Wed 13:00-18:00", "bio": "Focuses on pediatric OCD and anxiety disorders."},
-  {"id": "DR174", "name": "Dr. Alice Perry", "age": 46, "specialty": "Medical Genetics", "availability": "Thu-Fri 10:00-15:00", "bio": "Expert in cancer genetics and hereditary risk assessment."},
-  {"id": "DR175", "name": "Dr. Billy Powell", "age": 50, "specialty": "Physical Medicine & Rehab", "availability": "Mon-Thu 08:00-14:00", "bio": "Specializes in musculoskeletal ultrasound and joint injections."},
-  {"id": "DR176", "name": "Dr. Diana Long", "age": 38, "specialty": "Psychology", "availability": "Mon-Fri 09:00-17:00", "bio": "Focuses on neuropsychological testing and cognitive rehabilitation."},
-  {"id": "DR177", "name": "Dr. Bruce Patterson", "age": 53, "specialty": "Epidemiology", "availability": "Mon-Fri 08:00-16:00", "bio": "Researching global health security and emerging viral threats."},
-  {"id": "DR178", "name": "Dr. Annie Hughes", "age": 45, "specialty": "Family Medicine", "availability": "Mon-Fri 08:00-12:00", "bio": "Expert in women's health and family-centered primary care."},
-  {"id": "DR179", "name": "Dr. Eugene Flores", "age": 57, "specialty": "Microbiology", "availability": "Tue-Thu 10:00-14:00", "bio": "Specializes in clinical parasitology and tropical medicine."},
-  {"id": "DR180", "name": "Dr. Julia Washington", "age": 42, "specialty": "Clinical Pathology", "availability": "Mon-Fri 09:00-17:00", "bio": "Expert in transfusion medicine and blood bank management."},
-  {"id": "DR181", "name": "Dr. Louis Butler", "age": 49, "specialty": "Nuclear Medicine", "availability": "Wed-Fri 08:00-13:00", "bio": "Specializes in thyroid cancer imaging and radioiodine therapy."},
-  {"id": "DR182", "name": "Dr. Grace Simmons", "age": 36, "specialty": "Reproductive Endocrinology", "availability": "Mon-Tue 09:00-15:00", "bio": "Focuses on onco-fertility and preserving reproductive health."},
-  {"id": "DR183", "name": "Dr. Ralph Foster", "age": 61, "specialty": "Radiation Oncology", "availability": "Mon-Thu 08:00-12:00", "bio": "Expert in stereotactic body radiation therapy (SBRT)."},
-  {"id": "DR184", "name": "Dr. Victoria Gonzales", "age": 40, "specialty": "Emergency Medicine", "availability": "Rotating 24/7", "bio": "Specializes in pediatric emergency medicine and acute trauma."},
-  {"id": "DR185", "name": "Dr. Roy Bryant", "age": 54, "specialty": "Sports Medicine", "availability": "Mon-Wed 07:00-11:00", "bio": "Expert in concussion management and return-to-play protocols."},
-  {"id": "DR186", "name": "Dr. Kathryn Alexander", "age": 47, "specialty": "Pain Management", "availability": "Wed-Fri 08:00-12:00", "bio": "Focuses on non-opioid pain management and regenerative injections."},
-  {"id": "DR187", "name": "Dr. Harry Russell", "age": 59, "specialty": "Palliative Care", "availability": "Mon-Fri 10:00-16:00", "bio": "Dedicated to palliative care research and ethics."},
-  {"id": "DR188", "name": "Dr. Jean Griffin", "age": 43, "specialty": "Hospice Care", "availability": "Mon-Fri 09:00-17:00", "bio": "Focuses on psychological support for the terminally ill."},
-  {"id": "DR189", "name": "Dr. Philip Diaz", "age": 51, "specialty": "Toxicology", "availability": "Mon-Wed 09:00-13:00", "bio": "Expert in clinical neurotoxicology and forensic toxicology."},
-  {"id": "DR190", "name": "Dr. Cheryl Hayes", "age": 35, "specialty": "Neonatology", "availability": "Mon-Fri 08:00-14:00", "bio": "Focuses on neonatal lung injury and surfactant therapy."},
-  {"id": "DR191", "name": "Dr. Bobby Myers", "age": 56, "specialty": "Pharmacology", "availability": "Wed-Fri 09:00-17:00", "bio": "Specializes in pediatric pharmacology and dose optimization."},
-  {"id": "DR192", "name": "Dr. Mildred Ford", "age": 48, "specialty": "Transplant Surgery", "availability": "Mon-Wed 07:00-15:00", "bio": "Expert in kidney transplant immunology and rejection therapy."},
-  {"id": "DR193", "name": "Dr. Russell Hamilton", "age": 53, "specialty": "Pediatric Neurosurgery", "availability": "Tue-Fri 08:00-13:00", "bio": "Focuses on spinal dysraphism and congenital brain defects."},
-  {"id": "DR194", "name": "Dr. Joan Graham", "age": 42, "specialty": "Neurosurgery", "availability": "Mon-Fri 09:00-14:00", "bio": "Expert in cerebrovascular surgery and aneurysm repair."},
-  {"id": "DR195", "name": "Dr. Carl Sullivan", "age": 60, "specialty": "Hematology-Oncology", "availability": "Mon-Thu 09:00-13:00", "bio": "Specializes in multiple myeloma and plasma cell disorders."},
-  {"id": "DR196", "name": "Dr. Judith Wallace", "age": 44, "specialty": "Pediatric Cardiology", "availability": "Tue-Thu 08:00-12:00", "bio": "Expert in pediatric arrhythmia and pacemaker management."},
-  {"id": "DR197", "name": "Dr. Alan Woods", "age": 46, "specialty": "Otolaryngology (ENT)", "availability": "Wed-Fri 10:00-16:00", "bio": "Specializes in otology and neurotology (ear surgery)."},
-  {"id": "DR198", "name": "Dr. Marie Cole", "age": 55, "specialty": "Sleep Medicine", "availability": "Mon-Wed 20:00-02:00", "bio": "Focuses on circadian rhythm disorders and shift work sleep issues."},
-  {"id": "DR199", "name": "Dr. Willie West", "age": 41, "specialty": "Telemedicine", "availability": "Mon-Sat 08:00-18:00", "bio": "Expert in remote patient monitoring for chronic conditions."},
-  {"id": "DR200", "name": "Dr. Doris Jordan", "age": 49, "specialty": "Aerospace Medicine", "availability": "Thu-Fri 10:00-15:00", "bio": "Focuses on human factors and medical safety in commercial aviation."},
-  {"id": "DR201", "name": "Dr. Oscar Wilde", "age": 44, "specialty": "Narrative Medicine", "availability": "Mon-Wed 09:00-13:00", "bio": "Focuses on the patient's personal story to improve clinical outcomes and empathy in care."},
-  {"id": "DR202", "name": "Dr. Simone de Beauvoir", "age": 51, "specialty": "Medical Ethics", "availability": "Tue-Thu 10:00-14:00", "bio": "Consultant for complex ethical dilemmas in end-of-life care and clinical research."},
-  {"id": "DR203", "name": "Dr. Nelson Mandela", "age": 62, "specialty": "Public Health Advocacy", "availability": "Mon-Fri 08:00-12:00", "bio": "Dedicated to healthcare equity, community outreach, and rural health policy."},
-  {"id": "DR204", "name": "Dr. Amelia Earhart", "age": 39, "specialty": "Aviation Psychology", "availability": "Wed-Fri 10:00-15:00", "bio": "Specializes in pilot mental health, stress management, and performance under pressure."},
-  {"id": "DR205", "name": "Dr. Ernest Hemingway", "age": 55, "specialty": "Trauma Surgery", "availability": "Mon-Thu 07:00-15:00", "bio": "Expert in acute injury stabilization and surgical management of traumatic wounds."},
-  {"id": "DR206", "name": "Dr. Maya Angelou", "age": 48, "specialty": "Holistic Therapy", "availability": "Tue-Fri 09:00-14:00", "bio": "Integrates traditional psychotherapy with arts-based healing and mindfulness."},
-  {"id": "DR207", "name": "Dr. Winston Churchill", "age": 60, "specialty": "Crisis Management", "availability": "On-Call 24/7", "bio": "Specializes in hospital emergency protocols and large-scale medical disaster response."},
-  {"id": "DR208", "name": "Dr. Frida Kahlo", "age": 42, "specialty": "Pain Rehabilitation", "availability": "Mon-Wed 11:00-16:00", "bio": "Expert in managing chronic physical disability through multidisciplinary rehab."},
-  {"id": "DR209", "name": "Dr. Pablo Picasso", "age": 57, "specialty": "Reconstructive Surgery", "availability": "Tue-Thu 08:00-14:00", "bio": "Focuses on aesthetic restoration after major trauma or oncology surgeries."},
-  {"id": "DR210", "name": "Dr. Agatha Christie", "age": 45, "specialty": "Forensic Toxicology", "availability": "Mon-Fri 09:00-17:00", "bio": "Expert in identifying chemical agents and drug interactions in complex cases."},
-  {"id": "DR211", "name": "Dr. Arthur Conan Doyle", "age": 53, "specialty": "Diagnostic Pathology", "availability": "Wed-Fri 08:00-13:00", "bio": "Specializes in deducing rare disease origins through detailed tissue analysis."},
-  {"id": "DR212", "name": "Dr. Emily Dickinson", "age": 36, "specialty": "Immunotherapy Research", "availability": "Mon-Thu 10:00-15:00", "bio": "Researches internal immune responses to treat chronic autoimmune conditions."},
-  {"id": "DR213", "name": "Dr. Mark Twain", "age": 58, "specialty": "Geriatric Psychology", "availability": "Tue-Thu 09:00-14:00", "bio": "Focuses on cognitive health and humor-based therapy for the elderly."},
-  {"id": "DR214", "name": "Dr. Virginia Woolf", "age": 47, "specialty": "Neuropsychiatry", "availability": "Mon-Wed 13:00-17:00", "bio": "Expert in the biological basis of mood disorders and conscious awareness."},
-  {"id": "DR215", "name": "Dr. Leo Tolstoy", "age": 64, "specialty": "Family Health History", "availability": "Thu-Sat 08:00-12:00", "bio": "Specializes in tracing multi-generational health patterns and genetic risks."},
-  {"id": "DR216", "name": "Dr. Jane Austen", "age": 41, "specialty": "Social Medicine", "availability": "Mon-Fri 09:00-14:00", "bio": "Examines the impact of social structures and environment on long-term health."},
-  {"id": "DR217", "name": "Dr. Charles Dickens", "age": 50, "specialty": "Pediatric Welfare", "availability": "Mon-Wed 08:00-13:00", "bio": "Focuses on nutrition and health outcomes for children in low-income urban areas."},
-  {"id": "DR218", "name": "Dr. George Orwell", "age": 46, "specialty": "Preventative Surveillance", "availability": "Tue-Fri 10:00-16:00", "bio": "Expert in monitoring public health data to predict and prevent disease outbreaks."},
-  {"id": "DR219", "name": "Dr. James Joyce", "age": 52, "specialty": "Cognitive Science", "availability": "Wed-Fri 09:00-14:00", "bio": "Researches stream-of-consciousness patterns in neurodivergent patients."},
-  {"id": "DR220", "name": "Dr. Franz Kafka", "age": 43, "specialty": "Occupational Stress", "availability": "Mon-Thu 08:00-12:00", "bio": "Specializes in workplace-related anxiety and the health effects of bureaucracy."},
-  {"id": "DR221", "name": "Dr. Toni Morrison", "age": 56, "specialty": "Maternal Health", "availability": "Mon-Fri 11:00-16:00", "bio": "Focuses on disparities in maternal care and postpartum psychological support."},
-  {"id": "DR222", "name": "Dr. Gabriel Garcia Marquez", "age": 59, "specialty": "Memory Disorders", "availability": "Tue-Thu 09:00-13:00", "bio": "Expert in Alzheimer's and the preservation of childhood memories in dementia."},
-  {"id": "DR223", "name": "Dr. Sylvia Plath", "age": 34, "specialty": "Adolescent Psychiatry", "availability": "Wed-Sat 14:00-18:00", "bio": "Specializes in early intervention for depression and self-harm in teens."},
-  {"id": "DR224", "name": "Dr. Walt Whitman", "age": 61, "specialty": "Physical Wellness", "availability": "Mon-Wed 07:00-11:00", "bio": "Advocates for outdoor-based rehabilitation and natural physical therapy."},
-  {"id": "DR225", "name": "Dr. Victor Hugo", "age": 63, "specialty": "Internal Medicine (Chronic)", "availability": "Tue-Fri 08:00-12:00", "bio": "Dedicated to treating patients with multiple co-morbidities and complex needs."},
-  {"id": "DR226", "name": "Dr. Robert Frost", "age": 54, "specialty": "Rural Medicine", "availability": "Mon-Fri 09:00-17:00", "bio": "Expert in providing comprehensive care in remote and isolated environments."},
-  {"id": "DR227", "name": "Dr. Lewis Carroll", "age": 38, "specialty": "Pediatric Neurology", "availability": "Mon-Wed 10:00-14:00", "bio": "Focuses on sensory processing disorders and childhood epilepsy."},
-  {"id": "DR228", "name": "Dr. Mary Shelley", "age": 40, "specialty": "Bio-Engineering", "availability": "Thu-Sat 09:00-15:00", "bio": "Expert in early-stage prosthetic integration and tissue regeneration research."},
-  {"id": "DR229", "name": "Dr. Edgar Allan Poe", "age": 47, "specialty": "Sleep Pathology", "availability": "Mon-Fri 22:00-04:00", "bio": "Specializes in night terrors, sleep paralysis, and chronic insomnia."},
-  {"id": "DR230", "name": "Dr. Charlotte Bronte", "age": 45, "specialty": "Respirology", "availability": "Tue-Thu 08:00-12:00", "bio": "Expert in treating tuberculosis and chronic restrictive lung diseases."},
-  {"id": "DR231", "name": "Dr. Emily Bronte", "age": 42, "specialty": "Environmental Health", "availability": "Wed-Fri 09:00-14:00", "bio": "Studies the effect of climate and moorland environments on respiratory health."},
-  {"id": "DR232", "name": "Dr. Anne Bronte", "age": 39, "specialty": "Addiction Counseling", "availability": "Mon-Fri 13:00-17:00", "bio": "Focuses on family-centered recovery programs and behavioral health."},
-  {"id": "DR233", "name": "Dr. Fyodor Dostoevsky", "age": 55, "specialty": "Epileptology", "availability": "Mon-Wed 09:00-14:00", "bio": "Expert in complex seizure disorders and their psychological impacts."},
-  {"id": "DR234", "name": "Dr. William Faulkner", "age": 58, "specialty": "Orthopedic Trauma", "availability": "Tue-Fri 07:00-13:00", "bio": "Specializes in complex fractures and surgical repair of joint injuries."},
-  {"id": "DR235", "name": "Dr. John Steinbeck", "age": 51, "specialty": "Migrant Health", "availability": "Mon-Fri 08:00-12:00", "bio": "Focuses on healthcare for transient populations and manual laborers."},
-  {"id": "DR236", "name": "Dr. Tennessee Williams", "age": 49, "specialty": "Drama Therapy", "availability": "Wed-Sat 11:00-16:00", "bio": "Uses role-play and creative expression to treat social anxiety and trauma."},
-  {"id": "DR237", "name": "Dr. Harper Lee", "age": 52, "specialty": "Pediatric Advocacy", "availability": "Mon-Thu 10:00-15:00", "bio": "Focuses on child safety, forensic pediatrics, and social welfare."},
-  {"id": "DR238", "name": "Dr. Truman Capote", "age": 46, "specialty": "Diagnostic Interviewing", "availability": "Tue-Thu 13:00-17:00", "bio": "Expert in gathering complex clinical histories for difficult-to-diagnose cases."},
-  {"id": "DR239", "name": "Dr. Langston Hughes", "age": 44, "specialty": "Community Cardiology", "availability": "Mon-Fri 09:00-13:00", "bio": "Dedicated to heart health screenings in urban community centers."},
-  {"id": "DR240", "name": "Dr. Ralph Ellison", "age": 50, "specialty": "Visual Science", "availability": "Wed-Fri 10:00-14:00", "bio": "Expert in optic nerve disorders and visual field perception."},
-  {"id": "DR241", "name": "Dr. Zora Neale Hurston", "age": 48, "specialty": "Ethnopsychiatry", "availability": "Mon-Wed 08:00-12:00", "bio": "Studies cultural variations in mental health and traditional healing practices."},
-  {"id": "DR242", "name": "Dr. James Baldwin", "age": 53, "specialty": "Intersectional Medicine", "availability": "Tue-Fri 09:00-15:00", "bio": "Specializes in health disparities related to identity and social justice."},
-  {"id": "DR243", "name": "Dr. Sylvia Sylvia", "age": 35, "specialty": "Dermatology", "availability": "Wed-Fri 08:00-13:00", "bio": "Expert in pediatric skin conditions and hereditary dermatosis."},
-  {"id": "DR244", "name": "Dr. Hermann Hesse", "age": 60, "specialty": "Integrative Psychiatry", "availability": "Mon-Thu 10:00-16:00", "bio": "Blends eastern philosophy with western psychiatric protocols."},
-  {"id": "DR245", "name": "Dr. Thomas Mann", "age": 62, "specialty": "Sanatorium Medicine", "availability": "Tue-Fri 09:00-14:00", "bio": "Expert in long-term recovery for chronic infectious diseases."},
-  {"id": "DR246", "name": "Dr. Marcel Proust", "age": 51, "specialty": "Olfactory Neuroscience", "availability": "Wed-Fri 13:00-17:00", "bio": "Studies the link between smell, memory, and neurological triggers."},
-  {"id": "DR247", "name": "Dr. Albert Camus", "age": 45, "specialty": "Epidemiology Control", "availability": "Mon-Fri 08:00-16:00", "bio": "Expert in plague containment and rapid response to infectious outbreaks."},
-  {"id": "DR248", "name": "Dr. Jean-Paul Sartre", "age": 56, "specialty": "Existential Therapy", "availability": "Mon-Wed 10:00-15:00", "bio": "Focuses on personal freedom and choice in recovery from psychological trauma."},
-  {"id": "DR249", "name": "Dr. Hannah Arendt", "age": 54, "specialty": "Bio-Ethics Policy", "availability": "Tue-Thu 11:00-14:00", "bio": "Consultant on global medical human rights and clinical research ethics."},
-  {"id": "DR250", "name": "Dr. Michel Foucault", "age": 49, "specialty": "Medical Sociology", "availability": "Wed-Fri 09:00-13:00", "bio": "Researches the history of medical institutions and power dynamics in healthcare."},
-  {"id": "DR251", "name": "Dr. Noam Chomsky", "age": 65, "specialty": "Linguistic Therapy", "availability": "Mon-Thu 10:00-14:00", "bio": "Specializes in speech disorders and the cognitive structures of language."},
-  {"id": "DR252", "name": "Dr. Oliver Sacks", "age": 60, "specialty": "Clinical Neurology", "availability": "Mon-Fri 09:00-17:00", "bio": "Expert in rare neurological conditions and music-based therapy."},
-  {"id": "DR253", "name": "Dr. Elisabeth Kubler-Ross", "age": 58, "specialty": "Thanatology", "availability": "Tue-Fri 10:00-16:00", "bio": "World-renowned expert in the stages of grief and palliative care."},
-  {"id": "DR254", "name": "Dr. Viktor Frankl", "age": 61, "specialty": "Logotherapy", "availability": "Mon-Wed 08:00-12:00", "bio": "Helps patients find meaning through suffering and chronic illness."},
-  {"id": "DR255", "name": "Dr. Carl Jung", "age": 64, "specialty": "Analytical Psychology", "availability": "Wed-Fri 13:00-18:00", "bio": "Focuses on the collective unconscious and dream analysis in mental health."},
-  {"id": "DR256", "name": "Dr. Alfred Adler", "age": 57, "specialty": "Individual Psychology", "availability": "Mon-Thu 09:00-15:00", "bio": "Expert in overcoming inferiority complexes and social development."},
-  {"id": "DR257", "name": "Dr. Karen Horney", "age": 52, "specialty": "Feminine Psychology", "availability": "Tue-Fri 10:00-14:00", "bio": "Focuses on cultural impacts on mental health and neurosis therapy."},
-  {"id": "DR258", "name": "Dr. Erik Erikson", "age": 55, "specialty": "Developmental Health", "availability": "Mon-Wed 08:00-13:00", "bio": "Specializes in identity crises and lifecycle transitions."},
-  {"id": "DR259", "name": "Dr. B.F. Skinner", "age": 50, "specialty": "Behavior Modification", "availability": "Thu-Sat 10:00-15:00", "bio": "Expert in operant conditioning for behavioral disorders and habits."},
-  {"id": "DR260", "name": "Dr. Abraham Maslow", "age": 48, "specialty": "Humanistic Health", "availability": "Mon-Fri 09:00-14:00", "bio": "Focuses on self-actualization and fulfilling basic human needs for wellness."},
-  {"id": "DR261", "name": "Dr. Carl Rogers", "age": 59, "specialty": "Client-Centered Therapy", "availability": "Tue-Thu 11:00-17:00", "bio": "Expert in non-directive counseling and unconditional positive regard."},
-  {"id": "DR262", "name": "Dr. Jean Piaget", "age": 63, "specialty": "Cognitive Development", "availability": "Wed-Fri 08:00-12:00", "bio": "Researches child cognitive growth and learning disorders."},
-  {"id": "DR263", "name": "Dr. Lev Vygotsky", "age": 41, "specialty": "Educational Psychology", "availability": "Mon-Wed 09:00-14:00", "bio": "Specializes in the social context of pediatric development and speech."},
-  {"id": "DR264", "name": "Dr. Ivan Pavlov", "age": 56, "specialty": "Physiological Psychology", "availability": "Tue-Fri 07:00-12:00", "bio": "Expert in reflexive responses and the digestive-nervous system link."},
-  {"id": "DR265", "name": "Dr. Margaret Mead", "age": 47, "specialty": "Cultural Health", "availability": "Mon-Fri 10:00-16:00", "bio": "Studies how cultural norms influence adolescent health and maturity."},
-  {"id": "DR266", "name": "Dr. Rachel Carson", "age": 45, "specialty": "Environmental Toxicology", "availability": "Wed-Fri 08:00-13:00", "bio": "Specializes in the health impact of pesticides and environmental pollutants."},
-  {"id": "DR267", "name": "Dr. Jane Jacobs", "age": 52, "specialty": "Urban Health Planning", "availability": "Mon-Thu 09:00-15:00", "bio": "Focuses on how city design impacts community health and physical activity."},
-  {"id": "DR268", "name": "Dr. Buckminster Fuller", "age": 58, "specialty": "Design Science Medicine", "availability": "Tue-Fri 10:00-14:00", "bio": "Expert in medical facility design and sustainable health systems."},
-  {"id": "DR269", "name": "Dr. Lewis Mumford", "age": 61, "specialty": "Historical Medicine", "availability": "Mon-Wed 11:00-16:00", "bio": "Researches the evolution of health in civilizations and technology's role."},
-  {"id": "DR270", "name": "Dr. Susan Sontag", "age": 46, "specialty": "Illness Semiotics", "availability": "Wed-Fri 13:00-17:00", "bio": "Focuses on the metaphors used in cancer and infectious disease communication."},
-  {"id": "DR271", "name": "Dr. Joseph Campbell", "age": 54, "specialty": "Mythological Therapy", "availability": "Mon-Fri 09:00-13:00", "bio": "Uses universal archetypes to help patients navigate personal health crises."},
-  {"id": "DR272", "name": "Dr. Carl Sagan", "age": 53, "specialty": "Astro-Biology Medicine", "availability": "Tue-Thu 10:00-15:00", "bio": "Researches life conditions beyond earth and celestial impacts on biology."},
-  {"id": "DR273", "name": "Dr. Neil deGrasse Tyson", "age": 44, "specialty": "Public Science Health", "availability": "Mon-Wed 08:00-12:00", "bio": "Communicates health science concepts and data literacy to the public."},
-  {"id": "DR274", "name": "Dr. Michio Kaku", "age": 57, "specialty": "Quantum Medicine", "availability": "Wed-Sat 09:00-14:00", "bio": "Explores the future of nanotechnology and physics in cellular repair."},
-  {"id": "DR275", "name": "Dr. Brian Greene", "age": 42, "specialty": "Theoretical Biophysics", "availability": "Mon-Fri 10:00-15:00", "bio": "Studies the physical properties of biological membranes and proteins."},
-  {"id": "DR276", "name": "Dr. Jane Goodall", "age": 60, "specialty": "Zoonotic Health", "availability": "Mon-Wed 07:00-11:00", "bio": "Expert in cross-species viral transmissions and primate health."},
-  {"id": "DR277", "name": "Dr. Dian Fossey", "age": 51, "specialty": "Primatology Medicine", "availability": "Tue-Fri 08:00-13:00", "bio": "Focuses on infectious diseases in remote mountain habitats."},
-  {"id": "DR278", "name": "Dr. Birute Galdikas", "age": 49, "specialty": "Ethology-Based Wellness", "availability": "Wed-Fri 09:00-14:00", "bio": "Studies natural behavioral health and environmental stress adaptation."},
-  {"id": "DR279", "name": "Dr. David Attenborough", "age": 65, "specialty": "Bio-Diversity Health", "availability": "Mon-Fri 09:00-17:00", "bio": "Advocates for the link between planetary health and human longevity."},
-  {"id": "DR280", "name": "Dr. Jacques Cousteau", "age": 58, "specialty": "Hyperbaric Medicine", "availability": "Mon-Thu 08:00-12:00", "bio": "Expert in diving accidents, decompression sickness, and marine toxins."},
-  {"id": "DR281", "name": "Dr. Sylvia Earle", "age": 55, "specialty": "Marine Pharmacology", "availability": "Tue-Fri 10:00-16:00", "bio": "Researches medicinal compounds found in deep-sea ecosystems."},
-  {"id": "DR282", "name": "Dr. Robert Ballard", "age": 52, "specialty": "Remote Surgical Robotics", "availability": "Wed-Fri 09:00-14:00", "bio": "Expert in utilizing deep-sea tech for remote medical interventions."},
-  {"id": "DR283", "name": "Dr. Steve Irwin", "age": 39, "specialty": "Venomology", "availability": "On-Call 24/7", "bio": "Expert in treating bites and stings from dangerous wildlife and antivenom research."},
-  {"id": "DR284", "name": "Dr. Bear Grylls", "age": 41, "specialty": "Wilderness Medicine", "availability": "Rotating Shifts", "bio": "Specializes in survival-based first aid and medicine in extreme terrain."},
-  {"id": "DR285", "name": "Dr. Christopher Columbus", "age": 48, "specialty": "Global Disease Tracking", "availability": "Mon-Fri 08:00-12:00", "bio": "Expert in historical pandemics and the spread of disease across oceans."},
-  {"id": "DR286", "name": "Dr. Marco Polo", "age": 50, "specialty": "Infectious Travel Health", "availability": "Tue-Thu 11:00-17:00", "bio": "Specializes in diseases common to central and eastern trade routes."},
-  {"id": "DR287", "name": "Dr. Ferdinand Magellan", "age": 53, "specialty": "Naval Medicine", "availability": "Mon-Wed 09:00-14:00", "bio": "Expert in scurvy and long-term isolation health challenges on ships."},
-  {"id": "DR288", "name": "Dr. Vasco da Gama", "age": 56, "specialty": "Tropical Parasitology", "availability": "Wed-Fri 10:00-15:00", "bio": "Expert in malaria and parasitic infections in coastal regions."},
-  {"id": "DR289", "name": "Dr. Roald Amundsen", "age": 59, "specialty": "Arctic Medicine", "availability": "Mon-Fri 07:00-12:00", "bio": "Expert in hypothermia, frostbite, and health in extreme cold."},
-  {"id": "DR290", "name": "Dr. Robert Falcon Scott", "age": 47, "specialty": "Physiological Endurance", "availability": "Tue-Thu 09:00-14:00", "bio": "Studies the limits of human body endurance and nutritional depletion."},
-  {"id": "DR291", "name": "Dr. Ernest Shackleton", "age": 54, "specialty": "Resilience Medicine", "availability": "Wed-Fri 08:00-13:00", "bio": "Focuses on psychological leadership and group mental health in crisis."},
-  {"id": "DR292", "name": "Dr. Edmund Hillary", "age": 51, "specialty": "High-Altitude Physiology", "availability": "Mon-Thu 10:00-16:00", "bio": "Expert in mountain sickness and oxygen management at high altitudes."},
-  {"id": "DR293", "name": "Dr. Tenzing Norgay", "age": 49, "specialty": "Acclimatization Health", "availability": "Tue-Fri 09:00-15:00", "bio": "Specializes in natural adaptation to low-oxygen environments."},
-  {"id": "DR294", "name": "Dr. Thor Heyerdahl", "age": 45, "specialty": "Paleo-Medicine", "availability": "Mon-Wed 08:00-12:00", "bio": "Studies health and diet patterns of ancient seafaring populations."},
-  {"id": "DR295", "name": "Dr. Amelia Earhart", "age": 43, "specialty": "Aeronautical Health", "availability": "Wed-Fri 10:00-16:00", "bio": "Focuses on pilot fatigue and vestibular health in flight."},
-  {"id": "DR296", "name": "Dr. Charles Lindbergh", "age": 52, "specialty": "Mechanical Organ Research", "availability": "Mon-Fri 09:00-13:00", "bio": "Early pioneer in the development of artificial heart technology."},
-  {"id": "DR297", "name": "Dr. Wright Brothers", "age": 46, "specialty": "Balance & Vertigo", "availability": "Tue-Thu 11:00-15:00", "bio": "Specializes in inner ear disorders and spatial disorientation."},
-  {"id": "DR298", "name": "Dr. Leonardo da Vinci", "age": 60, "specialty": "Anatomical Illustration", "availability": "Mon-Fri 08:00-14:00", "bio": "Expert in mapping the human body for surgical planning and education."},
-  {"id": "DR299", "name": "Dr. Michelangelo Buonarroti", "age": 58, "specialty": "Musculoskeletal Anatomy", "availability": "Wed-Sat 09:00-17:00", "bio": "Focuses on the structural mechanics of human muscle and bone."},
-  {"id": "DR300", "name": "Dr. Raphael Sanzio", "age": 44, "specialty": "Pediatric Growth Patterns", "availability": "Mon-Wed 10:00-14:00", "bio": "Specializes in healthy child development and structural symmetry."}
+  {
+    "id": "DR001",
+    "name": "Dr. Pedro Sanchez",
+    "age": 45,
+    "specialty": "Cardiology",
+    "availability": "Mon-Wed 08:00-12:00",
+    "bio": "Specializes in heart rhythm disorders, hypertension, and cardiovascular health. Heart."
+  },
+  {
+    "id": "DR002",
+    "name": "Dr. Elena Rodriguez",
+    "age": 38,
+    "specialty": "Pediatrics",
+    "availability": "Tue-Thu 09:00-15:00",
+    "bio": "Focuses on infant nutrition, childhood vaccinations, and adolescent wellness."
+  },
+  {
+    "id": "DR003",
+    "name": "Dr. Marcus Thorne",
+    "age": 52,
+    "specialty": "Neurology",
+    "availability": "Mon-Fri 10:00-14:00",
+    "bio": "Expert in chronic migraines, seizure disorders, and sleep-related neurological issues."
+  },
+  {
+    "id": "DR004",
+    "name": "Dr. Sarah Jenkins",
+    "age": 41,
+    "specialty": "Dermatology",
+    "availability": "Wed-Fri 08:00-13:00",
+    "bio": "Treats skin conditions like eczema, acne, and performs skin cancer screenings."
+  },
+  {
+    "id": "DR005",
+    "name": "Dr. Victor Wu",
+    "age": 49,
+    "specialty": "Orthopedics",
+    "availability": "Mon-Thu 07:00-11:00",
+    "bio": "Specializes in sports injuries, joint replacements, and bone fractures."
+  },
+  {
+    "id": "DR006",
+    "name": "Dr. Amara Okafor",
+    "age": 36,
+    "specialty": "Psychiatry",
+    "availability": "Tue-Fri 13:00-18:00",
+    "bio": "Focuses on anxiety disorders, depression, and cognitive behavioral therapy."
+  },
+  {
+    "id": "DR007",
+    "name": "Dr. Julian Vance",
+    "age": 55,
+    "specialty": "Gastroenterology",
+    "availability": "Mon-Wed 09:00-14:00",
+    "bio": "Expert in digestive health, IBS, acid reflux, and liver diseases."
+  },
+  {
+    "id": "DR008",
+    "name": "Dr. Sophia Lin",
+    "age": 39,
+    "specialty": "Endocrinology",
+    "availability": "Thu-Sat 10:00-16:00",
+    "bio": "Specializes in diabetes management, thyroid disorders, and hormonal imbalances."
+  },
+  {
+    "id": "DR009",
+    "name": "Dr. Robert Halloway",
+    "age": 60,
+    "specialty": "Oncology",
+    "availability": "Mon-Fri 08:00-12:00",
+    "bio": "Dedicated to cancer diagnosis, chemotherapy protocols, and immunotherapy."
+  },
+  {
+    "id": "DR010",
+    "name": "Dr. Mia Kowalski",
+    "age": 34,
+    "specialty": "Ophthalmology",
+    "availability": "Tue-Thu 11:00-17:00",
+    "bio": "Expert in vision correction, glaucoma, and cataracts."
+  },
+  {
+    "id": "DR011",
+    "name": "Dr. Aaron Brooks",
+    "age": 47,
+    "specialty": "Urology",
+    "availability": "Mon-Wed 08:00-13:00",
+    "bio": "Specializes in kidney stones, prostate health, and urinary tract infections."
+  },
+  {
+    "id": "DR012",
+    "name": "Dr. Lisa Ray",
+    "age": 43,
+    "specialty": "Pulmonology",
+    "availability": "Wed-Fri 09:00-14:00",
+    "bio": "Treats asthma, COPD, sleep apnea, and chronic lung diseases."
+  },
+  {
+    "id": "DR013",
+    "name": "Dr. Kevin Patel",
+    "age": 50,
+    "specialty": "Rheumatology",
+    "availability": "Mon-Tue 10:00-16:00",
+    "bio": "Focuses on arthritis, lupus, and autoimmune inflammatory disorders."
+  },
+  {
+    "id": "DR014",
+    "name": "Dr. Nina Simone",
+    "age": 37,
+    "specialty": "Obstetrics & Gynecology",
+    "availability": "Tue-Fri 08:00-12:00",
+    "bio": "Provides prenatal care, reproductive health services, and menopause management."
+  },
+  {
+    "id": "DR015",
+    "name": "Dr. David Klein",
+    "age": 58,
+    "specialty": "Nephrology",
+    "availability": "Thu-Sat 09:00-13:00",
+    "bio": "Expert in chronic kidney disease, dialysis, and renal transplants."
+  },
+  {
+    "id": "DR016",
+    "name": "Dr. Rachel Green",
+    "age": 35,
+    "specialty": "Internal Medicine",
+    "availability": "Mon-Fri 08:00-17:00",
+    "bio": "General health screenings, chronic disease management, and preventative care."
+  },
+  {
+    "id": "DR017",
+    "name": "Dr. Samuel Jackson",
+    "age": 54,
+    "specialty": "General Surgery",
+    "availability": "Mon-Wed 07:00-15:00",
+    "bio": "Performs appendectomies, hernia repairs, and minimally invasive surgeries."
+  },
+  {
+    "id": "DR018",
+    "name": "Dr. Chloe Zhao",
+    "age": 40,
+    "specialty": "Allergy & Immunology",
+    "availability": "Wed-Fri 10:00-16:00",
+    "bio": "Treats seasonal allergies, food sensitivities, and immune deficiencies."
+  },
+  {
+    "id": "DR019",
+    "name": "Dr. Thomas Wright",
+    "age": 62,
+    "specialty": "Geriatrics",
+    "availability": "Tue-Thu 09:00-14:00",
+    "bio": "Specializes in elderly care, dementia, and age-related mobility issues."
+  },
+  {
+    "id": "DR020",
+    "name": "Dr. Isabel Allende",
+    "age": 44,
+    "specialty": "Infectious Disease",
+    "availability": "Mon-Fri 11:00-15:00",
+    "bio": "Expert in viral infections, antibiotic resistance, and tropical medicine."
+  },
+  {
+    "id": "DR021",
+    "name": "Dr. Henry Ford",
+    "age": 51,
+    "specialty": "Radiology",
+    "availability": "Mon-Sat 08:00-20:00",
+    "bio": "Interprets X-rays, MRIs, and CT scans for diagnostic accuracy."
+  },
+  {
+    "id": "DR022",
+    "name": "Dr. Maria Montessori",
+    "age": 39,
+    "specialty": "Child Psychiatry",
+    "availability": "Mon-Wed 13:00-18:00",
+    "bio": "Focuses on ADHD, autism spectrum disorders, and pediatric behavioral health."
+  },
+  {
+    "id": "DR023",
+    "name": "Dr. Alan Turing",
+    "age": 46,
+    "specialty": "Medical Genetics",
+    "availability": "Thu-Fri 10:00-15:00",
+    "bio": "Diagnoses hereditary disorders and provides genetic counseling."
+  },
+  {
+    "id": "DR024",
+    "name": "Dr. Florence Nightingale",
+    "age": 42,
+    "specialty": "Physical Medicine & Rehab",
+    "availability": "Mon-Thu 08:00-14:00",
+    "bio": "Focuses on post-injury recovery, stroke rehabilitation, and physical therapy."
+  },
+  {
+    "id": "DR025",
+    "name": "Dr. Sigmund Freud",
+    "age": 65,
+    "specialty": "Psychology",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Provides psychotherapy, counseling for trauma, and mental health support."
+  },
+  {
+    "id": "DR026",
+    "name": "Dr. Jonas Salk",
+    "age": 57,
+    "specialty": "Epidemiology",
+    "availability": "Mon-Fri 08:00-16:00",
+    "bio": "Public health expert focusing on disease outbreaks and vaccination programs."
+  },
+  {
+    "id": "DR027",
+    "name": "Dr. Elizabeth Blackwell",
+    "age": 48,
+    "specialty": "Family Medicine",
+    "availability": "Mon-Fri 08:00-12:00",
+    "bio": "Comprehensive care for all ages, from infants to seniors."
+  },
+  {
+    "id": "DR028",
+    "name": "Dr. Louis Pasteur",
+    "age": 53,
+    "specialty": "Microbiology",
+    "availability": "Tue-Thu 10:00-14:00",
+    "bio": "Diagnoses bacterial and fungal infections through lab analysis."
+  },
+  {
+    "id": "DR029",
+    "name": "Dr. Alexander Fleming",
+    "age": 59,
+    "specialty": "Clinical Pathology",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Analyzes blood and tissue samples to diagnose various diseases."
+  },
+  {
+    "id": "DR030",
+    "name": "Dr. Rosalind Franklin",
+    "age": 41,
+    "specialty": "Nuclear Medicine",
+    "availability": "Wed-Fri 08:00-13:00",
+    "bio": "Uses radioactive materials for imaging and treating conditions like hyperthyroidism."
+  },
+  {
+    "id": "DR031",
+    "name": "Dr. Gregor Mendel",
+    "age": 44,
+    "specialty": "Reproductive Endocrinology",
+    "availability": "Mon-Tue 09:00-15:00",
+    "bio": "Specializes in fertility treatments, IVF, and hormonal reproductive health."
+  },
+  {
+    "id": "DR032",
+    "name": "Dr. Marie Curie",
+    "age": 50,
+    "specialty": "Radiation Oncology",
+    "availability": "Mon-Thu 08:00-12:00",
+    "bio": "Uses targeted radiation to treat various forms of cancer."
+  },
+  {
+    "id": "DR033",
+    "name": "Dr. Charles Darwin",
+    "age": 61,
+    "specialty": "Evolutionary Medicine",
+    "availability": "Fri 10:00-16:00",
+    "bio": "Researches how human evolution impacts modern health and disease susceptibility."
+  },
+  {
+    "id": "DR034",
+    "name": "Dr. Jane Goodall",
+    "age": 37,
+    "specialty": "Zoonotic Diseases",
+    "availability": "Mon-Wed 09:00-14:00",
+    "bio": "Expert in diseases that spread from animals to humans."
+  },
+  {
+    "id": "DR035",
+    "name": "Dr. Stephen Hawking",
+    "age": 55,
+    "specialty": "Medical Physics",
+    "availability": "Tue-Thu 11:00-15:00",
+    "bio": "Ensures safety and precision in advanced medical imaging and radiotherapy."
+  },
+  {
+    "id": "DR036",
+    "name": "Dr. Nikola Tesla",
+    "age": 49,
+    "specialty": "Electrophysiology",
+    "availability": "Mon-Wed 08:00-12:00",
+    "bio": "Specializes in the electrical activity of the heart and nervous system."
+  },
+  {
+    "id": "DR037",
+    "name": "Dr. Ada Lovelace",
+    "age": 34,
+    "specialty": "Clinical Informatics",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Optimizes electronic health records and data for better patient outcomes."
+  },
+  {
+    "id": "DR038",
+    "name": "Dr. Isaac Newton",
+    "age": 58,
+    "specialty": "Otolaryngology (ENT)",
+    "availability": "Wed-Fri 10:00-16:00",
+    "bio": "Treats ear, nose, and throat disorders, including hearing loss and sinus issues."
+  },
+  {
+    "id": "DR039",
+    "name": "Dr. Albert Einstein",
+    "age": 63,
+    "specialty": "Theoretical Medicine",
+    "availability": "Tue 13:00-17:00",
+    "bio": "Explores complex medical models and innovative treatment pathways."
+  },
+  {
+    "id": "DR040",
+    "name": "Dr. Leonardo da Vinci",
+    "age": 52,
+    "specialty": "Anatomy & Physiology",
+    "availability": "Mon-Thu 09:00-14:00",
+    "bio": "Expert in the structural and functional aspects of the human body."
+  },
+  {
+    "id": "DR041",
+    "name": "Dr. Galileo Galilei",
+    "age": 56,
+    "specialty": "Sleep Medicine",
+    "availability": "Mon-Wed 20:00-02:00",
+    "bio": "Diagnoses and treats sleep disorders like insomnia and narcolepsy."
+  },
+  {
+    "id": "DR042",
+    "name": "Dr. Katherine Johnson",
+    "age": 40,
+    "specialty": "Bio-Statistics",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Analyzes clinical trial data to ensure treatment efficacy and safety."
+  },
+  {
+    "id": "DR043",
+    "name": "Dr. Grace Hopper",
+    "age": 47,
+    "specialty": "Telemedicine",
+    "availability": "Mon-Sat 08:00-18:00",
+    "bio": "Provides remote medical consultations and digital health monitoring."
+  },
+  {
+    "id": "DR044",
+    "name": "Dr. Neil Armstrong",
+    "age": 43,
+    "specialty": "Aerospace Medicine",
+    "availability": "Thu-Fri 10:00-15:00",
+    "bio": "Specializes in the health of pilots, crew, and passengers in flight."
+  },
+  {
+    "id": "DR045",
+    "name": "Dr. Yuri Gagarin",
+    "age": 39,
+    "specialty": "Sports Medicine",
+    "availability": "Mon-Wed 07:00-11:00",
+    "bio": "Treats athletic injuries and focuses on peak physical performance."
+  },
+  {
+    "id": "DR046",
+    "name": "Dr. Buzz Aldrin",
+    "age": 41,
+    "specialty": "Emergency Medicine",
+    "availability": "Rotating Shifts 24/7",
+    "bio": "Expert in trauma care, acute illnesses, and life-saving interventions."
+  },
+  {
+    "id": "DR047",
+    "name": "Dr. Valentina Tereshkova",
+    "age": 45,
+    "specialty": "Occupational Medicine",
+    "availability": "Tue-Thu 09:00-14:00",
+    "bio": "Focuses on workplace health, safety, and injury prevention."
+  },
+  {
+    "id": "DR048",
+    "name": "Dr. Sally Ride",
+    "age": 38,
+    "specialty": "Pain Management",
+    "availability": "Wed-Fri 08:00-12:00",
+    "bio": "Helps patients manage chronic pain through various therapies and treatments."
+  },
+  {
+    "id": "DR049",
+    "name": "Dr. Carl Sagan",
+    "age": 54,
+    "specialty": "Palliative Care",
+    "availability": "Mon-Fri 10:00-16:00",
+    "bio": "Focuses on providing relief from symptoms and stress for serious illnesses."
+  },
+  {
+    "id": "DR050",
+    "name": "Dr. Richard Feynman",
+    "age": 42,
+    "specialty": "Hospice Care",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Provides compassionate end-of-life care and support for families."
+  },
+  {
+    "id": "DR051",
+    "name": "Dr. Alice Hamilton",
+    "age": 50,
+    "specialty": "Toxicology",
+    "availability": "Mon-Wed 09:00-13:00",
+    "bio": "Expert in chemical exposure, poisoning, and industrial health hazards."
+  },
+  {
+    "id": "DR052",
+    "name": "Dr. Gerty Cori",
+    "age": 44,
+    "specialty": "Biochemistry",
+    "availability": "Tue-Thu 10:00-16:00",
+    "bio": "Focuses on metabolic pathways and enzyme-related disorders."
+  },
+  {
+    "id": "DR053",
+    "name": "Dr. Virginia Apgar",
+    "age": 55,
+    "specialty": "Neonatology",
+    "availability": "Mon-Fri 08:00-14:00",
+    "bio": "Expert in newborn health assessment and critical care for premature infants."
+  },
+  {
+    "id": "DR054",
+    "name": "Dr. Gertrude Elion",
+    "age": 48,
+    "specialty": "Pharmacology",
+    "availability": "Wed-Fri 09:00-17:00",
+    "bio": "Specializes in drug development and how medications interact with the body."
+  },
+  {
+    "id": "DR055",
+    "name": "Dr. Rita Levi-Montalcini",
+    "age": 60,
+    "specialty": "Neurobiology",
+    "availability": "Mon-Thu 10:00-15:00",
+    "bio": "Researches nerve growth and treatments for neurodegenerative diseases."
+  },
+  {
+    "id": "DR056",
+    "name": "Dr. Christian Barnard",
+    "age": 58,
+    "specialty": "Transplant Surgery",
+    "availability": "Mon-Wed 07:00-15:00",
+    "bio": "Expert in heart and organ transplantation procedures."
+  },
+  {
+    "id": "DR057",
+    "name": "Dr. Ben Carson",
+    "age": 52,
+    "specialty": "Pediatric Neurosurgery",
+    "availability": "Tue-Fri 08:00-13:00",
+    "bio": "Specializes in complex brain and spinal surgeries for children."
+  },
+  {
+    "id": "DR058",
+    "name": "Dr. Sanjay Gupta",
+    "age": 46,
+    "specialty": "Neurosurgery",
+    "availability": "Mon-Fri 09:00-14:00",
+    "bio": "Treats brain tumors, spine conditions, and neurological trauma."
+  },
+  {
+    "id": "DR059",
+    "name": "Dr. Atul Gawande",
+    "age": 49,
+    "specialty": "Health Systems Engineering",
+    "availability": "Wed 10:00-16:00",
+    "bio": "Focuses on surgery safety, public health policy, and medical efficiency."
+  },
+  {
+    "id": "DR060",
+    "name": "Dr. Siddhartha Mukherjee",
+    "age": 44,
+    "specialty": "Hematology-Oncology",
+    "availability": "Mon-Thu 09:00-13:00",
+    "bio": "Specializes in blood cancers, leukemia, and cellular therapy."
+  },
+  {
+    "id": "DR061",
+    "name": "Dr. Helen Brooke Taussig",
+    "age": 56,
+    "specialty": "Pediatric Cardiology",
+    "availability": "Tue-Thu 08:00-12:00",
+    "bio": "Expert in congenital heart defects in infants and children."
+  },
+  {
+    "id": "DR062",
+    "name": "Dr. William Osler",
+    "age": 62,
+    "specialty": "Clinical Education",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Focuses on medical diagnostics and the history of medicine."
+  },
+  {
+    "id": "DR063",
+    "name": "Dr. Joseph Lister",
+    "age": 59,
+    "specialty": "Antiseptic Surgery",
+    "availability": "Mon-Wed 08:00-14:00",
+    "bio": "Expert in surgical infection control and wound management."
+  },
+  {
+    "id": "DR064",
+    "name": "Dr. Ignaz Semmelweis",
+    "age": 53,
+    "specialty": "Preventative OBGYN",
+    "availability": "Tue-Fri 10:00-16:00",
+    "bio": "Focuses on maternal health and hygiene in reproductive care."
+  },
+  {
+    "id": "DR065",
+    "name": "Dr. Edward Jenner",
+    "age": 61,
+    "specialty": "Immunology",
+    "availability": "Wed-Sat 09:00-13:00",
+    "bio": "Expert in vaccine development and preventative immunity."
+  },
+  {
+    "id": "DR066",
+    "name": "Dr. Clara Barton",
+    "age": 47,
+    "specialty": "Disaster Medicine",
+    "availability": "On-Call 24/7",
+    "bio": "Specializes in emergency relief and medical care during crises."
+  },
+  {
+    "id": "DR067",
+    "name": "Dr. Margaret Sanger",
+    "age": 51,
+    "specialty": "Family Planning",
+    "availability": "Mon-Thu 10:00-15:00",
+    "bio": "Focuses on reproductive rights, contraception, and maternal wellness."
+  },
+  {
+    "id": "DR068",
+    "name": "Dr. Dorothy Hodgkin",
+    "age": 45,
+    "specialty": "Crystallography",
+    "availability": "Tue-Thu 09:00-14:00",
+    "bio": "Analyzes molecular structures of proteins and drugs for treatment design."
+  },
+  {
+    "id": "DR069",
+    "name": "Dr. Barbara McClintock",
+    "age": 54,
+    "specialty": "Cytogenetics",
+    "availability": "Mon-Wed 11:00-17:00",
+    "bio": "Expert in chromosome analysis and genetic inheritance patterns."
+  },
+  {
+    "id": "DR070",
+    "name": "Dr. Chien-Shiung Wu",
+    "age": 42,
+    "specialty": "Radiotherapy Physics",
+    "availability": "Wed-Fri 08:00-12:00",
+    "bio": "Specializes in the physics of radiation treatment for cancer patients."
+  },
+  {
+    "id": "DR071",
+    "name": "Dr. Tu Youyou",
+    "age": 60,
+    "specialty": "Tropical Medicine",
+    "availability": "Mon-Fri 09:00-13:00",
+    "bio": "Expert in malaria treatment and herbal pharmacology."
+  },
+  {
+    "id": "DR072",
+    "name": "Dr. Françoise Barré-Sinoussi",
+    "age": 58,
+    "specialty": "Virology",
+    "availability": "Tue-Thu 10:00-16:00",
+    "bio": "Expert in retroviruses and the treatment of HIV/AIDS."
+  },
+  {
+    "id": "DR073",
+    "name": "Dr. Linda Buck",
+    "age": 49,
+    "specialty": "Sensory Neuroscience",
+    "availability": "Mon-Wed 09:00-14:00",
+    "bio": "Focuses on smell and taste disorders and neurological sensory pathways."
+  },
+  {
+    "id": "DR074",
+    "name": "Dr. May-Britt Moser",
+    "age": 53,
+    "specialty": "Cognitive Psychology",
+    "availability": "Wed-Fri 10:00-15:00",
+    "bio": "Expert in memory loss, spatial orientation, and Alzheimer's disease."
+  },
+  {
+    "id": "DR075",
+    "name": "Dr. Jennifer Doudna",
+    "age": 46,
+    "specialty": "Gene Therapy",
+    "availability": "Mon-Thu 08:00-12:00",
+    "bio": "Specializes in CRISPR technology and editing genetic defects."
+  },
+  {
+    "id": "DR076",
+    "name": "Dr. Emmanuelle Charpentier",
+    "age": 47,
+    "specialty": "Molecular Biology",
+    "availability": "Tue-Fri 09:00-13:00",
+    "bio": "Researches molecular mechanisms of bacteria and immune defense."
+  },
+  {
+    "id": "DR077",
+    "name": "Dr. Katalin Karikó",
+    "age": 55,
+    "specialty": "RNA Therapeutics",
+    "availability": "Mon-Fri 08:00-16:00",
+    "bio": "Expert in mRNA technology for vaccines and personalized medicine."
+  },
+  {
+    "id": "DR078",
+    "name": "Dr. Anthony Fauci",
+    "age": 65,
+    "specialty": "Public Health Policy",
+    "availability": "Mon-Fri 07:00-19:00",
+    "bio": "Expert in national pandemic response and infectious disease outbreaks."
+  },
+  {
+    "id": "DR079",
+    "name": "Dr. Oz",
+    "age": 52,
+    "specialty": "Integrative Medicine",
+    "availability": "Mon-Wed 09:00-12:00",
+    "bio": "Combines traditional surgery with alternative wellness and lifestyle health."
+  },
+  {
+    "id": "DR080",
+    "name": "Dr. Phil",
+    "age": 60,
+    "specialty": "Behavioral Health",
+    "availability": "Tue-Thu 10:00-14:00",
+    "bio": "Focuses on life coaching, relationship dynamics, and behavioral therapy."
+  },
+  {
+    "id": "DR081",
+    "name": "Dr. Drew",
+    "age": 58,
+    "specialty": "Addiction Medicine",
+    "availability": "Mon-Fri 13:00-18:00",
+    "bio": "Specializes in substance abuse recovery and chemical dependency treatment."
+  },
+  {
+    "id": "DR082",
+    "name": "Dr. Gregory House",
+    "age": 51,
+    "specialty": "Diagnostic Medicine",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Specializes in solving rare and complex medical cases that others cannot diagnose."
+  },
+  {
+    "id": "DR083",
+    "name": "Dr. Meredith Grey",
+    "age": 44,
+    "specialty": "General Surgery",
+    "availability": "Wed-Sun 08:00-20:00",
+    "bio": "Expert in abdominal surgery and surgical innovation."
+  },
+  {
+    "id": "DR084",
+    "name": "Dr. Derek Shepherd",
+    "age": 48,
+    "specialty": "Neuro-Oncology",
+    "availability": "Mon-Thu 07:00-15:00",
+    "bio": "Expert in brain surgery and treating neurological tumors."
+  },
+  {
+    "id": "DR085",
+    "name": "Dr. Cristina Yang",
+    "age": 43,
+    "specialty": "Cardiothoracic Surgery",
+    "availability": "Tue-Sat 08:00-18:00",
+    "bio": "Specializes in heart transplants and complex valve repairs."
+  },
+  {
+    "id": "DR086",
+    "name": "Dr. Miranda Bailey",
+    "age": 50,
+    "specialty": "Surgery Administration",
+    "availability": "Mon-Fri 08:00-16:00",
+    "bio": "Oversees surgical training and hospital policy implementation."
+  },
+  {
+    "id": "DR087",
+    "name": "Dr. John Watson",
+    "age": 45,
+    "specialty": "Military Medicine",
+    "availability": "Mon-Wed 09:00-13:00",
+    "bio": "Expert in battlefield trauma and acute injury stabilization."
+  },
+  {
+    "id": "DR088",
+    "name": "Dr. Leonard McCoy",
+    "age": 55,
+    "specialty": "Exobiology",
+    "availability": "Tue-Fri 10:00-16:00",
+    "bio": "Expert in advanced diagnostics and frontier medical technology."
+  },
+  {
+    "id": "DR089",
+    "name": "Dr. Beverly Crusher",
+    "age": 52,
+    "specialty": "Cybernetic Medicine",
+    "availability": "Mon-Thu 08:00-14:00",
+    "bio": "Specializes in bionic implants and neuro-prosthetics."
+  },
+  {
+    "id": "DR090",
+    "name": "Dr. Strange",
+    "age": 49,
+    "specialty": "Metaphysical Medicine",
+    "availability": "Mon-Fri 10:00-15:00",
+    "bio": "Explores the intersection of neurology, philosophy, and mind-body healing."
+  },
+  {
+    "id": "DR091",
+    "name": "Dr. Quinn",
+    "age": 46,
+    "specialty": "Frontier Health",
+    "availability": "Mon-Sat 08:00-18:00",
+    "bio": "Expert in rural medicine and community-based health initiatives."
+  },
+  {
+    "id": "DR092",
+    "name": "Dr. Dolittle",
+    "age": 42,
+    "specialty": "Comparative Medicine",
+    "availability": "Mon-Fri 09:00-13:00",
+    "bio": "Researches health similarities between humans and other species."
+  },
+  {
+    "id": "DR093",
+    "name": "Dr. No",
+    "age": 58,
+    "specialty": "Nuclear Radiology",
+    "availability": "Tue-Thu 11:00-17:00",
+    "bio": "Expert in high-energy physics applications in medical imaging."
+  },
+  {
+    "id": "DR094",
+    "name": "Dr. Frankenstein",
+    "age": 54,
+    "specialty": "Regenerative Medicine",
+    "availability": "Mon-Fri 22:00-04:00",
+    "bio": "Researches tissue engineering and organ regrowth technologies."
+  },
+  {
+    "id": "DR095",
+    "name": "Dr. Jekyll",
+    "age": 47,
+    "specialty": "Endocrinology Research",
+    "availability": "Mon-Wed 09:00-14:00",
+    "bio": "Studies hormonal influences on personality and behavior change."
+  },
+  {
+    "id": "DR096",
+    "name": "Dr. Moreau",
+    "age": 53,
+    "specialty": "Transgenics",
+    "availability": "Wed-Fri 10:00-16:00",
+    "bio": "Expert in cross-species genetic modification and experimental health."
+  },
+  {
+    "id": "DR097",
+    "name": "Dr. Banner",
+    "age": 48,
+    "specialty": "Gamma Radiation Health",
+    "availability": "Mon-Fri 08:00-12:00",
+    "bio": "Specializes in cellular mutation and radiation exposure therapy."
+  },
+  {
+    "id": "DR098",
+    "name": "Dr. Xavier",
+    "age": 60,
+    "specialty": "Neuro-Genetics",
+    "availability": "Tue-Thu 09:00-15:00",
+    "bio": "Focuses on genetic mutations in the brain and cognitive evolution."
+  },
+  {
+    "id": "DR099",
+    "name": "Dr. Lecter",
+    "age": 55,
+    "specialty": "Forensic Psychiatry",
+    "availability": "Mon-Fri 13:00-17:00",
+    "bio": "Expert in criminal profiling and complex psychological analysis."
+  },
+  {
+    "id": "DR100",
+    "name": "Dr. Who",
+    "age": 100,
+    "specialty": "Temporal Medicine",
+    "availability": "Available Anytime",
+    "bio": "Specializes in age reversal, longevity research, and the biology of time."
+  },
+  {
+    "id": "DR101",
+    "name": "Dr. James Miller",
+    "age": 42,
+    "specialty": "Cardiology",
+    "availability": "Mon-Wed 08:00-14:00",
+    "bio": "Specializes in preventive cardiology and heart failure management."
+  },
+  {
+    "id": "DR102",
+    "name": "Dr. Mary Wilson",
+    "age": 35,
+    "specialty": "Pediatrics",
+    "availability": "Tue-Fri 09:00-15:00",
+    "bio": "Dedicated to neonatal care and developmental milestones."
+  },
+  {
+    "id": "DR103",
+    "name": "Dr. Robert Garcia",
+    "age": 58,
+    "specialty": "Neurology",
+    "availability": "Mon-Thu 10:00-16:00",
+    "bio": "Focuses on neuro-degenerative diseases and stroke recovery."
+  },
+  {
+    "id": "DR104",
+    "name": "Dr. Patricia Jones",
+    "age": 47,
+    "specialty": "Dermatology",
+    "availability": "Wed-Fri 08:00-13:00",
+    "bio": "Expert in cosmetic dermatology and inflammatory skin conditions."
+  },
+  {
+    "id": "DR105",
+    "name": "Dr. Michael Brown",
+    "age": 52,
+    "specialty": "Orthopedics",
+    "availability": "Mon-Wed 07:00-12:00",
+    "bio": "Specializes in spinal surgery and reconstructive orthopedics."
+  },
+  {
+    "id": "DR106",
+    "name": "Dr. Linda Martinez",
+    "age": 39,
+    "specialty": "Psychiatry",
+    "availability": "Tue-Thu 13:00-18:00",
+    "bio": "Focuses on adolescent mental health and mood disorders."
+  },
+  {
+    "id": "DR107",
+    "name": "Dr. David Hernandez",
+    "age": 44,
+    "specialty": "Gastroenterology",
+    "availability": "Mon-Fri 09:00-14:00",
+    "bio": "Expert in endoscopy and inflammatory bowel disease (IBD)."
+  },
+  {
+    "id": "DR108",
+    "name": "Dr. Elizabeth Taylor",
+    "age": 50,
+    "specialty": "Endocrinology",
+    "availability": "Wed-Sat 10:00-15:00",
+    "bio": "Specializes in metabolic syndrome and pituitary disorders."
+  },
+  {
+    "id": "DR109",
+    "name": "Dr. Richard Moore",
+    "age": 63,
+    "specialty": "Oncology",
+    "availability": "Mon-Thu 08:00-12:00",
+    "bio": "Dedicated to clinical trials in hematologic malignancies."
+  },
+  {
+    "id": "DR110",
+    "name": "Dr. Jennifer Anderson",
+    "age": 37,
+    "specialty": "Ophthalmology",
+    "availability": "Tue-Fri 11:00-17:00",
+    "bio": "Focuses on pediatric ophthalmology and retinal health."
+  },
+  {
+    "id": "DR111",
+    "name": "Dr. William Thomas",
+    "age": 49,
+    "specialty": "Urology",
+    "availability": "Mon-Wed 08:00-13:00",
+    "bio": "Specializes in minimally invasive robotic urological surgery."
+  },
+  {
+    "id": "DR112",
+    "name": "Dr. Barbara White",
+    "age": 55,
+    "specialty": "Pulmonology",
+    "availability": "Wed-Fri 09:00-16:00",
+    "bio": "Expert in cystic fibrosis and pulmonary hypertension."
+  },
+  {
+    "id": "DR113",
+    "name": "Dr. Joseph Harris",
+    "age": 41,
+    "specialty": "Rheumatology",
+    "availability": "Mon-Tue 10:00-15:00",
+    "bio": "Focuses on psoriatic arthritis and vasculitis."
+  },
+  {
+    "id": "DR114",
+    "name": "Dr. Susan Martin",
+    "age": 46,
+    "specialty": "Obstetrics & Gynecology",
+    "availability": "Tue-Fri 08:00-14:00",
+    "bio": "Specializes in high-risk pregnancies and gynecologic surgery."
+  },
+  {
+    "id": "DR115",
+    "name": "Dr. Thomas Thompson",
+    "age": 60,
+    "specialty": "Nephrology",
+    "availability": "Thu-Sat 09:00-13:00",
+    "bio": "Expert in hypertension-related kidney disease and electrolytes."
+  },
+  {
+    "id": "DR116",
+    "name": "Dr. Jessica Jackson",
+    "age": 34,
+    "specialty": "Internal Medicine",
+    "availability": "Mon-Fri 08:00-17:00",
+    "bio": "Focused on primary care and adult wellness screenings."
+  },
+  {
+    "id": "DR117",
+    "name": "Dr. Charles Davis",
+    "age": 53,
+    "specialty": "General Surgery",
+    "availability": "Mon-Wed 07:00-15:00",
+    "bio": "Specializes in bariatric surgery and trauma surgery."
+  },
+  {
+    "id": "DR118",
+    "name": "Dr. Karen Rodriguez",
+    "age": 40,
+    "specialty": "Allergy & Immunology",
+    "availability": "Wed-Fri 10:00-16:00",
+    "bio": "Expert in asthma management and severe food allergies."
+  },
+  {
+    "id": "DR119",
+    "name": "Dr. Christopher Lee",
+    "age": 65,
+    "specialty": "Geriatrics",
+    "availability": "Tue-Thu 09:00-14:00",
+    "bio": "Focuses on polypharmacy and frailty in the elderly."
+  },
+  {
+    "id": "DR120",
+    "name": "Dr. Sarah Walker",
+    "age": 38,
+    "specialty": "Infectious Disease",
+    "availability": "Mon-Fri 11:00-15:00",
+    "bio": "Specializes in HIV care and travel medicine."
+  },
+  {
+    "id": "DR121",
+    "name": "Dr. Daniel Hall",
+    "age": 48,
+    "specialty": "Radiology",
+    "availability": "Mon-Sat 08:00-20:00",
+    "bio": "Expert in interventional radiology and musculoskeletal imaging."
+  },
+  {
+    "id": "DR122",
+    "name": "Dr. Nancy Young",
+    "age": 43,
+    "specialty": "Child Psychiatry",
+    "availability": "Mon-Wed 13:00-18:00",
+    "bio": "Specializes in early childhood trauma and autism."
+  },
+  {
+    "id": "DR123",
+    "name": "Dr. Matthew Allen",
+    "age": 51,
+    "specialty": "Medical Genetics",
+    "availability": "Thu-Fri 10:00-15:00",
+    "bio": "Focuses on metabolic genetic disorders and rare diseases."
+  },
+  {
+    "id": "DR124",
+    "name": "Dr. Lisa King",
+    "age": 45,
+    "specialty": "Physical Medicine & Rehab",
+    "availability": "Mon-Thu 08:00-14:00",
+    "bio": "Expert in spinal cord injury and sports rehabilitation."
+  },
+  {
+    "id": "DR125",
+    "name": "Dr. Anthony Wright",
+    "age": 57,
+    "specialty": "Psychology",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Specializes in mindfulness-based stress reduction (MBSR)."
+  },
+  {
+    "id": "DR126",
+    "name": "Dr. Betty Scott",
+    "age": 62,
+    "specialty": "Epidemiology",
+    "availability": "Mon-Fri 08:00-16:00",
+    "bio": "Focuses on urban health and chronic disease surveillance."
+  },
+  {
+    "id": "DR127",
+    "name": "Dr. Mark Green",
+    "age": 44,
+    "specialty": "Family Medicine",
+    "availability": "Mon-Fri 08:00-12:00",
+    "bio": "Comprehensive care for rural communities and families."
+  },
+  {
+    "id": "DR128",
+    "name": "Dr. Sandra Adams",
+    "age": 52,
+    "specialty": "Microbiology",
+    "availability": "Tue-Thu 10:00-14:00",
+    "bio": "Researching antimicrobial resistance and fungal pathogens."
+  },
+  {
+    "id": "DR129",
+    "name": "Dr. Steven Baker",
+    "age": 59,
+    "specialty": "Clinical Pathology",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Specializes in molecular diagnostics and tumor profiling."
+  },
+  {
+    "id": "DR130",
+    "name": "Dr. Ashley Gonzalez",
+    "age": 36,
+    "specialty": "Nuclear Medicine",
+    "availability": "Wed-Fri 08:00-13:00",
+    "bio": "Focuses on PET/CT imaging and molecular radiotherapy."
+  },
+  {
+    "id": "DR131",
+    "name": "Dr. Paul Nelson",
+    "age": 47,
+    "specialty": "Reproductive Endocrinology",
+    "availability": "Mon-Tue 09:00-15:00",
+    "bio": "Expert in PCOS and recurrent pregnancy loss."
+  },
+  {
+    "id": "DR132",
+    "name": "Dr. Kimberly Carter",
+    "age": 50,
+    "specialty": "Radiation Oncology",
+    "availability": "Mon-Thu 08:00-12:00",
+    "bio": "Specializes in brachytherapy and breast cancer radiation."
+  },
+  {
+    "id": "DR133",
+    "name": "Dr. Andrew Mitchell",
+    "age": 41,
+    "specialty": "Emergency Medicine",
+    "availability": "Rotating 24/7",
+    "bio": "Expert in disaster response and emergency airway management."
+  },
+  {
+    "id": "DR134",
+    "name": "Dr. Donna Perez",
+    "age": 49,
+    "specialty": "Sports Medicine",
+    "availability": "Mon-Wed 07:00-11:00",
+    "bio": "Treats elite athletes and focuses on injury prevention."
+  },
+  {
+    "id": "DR135",
+    "name": "Dr. Kenneth Roberts",
+    "age": 54,
+    "specialty": "Pain Management",
+    "availability": "Wed-Fri 08:00-12:00",
+    "bio": "Specializes in interventional pain procedures and neuromodulation."
+  },
+  {
+    "id": "DR136",
+    "name": "Dr. Michelle Turner",
+    "age": 42,
+    "specialty": "Palliative Care",
+    "availability": "Mon-Fri 10:00-16:00",
+    "bio": "Focuses on quality of life for patients with terminal illnesses."
+  },
+  {
+    "id": "DR137",
+    "name": "Dr. Joshua Phillips",
+    "age": 39,
+    "specialty": "Hospice Care",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Dedicated to home-based end-of-life care and bereavement support."
+  },
+  {
+    "id": "DR138",
+    "name": "Dr. Emily Campbell",
+    "age": 46,
+    "specialty": "Toxicology",
+    "availability": "Mon-Wed 09:00-13:00",
+    "bio": "Expert in occupational poisonings and heavy metal toxicity."
+  },
+  {
+    "id": "DR139",
+    "name": "Dr. Kevin Parker",
+    "age": 51,
+    "specialty": "Neonatology",
+    "availability": "Mon-Fri 08:00-14:00",
+    "bio": "Specializes in extremely low birth weight infants and NICU care."
+  },
+  {
+    "id": "DR140",
+    "name": "Dr. Amanda Evans",
+    "age": 35,
+    "specialty": "Pharmacology",
+    "availability": "Wed-Fri 09:00-17:00",
+    "bio": "Focuses on pharmacogenomics and personalized drug therapy."
+  },
+  {
+    "id": "DR141",
+    "name": "Dr. Brian Edwards",
+    "age": 58,
+    "specialty": "Transplant Surgery",
+    "availability": "Mon-Wed 07:00-15:00",
+    "bio": "Expert in liver and pancreas transplantation."
+  },
+  {
+    "id": "DR142",
+    "name": "Dr. Melissa Collins",
+    "age": 44,
+    "specialty": "Pediatric Neurosurgery",
+    "availability": "Tue-Fri 08:00-13:00",
+    "bio": "Specializes in pediatric epilepsy surgery and hydrocephalus."
+  },
+  {
+    "id": "DR143",
+    "name": "Dr. Ronald Stewart",
+    "age": 60,
+    "specialty": "Neurosurgery",
+    "availability": "Mon-Fri 09:00-14:00",
+    "bio": "Expert in complex skull-base surgery and pituitary tumors."
+  },
+  {
+    "id": "DR144",
+    "name": "Dr. Stephanie Sanchez",
+    "age": 43,
+    "specialty": "Hematology-Oncology",
+    "availability": "Mon-Thu 09:00-13:00",
+    "bio": "Focuses on coagulation disorders and benign hematology."
+  },
+  {
+    "id": "DR145",
+    "name": "Dr. Edward Morris",
+    "age": 55,
+    "specialty": "Pediatric Cardiology",
+    "availability": "Tue-Thu 08:00-12:00",
+    "bio": "Expert in fetal echocardiography and congenital heart disease."
+  },
+  {
+    "id": "DR146",
+    "name": "Dr. Rebecca Rogers",
+    "age": 38,
+    "specialty": "Otolaryngology (ENT)",
+    "availability": "Wed-Fri 10:00-16:00",
+    "bio": "Specializes in voice disorders and laryngology."
+  },
+  {
+    "id": "DR147",
+    "name": "Dr. George Reed",
+    "age": 61,
+    "specialty": "Sleep Medicine",
+    "availability": "Mon-Wed 20:00-02:00",
+    "bio": "Expert in obstructive sleep apnea and restless leg syndrome."
+  },
+  {
+    "id": "DR148",
+    "name": "Dr. Laura Cook",
+    "age": 47,
+    "specialty": "Telemedicine",
+    "availability": "Mon-Sat 08:00-18:00",
+    "bio": "Focuses on digital health access in underserved areas."
+  },
+  {
+    "id": "DR149",
+    "name": "Dr. Gregory Morgan",
+    "age": 53,
+    "specialty": "Aerospace Medicine",
+    "availability": "Thu-Fri 10:00-15:00",
+    "bio": "Specializes in physiological effects of high altitude and spaceflight."
+  },
+  {
+    "id": "DR150",
+    "name": "Dr. Sharon Bell",
+    "age": 41,
+    "specialty": "Occupational Medicine",
+    "availability": "Tue-Thu 09:00-14:00",
+    "bio": "Focuses on ergonomic assessments and workplace wellness programs."
+  },
+  {
+    "id": "DR151",
+    "name": "Dr. Raymond Murphy",
+    "age": 52,
+    "specialty": "Clinical Informatics",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Expert in clinical decision support systems and health data privacy."
+  },
+  {
+    "id": "DR152",
+    "name": "Dr. Cynthia Bailey",
+    "age": 45,
+    "specialty": "Cardiology",
+    "availability": "Mon-Wed 08:00-12:00",
+    "bio": "Specializes in women's heart health and cardiovascular imaging."
+  },
+  {
+    "id": "DR153",
+    "name": "Dr. Peter Rivera",
+    "age": 49,
+    "specialty": "Pediatrics",
+    "availability": "Tue-Thu 09:00-15:00",
+    "bio": "Focuses on pediatric allergies and infectious diseases."
+  },
+  {
+    "id": "DR154",
+    "name": "Dr. Kathleen Cooper",
+    "age": 56,
+    "specialty": "Neurology",
+    "availability": "Mon-Fri 10:00-14:00",
+    "bio": "Expert in neuromuscular disorders and ALS."
+  },
+  {
+    "id": "DR155",
+    "name": "Dr. Justin Richardson",
+    "age": 39,
+    "specialty": "Dermatology",
+    "availability": "Wed-Fri 08:00-13:00",
+    "bio": "Specializes in Mohs surgery and skin oncology."
+  },
+  {
+    "id": "DR156",
+    "name": "Dr. Shirley Cox",
+    "age": 54,
+    "specialty": "Orthopedics",
+    "availability": "Mon-Thu 07:00-11:00",
+    "bio": "Expert in hand surgery and upper extremity injuries."
+  },
+  {
+    "id": "DR157",
+    "name": "Dr. Terry Howard",
+    "age": 42,
+    "specialty": "Psychiatry",
+    "availability": "Tue-Fri 13:00-18:00",
+    "bio": "Focuses on addiction psychiatry and dual diagnosis."
+  },
+  {
+    "id": "DR158",
+    "name": "Dr. Martha Ward",
+    "age": 60,
+    "specialty": "Gastroenterology",
+    "availability": "Mon-Wed 09:00-14:00",
+    "bio": "Specializes in hepatology and liver transplantation."
+  },
+  {
+    "id": "DR159",
+    "name": "Dr. Arthur Torres",
+    "age": 46,
+    "specialty": "Endocrinology",
+    "availability": "Thu-Sat 10:00-16:00",
+    "bio": "Expert in adrenal disorders and osteoporosis."
+  },
+  {
+    "id": "DR160",
+    "name": "Dr. Kelly Peterson",
+    "age": 37,
+    "specialty": "Oncology",
+    "availability": "Mon-Fri 08:00-12:00",
+    "bio": "Focuses on breast cancer treatment and survivorship care."
+  },
+  {
+    "id": "DR161",
+    "name": "Dr. Jerry Gray",
+    "age": 58,
+    "specialty": "Ophthalmology",
+    "availability": "Tue-Thu 11:00-17:00",
+    "bio": "Specializes in corneal transplants and refractive surgery."
+  },
+  {
+    "id": "DR162",
+    "name": "Dr. Janet Ramirez",
+    "age": 48,
+    "specialty": "Urology",
+    "availability": "Mon-Wed 08:00-13:00",
+    "bio": "Expert in female urology and pelvic floor reconstruction."
+  },
+  {
+    "id": "DR163",
+    "name": "Dr. Walter James",
+    "age": 51,
+    "specialty": "Pulmonology",
+    "availability": "Wed-Fri 09:00-14:00",
+    "bio": "Focuses on critical care medicine and ventilator management."
+  },
+  {
+    "id": "DR164",
+    "name": "Dr. Deborah Watson",
+    "age": 43,
+    "specialty": "Rheumatology",
+    "availability": "Mon-Tue 10:00-16:00",
+    "bio": "Expert in scleroderma and systemic autoimmune diseases."
+  },
+  {
+    "id": "DR165",
+    "name": "Dr. Harold Brooks",
+    "age": 62,
+    "specialty": "Obstetrics & Gynecology",
+    "availability": "Tue-Fri 08:00-12:00",
+    "bio": "Specializes in urogynecology and minimally invasive surgery."
+  },
+  {
+    "id": "DR166",
+    "name": "Dr. Teresa Kelly",
+    "age": 40,
+    "specialty": "Nephrology",
+    "availability": "Thu-Sat 09:00-13:00",
+    "bio": "Focuses on peritoneal dialysis and chronic kidney disease management."
+  },
+  {
+    "id": "DR167",
+    "name": "Dr. Lawrence Sanders",
+    "age": 55,
+    "specialty": "Internal Medicine",
+    "availability": "Mon-Fri 08:00-17:00",
+    "bio": "Specializes in complex chronic disease and geriatric internal medicine."
+  },
+  {
+    "id": "DR168",
+    "name": "Dr. Doris Price",
+    "age": 47,
+    "specialty": "General Surgery",
+    "availability": "Mon-Wed 07:00-15:00",
+    "bio": "Expert in endocrine surgery and thyroidectomy."
+  },
+  {
+    "id": "DR169",
+    "name": "Dr. Joe Bennett",
+    "age": 39,
+    "specialty": "Allergy & Immunology",
+    "availability": "Wed-Fri 10:00-16:00",
+    "bio": "Focuses on primary immunodeficiency and chronic urticaria."
+  },
+  {
+    "id": "DR170",
+    "name": "Dr. Evelyn Wood",
+    "age": 59,
+    "specialty": "Geriatrics",
+    "availability": "Tue-Thu 09:00-14:00",
+    "bio": "Specializes in palliative geriatrics and dementia care."
+  },
+  {
+    "id": "DR171",
+    "name": "Dr. Albert Barnes",
+    "age": 44,
+    "specialty": "Infectious Disease",
+    "availability": "Mon-Fri 11:00-15:00",
+    "bio": "Expert in antibiotic stewardship and hospital-acquired infections."
+  },
+  {
+    "id": "DR172",
+    "name": "Dr. Rose Ross",
+    "age": 52,
+    "specialty": "Radiology",
+    "availability": "Mon-Sat 08:00-20:00",
+    "bio": "Specializes in neuroradiology and advanced neuro-imaging."
+  },
+  {
+    "id": "DR173",
+    "name": "Dr. Wayne Jenkins",
+    "age": 41,
+    "specialty": "Child Psychiatry",
+    "availability": "Mon-Wed 13:00-18:00",
+    "bio": "Focuses on pediatric OCD and anxiety disorders."
+  },
+  {
+    "id": "DR174",
+    "name": "Dr. Alice Perry",
+    "age": 46,
+    "specialty": "Medical Genetics",
+    "availability": "Thu-Fri 10:00-15:00",
+    "bio": "Expert in cancer genetics and hereditary risk assessment."
+  },
+  {
+    "id": "DR175",
+    "name": "Dr. Billy Powell",
+    "age": 50,
+    "specialty": "Physical Medicine & Rehab",
+    "availability": "Mon-Thu 08:00-14:00",
+    "bio": "Specializes in musculoskeletal ultrasound and joint injections."
+  },
+  {
+    "id": "DR176",
+    "name": "Dr. Diana Long",
+    "age": 38,
+    "specialty": "Psychology",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Focuses on neuropsychological testing and cognitive rehabilitation."
+  },
+  {
+    "id": "DR177",
+    "name": "Dr. Bruce Patterson",
+    "age": 53,
+    "specialty": "Epidemiology",
+    "availability": "Mon-Fri 08:00-16:00",
+    "bio": "Researching global health security and emerging viral threats."
+  },
+  {
+    "id": "DR178",
+    "name": "Dr. Annie Hughes",
+    "age": 45,
+    "specialty": "Family Medicine",
+    "availability": "Mon-Fri 08:00-12:00",
+    "bio": "Expert in women's health and family-centered primary care."
+  },
+  {
+    "id": "DR179",
+    "name": "Dr. Eugene Flores",
+    "age": 57,
+    "specialty": "Microbiology",
+    "availability": "Tue-Thu 10:00-14:00",
+    "bio": "Specializes in clinical parasitology and tropical medicine."
+  },
+  {
+    "id": "DR180",
+    "name": "Dr. Julia Washington",
+    "age": 42,
+    "specialty": "Clinical Pathology",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Expert in transfusion medicine and blood bank management."
+  },
+  {
+    "id": "DR181",
+    "name": "Dr. Louis Butler",
+    "age": 49,
+    "specialty": "Nuclear Medicine",
+    "availability": "Wed-Fri 08:00-13:00",
+    "bio": "Specializes in thyroid cancer imaging and radioiodine therapy."
+  },
+  {
+    "id": "DR182",
+    "name": "Dr. Grace Simmons",
+    "age": 36,
+    "specialty": "Reproductive Endocrinology",
+    "availability": "Mon-Tue 09:00-15:00",
+    "bio": "Focuses on onco-fertility and preserving reproductive health."
+  },
+  {
+    "id": "DR183",
+    "name": "Dr. Ralph Foster",
+    "age": 61,
+    "specialty": "Radiation Oncology",
+    "availability": "Mon-Thu 08:00-12:00",
+    "bio": "Expert in stereotactic body radiation therapy (SBRT)."
+  },
+  {
+    "id": "DR184",
+    "name": "Dr. Victoria Gonzales",
+    "age": 40,
+    "specialty": "Emergency Medicine",
+    "availability": "Rotating 24/7",
+    "bio": "Specializes in pediatric emergency medicine and acute trauma."
+  },
+  {
+    "id": "DR185",
+    "name": "Dr. Roy Bryant",
+    "age": 54,
+    "specialty": "Sports Medicine",
+    "availability": "Mon-Wed 07:00-11:00",
+    "bio": "Expert in concussion management and return-to-play protocols."
+  },
+  {
+    "id": "DR186",
+    "name": "Dr. Kathryn Alexander",
+    "age": 47,
+    "specialty": "Pain Management",
+    "availability": "Wed-Fri 08:00-12:00",
+    "bio": "Focuses on non-opioid pain management and regenerative injections."
+  },
+  {
+    "id": "DR187",
+    "name": "Dr. Harry Russell",
+    "age": 59,
+    "specialty": "Palliative Care",
+    "availability": "Mon-Fri 10:00-16:00",
+    "bio": "Dedicated to palliative care research and ethics."
+  },
+  {
+    "id": "DR188",
+    "name": "Dr. Jean Griffin",
+    "age": 43,
+    "specialty": "Hospice Care",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Focuses on psychological support for the terminally ill."
+  },
+  {
+    "id": "DR189",
+    "name": "Dr. Philip Diaz",
+    "age": 51,
+    "specialty": "Toxicology",
+    "availability": "Mon-Wed 09:00-13:00",
+    "bio": "Expert in clinical neurotoxicology and forensic toxicology."
+  },
+  {
+    "id": "DR190",
+    "name": "Dr. Cheryl Hayes",
+    "age": 35,
+    "specialty": "Neonatology",
+    "availability": "Mon-Fri 08:00-14:00",
+    "bio": "Focuses on neonatal lung injury and surfactant therapy."
+  },
+  {
+    "id": "DR191",
+    "name": "Dr. Bobby Myers",
+    "age": 56,
+    "specialty": "Pharmacology",
+    "availability": "Wed-Fri 09:00-17:00",
+    "bio": "Specializes in pediatric pharmacology and dose optimization."
+  },
+  {
+    "id": "DR192",
+    "name": "Dr. Mildred Ford",
+    "age": 48,
+    "specialty": "Transplant Surgery",
+    "availability": "Mon-Wed 07:00-15:00",
+    "bio": "Expert in kidney transplant immunology and rejection therapy."
+  },
+  {
+    "id": "DR193",
+    "name": "Dr. Russell Hamilton",
+    "age": 53,
+    "specialty": "Pediatric Neurosurgery",
+    "availability": "Tue-Fri 08:00-13:00",
+    "bio": "Focuses on spinal dysraphism and congenital brain defects."
+  },
+  {
+    "id": "DR194",
+    "name": "Dr. Joan Graham",
+    "age": 42,
+    "specialty": "Neurosurgery",
+    "availability": "Mon-Fri 09:00-14:00",
+    "bio": "Expert in cerebrovascular surgery and aneurysm repair."
+  },
+  {
+    "id": "DR195",
+    "name": "Dr. Carl Sullivan",
+    "age": 60,
+    "specialty": "Hematology-Oncology",
+    "availability": "Mon-Thu 09:00-13:00",
+    "bio": "Specializes in multiple myeloma and plasma cell disorders."
+  },
+  {
+    "id": "DR196",
+    "name": "Dr. Judith Wallace",
+    "age": 44,
+    "specialty": "Pediatric Cardiology",
+    "availability": "Tue-Thu 08:00-12:00",
+    "bio": "Expert in pediatric arrhythmia and pacemaker management."
+  },
+  {
+    "id": "DR197",
+    "name": "Dr. Alan Woods",
+    "age": 46,
+    "specialty": "Otolaryngology (ENT)",
+    "availability": "Wed-Fri 10:00-16:00",
+    "bio": "Specializes in otology and neurotology (ear surgery)."
+  },
+  {
+    "id": "DR198",
+    "name": "Dr. Marie Cole",
+    "age": 55,
+    "specialty": "Sleep Medicine",
+    "availability": "Mon-Wed 20:00-02:00",
+    "bio": "Focuses on circadian rhythm disorders and shift work sleep issues."
+  },
+  {
+    "id": "DR199",
+    "name": "Dr. Willie West",
+    "age": 41,
+    "specialty": "Telemedicine",
+    "availability": "Mon-Sat 08:00-18:00",
+    "bio": "Expert in remote patient monitoring for chronic conditions."
+  },
+  {
+    "id": "DR200",
+    "name": "Dr. Doris Jordan",
+    "age": 49,
+    "specialty": "Aerospace Medicine",
+    "availability": "Thu-Fri 10:00-15:00",
+    "bio": "Focuses on human factors and medical safety in commercial aviation."
+  },
+  {
+    "id": "DR201",
+    "name": "Dr. Oscar Wilde",
+    "age": 44,
+    "specialty": "Narrative Medicine",
+    "availability": "Mon-Wed 09:00-13:00",
+    "bio": "Focuses on the patient's personal story to improve clinical outcomes and empathy in care."
+  },
+  {
+    "id": "DR202",
+    "name": "Dr. Simone de Beauvoir",
+    "age": 51,
+    "specialty": "Medical Ethics",
+    "availability": "Tue-Thu 10:00-14:00",
+    "bio": "Consultant for complex ethical dilemmas in end-of-life care and clinical research."
+  },
+  {
+    "id": "DR203",
+    "name": "Dr. Nelson Mandela",
+    "age": 62,
+    "specialty": "Public Health Advocacy",
+    "availability": "Mon-Fri 08:00-12:00",
+    "bio": "Dedicated to healthcare equity, community outreach, and rural health policy."
+  },
+  {
+    "id": "DR204",
+    "name": "Dr. Amelia Earhart",
+    "age": 39,
+    "specialty": "Aviation Psychology",
+    "availability": "Wed-Fri 10:00-15:00",
+    "bio": "Specializes in pilot mental health, stress management, and performance under pressure."
+  },
+  {
+    "id": "DR205",
+    "name": "Dr. Ernest Hemingway",
+    "age": 55,
+    "specialty": "Trauma Surgery",
+    "availability": "Mon-Thu 07:00-15:00",
+    "bio": "Expert in acute injury stabilization and surgical management of traumatic wounds."
+  },
+  {
+    "id": "DR206",
+    "name": "Dr. Maya Angelou",
+    "age": 48,
+    "specialty": "Holistic Therapy",
+    "availability": "Tue-Fri 09:00-14:00",
+    "bio": "Integrates traditional psychotherapy with arts-based healing and mindfulness."
+  },
+  {
+    "id": "DR207",
+    "name": "Dr. Winston Churchill",
+    "age": 60,
+    "specialty": "Crisis Management",
+    "availability": "On-Call 24/7",
+    "bio": "Specializes in hospital emergency protocols and large-scale medical disaster response."
+  },
+  {
+    "id": "DR208",
+    "name": "Dr. Frida Kahlo",
+    "age": 42,
+    "specialty": "Pain Rehabilitation",
+    "availability": "Mon-Wed 11:00-16:00",
+    "bio": "Expert in managing chronic physical disability through multidisciplinary rehab."
+  },
+  {
+    "id": "DR209",
+    "name": "Dr. Pablo Picasso",
+    "age": 57,
+    "specialty": "Reconstructive Surgery",
+    "availability": "Tue-Thu 08:00-14:00",
+    "bio": "Focuses on aesthetic restoration after major trauma or oncology surgeries."
+  },
+  {
+    "id": "DR210",
+    "name": "Dr. Agatha Christie",
+    "age": 45,
+    "specialty": "Forensic Toxicology",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Expert in identifying chemical agents and drug interactions in complex cases."
+  },
+  {
+    "id": "DR211",
+    "name": "Dr. Arthur Conan Doyle",
+    "age": 53,
+    "specialty": "Diagnostic Pathology",
+    "availability": "Wed-Fri 08:00-13:00",
+    "bio": "Specializes in deducing rare disease origins through detailed tissue analysis."
+  },
+  {
+    "id": "DR212",
+    "name": "Dr. Emily Dickinson",
+    "age": 36,
+    "specialty": "Immunotherapy Research",
+    "availability": "Mon-Thu 10:00-15:00",
+    "bio": "Researches internal immune responses to treat chronic autoimmune conditions."
+  },
+  {
+    "id": "DR213",
+    "name": "Dr. Mark Twain",
+    "age": 58,
+    "specialty": "Geriatric Psychology",
+    "availability": "Tue-Thu 09:00-14:00",
+    "bio": "Focuses on cognitive health and humor-based therapy for the elderly."
+  },
+  {
+    "id": "DR214",
+    "name": "Dr. Virginia Woolf",
+    "age": 47,
+    "specialty": "Neuropsychiatry",
+    "availability": "Mon-Wed 13:00-17:00",
+    "bio": "Expert in the biological basis of mood disorders and conscious awareness."
+  },
+  {
+    "id": "DR215",
+    "name": "Dr. Leo Tolstoy",
+    "age": 64,
+    "specialty": "Family Health History",
+    "availability": "Thu-Sat 08:00-12:00",
+    "bio": "Specializes in tracing multi-generational health patterns and genetic risks."
+  },
+  {
+    "id": "DR216",
+    "name": "Dr. Jane Austen",
+    "age": 41,
+    "specialty": "Social Medicine",
+    "availability": "Mon-Fri 09:00-14:00",
+    "bio": "Examines the impact of social structures and environment on long-term health."
+  },
+  {
+    "id": "DR217",
+    "name": "Dr. Charles Dickens",
+    "age": 50,
+    "specialty": "Pediatric Welfare",
+    "availability": "Mon-Wed 08:00-13:00",
+    "bio": "Focuses on nutrition and health outcomes for children in low-income urban areas."
+  },
+  {
+    "id": "DR218",
+    "name": "Dr. George Orwell",
+    "age": 46,
+    "specialty": "Preventative Surveillance",
+    "availability": "Tue-Fri 10:00-16:00",
+    "bio": "Expert in monitoring public health data to predict and prevent disease outbreaks."
+  },
+  {
+    "id": "DR219",
+    "name": "Dr. James Joyce",
+    "age": 52,
+    "specialty": "Cognitive Science",
+    "availability": "Wed-Fri 09:00-14:00",
+    "bio": "Researches stream-of-consciousness patterns in neurodivergent patients."
+  },
+  {
+    "id": "DR220",
+    "name": "Dr. Franz Kafka",
+    "age": 43,
+    "specialty": "Occupational Stress",
+    "availability": "Mon-Thu 08:00-12:00",
+    "bio": "Specializes in workplace-related anxiety and the health effects of bureaucracy."
+  },
+  {
+    "id": "DR221",
+    "name": "Dr. Toni Morrison",
+    "age": 56,
+    "specialty": "Maternal Health",
+    "availability": "Mon-Fri 11:00-16:00",
+    "bio": "Focuses on disparities in maternal care and postpartum psychological support."
+  },
+  {
+    "id": "DR222",
+    "name": "Dr. Gabriel Garcia Marquez",
+    "age": 59,
+    "specialty": "Memory Disorders",
+    "availability": "Tue-Thu 09:00-13:00",
+    "bio": "Expert in Alzheimer's and the preservation of childhood memories in dementia."
+  },
+  {
+    "id": "DR223",
+    "name": "Dr. Sylvia Plath",
+    "age": 34,
+    "specialty": "Adolescent Psychiatry",
+    "availability": "Wed-Sat 14:00-18:00",
+    "bio": "Specializes in early intervention for depression and self-harm in teens."
+  },
+  {
+    "id": "DR224",
+    "name": "Dr. Walt Whitman",
+    "age": 61,
+    "specialty": "Physical Wellness",
+    "availability": "Mon-Wed 07:00-11:00",
+    "bio": "Advocates for outdoor-based rehabilitation and natural physical therapy."
+  },
+  {
+    "id": "DR225",
+    "name": "Dr. Victor Hugo",
+    "age": 63,
+    "specialty": "Internal Medicine (Chronic)",
+    "availability": "Tue-Fri 08:00-12:00",
+    "bio": "Dedicated to treating patients with multiple co-morbidities and complex needs."
+  },
+  {
+    "id": "DR226",
+    "name": "Dr. Robert Frost",
+    "age": 54,
+    "specialty": "Rural Medicine",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Expert in providing comprehensive care in remote and isolated environments."
+  },
+  {
+    "id": "DR227",
+    "name": "Dr. Lewis Carroll",
+    "age": 38,
+    "specialty": "Pediatric Neurology",
+    "availability": "Mon-Wed 10:00-14:00",
+    "bio": "Focuses on sensory processing disorders and childhood epilepsy."
+  },
+  {
+    "id": "DR228",
+    "name": "Dr. Mary Shelley",
+    "age": 40,
+    "specialty": "Bio-Engineering",
+    "availability": "Thu-Sat 09:00-15:00",
+    "bio": "Expert in early-stage prosthetic integration and tissue regeneration research."
+  },
+  {
+    "id": "DR229",
+    "name": "Dr. Edgar Allan Poe",
+    "age": 47,
+    "specialty": "Sleep Pathology",
+    "availability": "Mon-Fri 22:00-04:00",
+    "bio": "Specializes in night terrors, sleep paralysis, and chronic insomnia."
+  },
+  {
+    "id": "DR230",
+    "name": "Dr. Charlotte Bronte",
+    "age": 45,
+    "specialty": "Respirology",
+    "availability": "Tue-Thu 08:00-12:00",
+    "bio": "Expert in treating tuberculosis and chronic restrictive lung diseases."
+  },
+  {
+    "id": "DR231",
+    "name": "Dr. Emily Bronte",
+    "age": 42,
+    "specialty": "Environmental Health",
+    "availability": "Wed-Fri 09:00-14:00",
+    "bio": "Studies the effect of climate and moorland environments on respiratory health."
+  },
+  {
+    "id": "DR232",
+    "name": "Dr. Anne Bronte",
+    "age": 39,
+    "specialty": "Addiction Counseling",
+    "availability": "Mon-Fri 13:00-17:00",
+    "bio": "Focuses on family-centered recovery programs and behavioral health."
+  },
+  {
+    "id": "DR233",
+    "name": "Dr. Fyodor Dostoevsky",
+    "age": 55,
+    "specialty": "Epileptology",
+    "availability": "Mon-Wed 09:00-14:00",
+    "bio": "Expert in complex seizure disorders and their psychological impacts."
+  },
+  {
+    "id": "DR234",
+    "name": "Dr. William Faulkner",
+    "age": 58,
+    "specialty": "Orthopedic Trauma",
+    "availability": "Tue-Fri 07:00-13:00",
+    "bio": "Specializes in complex fractures and surgical repair of joint injuries."
+  },
+  {
+    "id": "DR235",
+    "name": "Dr. John Steinbeck",
+    "age": 51,
+    "specialty": "Migrant Health",
+    "availability": "Mon-Fri 08:00-12:00",
+    "bio": "Focuses on healthcare for transient populations and manual laborers."
+  },
+  {
+    "id": "DR236",
+    "name": "Dr. Tennessee Williams",
+    "age": 49,
+    "specialty": "Drama Therapy",
+    "availability": "Wed-Sat 11:00-16:00",
+    "bio": "Uses role-play and creative expression to treat social anxiety and trauma."
+  },
+  {
+    "id": "DR237",
+    "name": "Dr. Harper Lee",
+    "age": 52,
+    "specialty": "Pediatric Advocacy",
+    "availability": "Mon-Thu 10:00-15:00",
+    "bio": "Focuses on child safety, forensic pediatrics, and social welfare."
+  },
+  {
+    "id": "DR238",
+    "name": "Dr. Truman Capote",
+    "age": 46,
+    "specialty": "Diagnostic Interviewing",
+    "availability": "Tue-Thu 13:00-17:00",
+    "bio": "Expert in gathering complex clinical histories for difficult-to-diagnose cases."
+  },
+  {
+    "id": "DR239",
+    "name": "Dr. Langston Hughes",
+    "age": 44,
+    "specialty": "Community Cardiology",
+    "availability": "Mon-Fri 09:00-13:00",
+    "bio": "Dedicated to heart health screenings in urban community centers."
+  },
+  {
+    "id": "DR240",
+    "name": "Dr. Ralph Ellison",
+    "age": 50,
+    "specialty": "Visual Science",
+    "availability": "Wed-Fri 10:00-14:00",
+    "bio": "Expert in optic nerve disorders and visual field perception."
+  },
+  {
+    "id": "DR241",
+    "name": "Dr. Zora Neale Hurston",
+    "age": 48,
+    "specialty": "Ethnopsychiatry",
+    "availability": "Mon-Wed 08:00-12:00",
+    "bio": "Studies cultural variations in mental health and traditional healing practices."
+  },
+  {
+    "id": "DR242",
+    "name": "Dr. James Baldwin",
+    "age": 53,
+    "specialty": "Intersectional Medicine",
+    "availability": "Tue-Fri 09:00-15:00",
+    "bio": "Specializes in health disparities related to identity and social justice."
+  },
+  {
+    "id": "DR243",
+    "name": "Dr. Sylvia Sylvia",
+    "age": 35,
+    "specialty": "Dermatology",
+    "availability": "Wed-Fri 08:00-13:00",
+    "bio": "Expert in pediatric skin conditions and hereditary dermatosis."
+  },
+  {
+    "id": "DR244",
+    "name": "Dr. Hermann Hesse",
+    "age": 60,
+    "specialty": "Integrative Psychiatry",
+    "availability": "Mon-Thu 10:00-16:00",
+    "bio": "Blends eastern philosophy with western psychiatric protocols."
+  },
+  {
+    "id": "DR245",
+    "name": "Dr. Thomas Mann",
+    "age": 62,
+    "specialty": "Sanatorium Medicine",
+    "availability": "Tue-Fri 09:00-14:00",
+    "bio": "Expert in long-term recovery for chronic infectious diseases."
+  },
+  {
+    "id": "DR246",
+    "name": "Dr. Marcel Proust",
+    "age": 51,
+    "specialty": "Olfactory Neuroscience",
+    "availability": "Wed-Fri 13:00-17:00",
+    "bio": "Studies the link between smell, memory, and neurological triggers."
+  },
+  {
+    "id": "DR247",
+    "name": "Dr. Albert Camus",
+    "age": 45,
+    "specialty": "Epidemiology Control",
+    "availability": "Mon-Fri 08:00-16:00",
+    "bio": "Expert in plague containment and rapid response to infectious outbreaks."
+  },
+  {
+    "id": "DR248",
+    "name": "Dr. Jean-Paul Sartre",
+    "age": 56,
+    "specialty": "Existential Therapy",
+    "availability": "Mon-Wed 10:00-15:00",
+    "bio": "Focuses on personal freedom and choice in recovery from psychological trauma."
+  },
+  {
+    "id": "DR249",
+    "name": "Dr. Hannah Arendt",
+    "age": 54,
+    "specialty": "Bio-Ethics Policy",
+    "availability": "Tue-Thu 11:00-14:00",
+    "bio": "Consultant on global medical human rights and clinical research ethics."
+  },
+  {
+    "id": "DR250",
+    "name": "Dr. Michel Foucault",
+    "age": 49,
+    "specialty": "Medical Sociology",
+    "availability": "Wed-Fri 09:00-13:00",
+    "bio": "Researches the history of medical institutions and power dynamics in healthcare."
+  },
+  {
+    "id": "DR251",
+    "name": "Dr. Noam Chomsky",
+    "age": 65,
+    "specialty": "Linguistic Therapy",
+    "availability": "Mon-Thu 10:00-14:00",
+    "bio": "Specializes in speech disorders and the cognitive structures of language."
+  },
+  {
+    "id": "DR252",
+    "name": "Dr. Oliver Sacks",
+    "age": 60,
+    "specialty": "Clinical Neurology",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Expert in rare neurological conditions and music-based therapy."
+  },
+  {
+    "id": "DR253",
+    "name": "Dr. Elisabeth Kubler-Ross",
+    "age": 58,
+    "specialty": "Thanatology",
+    "availability": "Tue-Fri 10:00-16:00",
+    "bio": "World-renowned expert in the stages of grief and palliative care."
+  },
+  {
+    "id": "DR254",
+    "name": "Dr. Viktor Frankl",
+    "age": 61,
+    "specialty": "Logotherapy",
+    "availability": "Mon-Wed 08:00-12:00",
+    "bio": "Helps patients find meaning through suffering and chronic illness."
+  },
+  {
+    "id": "DR255",
+    "name": "Dr. Carl Jung",
+    "age": 64,
+    "specialty": "Analytical Psychology",
+    "availability": "Wed-Fri 13:00-18:00",
+    "bio": "Focuses on the collective unconscious and dream analysis in mental health."
+  },
+  {
+    "id": "DR256",
+    "name": "Dr. Alfred Adler",
+    "age": 57,
+    "specialty": "Individual Psychology",
+    "availability": "Mon-Thu 09:00-15:00",
+    "bio": "Expert in overcoming inferiority complexes and social development."
+  },
+  {
+    "id": "DR257",
+    "name": "Dr. Karen Horney",
+    "age": 52,
+    "specialty": "Feminine Psychology",
+    "availability": "Tue-Fri 10:00-14:00",
+    "bio": "Focuses on cultural impacts on mental health and neurosis therapy."
+  },
+  {
+    "id": "DR258",
+    "name": "Dr. Erik Erikson",
+    "age": 55,
+    "specialty": "Developmental Health",
+    "availability": "Mon-Wed 08:00-13:00",
+    "bio": "Specializes in identity crises and lifecycle transitions."
+  },
+  {
+    "id": "DR259",
+    "name": "Dr. B.F. Skinner",
+    "age": 50,
+    "specialty": "Behavior Modification",
+    "availability": "Thu-Sat 10:00-15:00",
+    "bio": "Expert in operant conditioning for behavioral disorders and habits."
+  },
+  {
+    "id": "DR260",
+    "name": "Dr. Abraham Maslow",
+    "age": 48,
+    "specialty": "Humanistic Health",
+    "availability": "Mon-Fri 09:00-14:00",
+    "bio": "Focuses on self-actualization and fulfilling basic human needs for wellness."
+  },
+  {
+    "id": "DR261",
+    "name": "Dr. Carl Rogers",
+    "age": 59,
+    "specialty": "Client-Centered Therapy",
+    "availability": "Tue-Thu 11:00-17:00",
+    "bio": "Expert in non-directive counseling and unconditional positive regard."
+  },
+  {
+    "id": "DR262",
+    "name": "Dr. Jean Piaget",
+    "age": 63,
+    "specialty": "Cognitive Development",
+    "availability": "Wed-Fri 08:00-12:00",
+    "bio": "Researches child cognitive growth and learning disorders."
+  },
+  {
+    "id": "DR263",
+    "name": "Dr. Lev Vygotsky",
+    "age": 41,
+    "specialty": "Educational Psychology",
+    "availability": "Mon-Wed 09:00-14:00",
+    "bio": "Specializes in the social context of pediatric development and speech."
+  },
+  {
+    "id": "DR264",
+    "name": "Dr. Ivan Pavlov",
+    "age": 56,
+    "specialty": "Physiological Psychology",
+    "availability": "Tue-Fri 07:00-12:00",
+    "bio": "Expert in reflexive responses and the digestive-nervous system link."
+  },
+  {
+    "id": "DR265",
+    "name": "Dr. Margaret Mead",
+    "age": 47,
+    "specialty": "Cultural Health",
+    "availability": "Mon-Fri 10:00-16:00",
+    "bio": "Studies how cultural norms influence adolescent health and maturity."
+  },
+  {
+    "id": "DR266",
+    "name": "Dr. Rachel Carson",
+    "age": 45,
+    "specialty": "Environmental Toxicology",
+    "availability": "Wed-Fri 08:00-13:00",
+    "bio": "Specializes in the health impact of pesticides and environmental pollutants."
+  },
+  {
+    "id": "DR267",
+    "name": "Dr. Jane Jacobs",
+    "age": 52,
+    "specialty": "Urban Health Planning",
+    "availability": "Mon-Thu 09:00-15:00",
+    "bio": "Focuses on how city design impacts community health and physical activity."
+  },
+  {
+    "id": "DR268",
+    "name": "Dr. Buckminster Fuller",
+    "age": 58,
+    "specialty": "Design Science Medicine",
+    "availability": "Tue-Fri 10:00-14:00",
+    "bio": "Expert in medical facility design and sustainable health systems."
+  },
+  {
+    "id": "DR269",
+    "name": "Dr. Lewis Mumford",
+    "age": 61,
+    "specialty": "Historical Medicine",
+    "availability": "Mon-Wed 11:00-16:00",
+    "bio": "Researches the evolution of health in civilizations and technology's role."
+  },
+  {
+    "id": "DR270",
+    "name": "Dr. Susan Sontag",
+    "age": 46,
+    "specialty": "Illness Semiotics",
+    "availability": "Wed-Fri 13:00-17:00",
+    "bio": "Focuses on the metaphors used in cancer and infectious disease communication."
+  },
+  {
+    "id": "DR271",
+    "name": "Dr. Joseph Campbell",
+    "age": 54,
+    "specialty": "Mythological Therapy",
+    "availability": "Mon-Fri 09:00-13:00",
+    "bio": "Uses universal archetypes to help patients navigate personal health crises."
+  },
+  {
+    "id": "DR272",
+    "name": "Dr. Carl Sagan",
+    "age": 53,
+    "specialty": "Astro-Biology Medicine",
+    "availability": "Tue-Thu 10:00-15:00",
+    "bio": "Researches life conditions beyond earth and celestial impacts on biology."
+  },
+  {
+    "id": "DR273",
+    "name": "Dr. Neil deGrasse Tyson",
+    "age": 44,
+    "specialty": "Public Science Health",
+    "availability": "Mon-Wed 08:00-12:00",
+    "bio": "Communicates health science concepts and data literacy to the public."
+  },
+  {
+    "id": "DR274",
+    "name": "Dr. Michio Kaku",
+    "age": 57,
+    "specialty": "Quantum Medicine",
+    "availability": "Wed-Sat 09:00-14:00",
+    "bio": "Explores the future of nanotechnology and physics in cellular repair."
+  },
+  {
+    "id": "DR275",
+    "name": "Dr. Brian Greene",
+    "age": 42,
+    "specialty": "Theoretical Biophysics",
+    "availability": "Mon-Fri 10:00-15:00",
+    "bio": "Studies the physical properties of biological membranes and proteins."
+  },
+  {
+    "id": "DR276",
+    "name": "Dr. Jane Goodall",
+    "age": 60,
+    "specialty": "Zoonotic Health",
+    "availability": "Mon-Wed 07:00-11:00",
+    "bio": "Expert in cross-species viral transmissions and primate health."
+  },
+  {
+    "id": "DR277",
+    "name": "Dr. Dian Fossey",
+    "age": 51,
+    "specialty": "Primatology Medicine",
+    "availability": "Tue-Fri 08:00-13:00",
+    "bio": "Focuses on infectious diseases in remote mountain habitats."
+  },
+  {
+    "id": "DR278",
+    "name": "Dr. Birute Galdikas",
+    "age": 49,
+    "specialty": "Ethology-Based Wellness",
+    "availability": "Wed-Fri 09:00-14:00",
+    "bio": "Studies natural behavioral health and environmental stress adaptation."
+  },
+  {
+    "id": "DR279",
+    "name": "Dr. David Attenborough",
+    "age": 65,
+    "specialty": "Bio-Diversity Health",
+    "availability": "Mon-Fri 09:00-17:00",
+    "bio": "Advocates for the link between planetary health and human longevity."
+  },
+  {
+    "id": "DR280",
+    "name": "Dr. Jacques Cousteau",
+    "age": 58,
+    "specialty": "Hyperbaric Medicine",
+    "availability": "Mon-Thu 08:00-12:00",
+    "bio": "Expert in diving accidents, decompression sickness, and marine toxins."
+  },
+  {
+    "id": "DR281",
+    "name": "Dr. Sylvia Earle",
+    "age": 55,
+    "specialty": "Marine Pharmacology",
+    "availability": "Tue-Fri 10:00-16:00",
+    "bio": "Researches medicinal compounds found in deep-sea ecosystems."
+  },
+  {
+    "id": "DR282",
+    "name": "Dr. Robert Ballard",
+    "age": 52,
+    "specialty": "Remote Surgical Robotics",
+    "availability": "Wed-Fri 09:00-14:00",
+    "bio": "Expert in utilizing deep-sea tech for remote medical interventions."
+  },
+  {
+    "id": "DR283",
+    "name": "Dr. Steve Irwin",
+    "age": 39,
+    "specialty": "Venomology",
+    "availability": "On-Call 24/7",
+    "bio": "Expert in treating bites and stings from dangerous wildlife and antivenom research."
+  },
+  {
+    "id": "DR284",
+    "name": "Dr. Bear Grylls",
+    "age": 41,
+    "specialty": "Wilderness Medicine",
+    "availability": "Rotating Shifts",
+    "bio": "Specializes in survival-based first aid and medicine in extreme terrain."
+  },
+  {
+    "id": "DR285",
+    "name": "Dr. Christopher Columbus",
+    "age": 48,
+    "specialty": "Global Disease Tracking",
+    "availability": "Mon-Fri 08:00-12:00",
+    "bio": "Expert in historical pandemics and the spread of disease across oceans."
+  },
+  {
+    "id": "DR286",
+    "name": "Dr. Marco Polo",
+    "age": 50,
+    "specialty": "Infectious Travel Health",
+    "availability": "Tue-Thu 11:00-17:00",
+    "bio": "Specializes in diseases common to central and eastern trade routes."
+  },
+  {
+    "id": "DR287",
+    "name": "Dr. Ferdinand Magellan",
+    "age": 53,
+    "specialty": "Naval Medicine",
+    "availability": "Mon-Wed 09:00-14:00",
+    "bio": "Expert in scurvy and long-term isolation health challenges on ships."
+  },
+  {
+    "id": "DR288",
+    "name": "Dr. Vasco da Gama",
+    "age": 56,
+    "specialty": "Tropical Parasitology",
+    "availability": "Wed-Fri 10:00-15:00",
+    "bio": "Expert in malaria and parasitic infections in coastal regions."
+  },
+  {
+    "id": "DR289",
+    "name": "Dr. Roald Amundsen",
+    "age": 59,
+    "specialty": "Arctic Medicine",
+    "availability": "Mon-Fri 07:00-12:00",
+    "bio": "Expert in hypothermia, frostbite, and health in extreme cold."
+  },
+  {
+    "id": "DR290",
+    "name": "Dr. Robert Falcon Scott",
+    "age": 47,
+    "specialty": "Physiological Endurance",
+    "availability": "Tue-Thu 09:00-14:00",
+    "bio": "Studies the limits of human body endurance and nutritional depletion."
+  },
+  {
+    "id": "DR291",
+    "name": "Dr. Ernest Shackleton",
+    "age": 54,
+    "specialty": "Resilience Medicine",
+    "availability": "Wed-Fri 08:00-13:00",
+    "bio": "Focuses on psychological leadership and group mental health in crisis."
+  },
+  {
+    "id": "DR292",
+    "name": "Dr. Edmund Hillary",
+    "age": 51,
+    "specialty": "High-Altitude Physiology",
+    "availability": "Mon-Thu 10:00-16:00",
+    "bio": "Expert in mountain sickness and oxygen management at high altitudes."
+  },
+  {
+    "id": "DR293",
+    "name": "Dr. Tenzing Norgay",
+    "age": 49,
+    "specialty": "Acclimatization Health",
+    "availability": "Tue-Fri 09:00-15:00",
+    "bio": "Specializes in natural adaptation to low-oxygen environments."
+  },
+  {
+    "id": "DR294",
+    "name": "Dr. Thor Heyerdahl",
+    "age": 45,
+    "specialty": "Paleo-Medicine",
+    "availability": "Mon-Wed 08:00-12:00",
+    "bio": "Studies health and diet patterns of ancient seafaring populations."
+  },
+  {
+    "id": "DR295",
+    "name": "Dr. Amelia Earhart",
+    "age": 43,
+    "specialty": "Aeronautical Health",
+    "availability": "Wed-Fri 10:00-16:00",
+    "bio": "Focuses on pilot fatigue and vestibular health in flight."
+  },
+  {
+    "id": "DR296",
+    "name": "Dr. Charles Lindbergh",
+    "age": 52,
+    "specialty": "Mechanical Organ Research",
+    "availability": "Mon-Fri 09:00-13:00",
+    "bio": "Early pioneer in the development of artificial heart technology."
+  },
+  {
+    "id": "DR297",
+    "name": "Dr. Wright Brothers",
+    "age": 46,
+    "specialty": "Balance & Vertigo",
+    "availability": "Tue-Thu 11:00-15:00",
+    "bio": "Specializes in inner ear disorders and spatial disorientation."
+  },
+  {
+    "id": "DR298",
+    "name": "Dr. Leonardo da Vinci",
+    "age": 60,
+    "specialty": "Anatomical Illustration",
+    "availability": "Mon-Fri 08:00-14:00",
+    "bio": "Expert in mapping the human body for surgical planning and education."
+  },
+  {
+    "id": "DR299",
+    "name": "Dr. Michelangelo Buonarroti",
+    "age": 58,
+    "specialty": "Musculoskeletal Anatomy",
+    "availability": "Wed-Sat 09:00-17:00",
+    "bio": "Focuses on the structural mechanics of human muscle and bone."
+  },
+  {
+    "id": "DR300",
+    "name": "Dr. Raphael Sanzio",
+    "age": 44,
+    "specialty": "Pediatric Growth Patterns",
+    "availability": "Mon-Wed 10:00-14:00",
+    "bio": "Specializes in healthy child development and structural symmetry."
+  }
 ]
