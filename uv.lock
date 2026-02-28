@@ -481,6 +481,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "nltk" },
+    { name = "numpy" },
     { name = "pip" },
     { name = "sentence-transformers" },
     { name = "spacy" },
@@ -489,6 +490,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "nltk", specifier = ">=3.9.2" },
+    { name = "numpy", specifier = ">=2.4.2" },
     { name = "pip", specifier = ">=26.0.1" },
     { name = "sentence-transformers", specifier = ">=5.2.3" },
     { name = "spacy", specifier = ">=3.8.11" },
