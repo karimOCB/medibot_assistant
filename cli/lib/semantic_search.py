@@ -1,7 +1,7 @@
 import numpy as np
 import os
 from sentence_transformers import SentenceTransformer
-from lib.search_utils import cache_path, load_doctors
+from lib.search_utils import cache_path, load_doctors, DEFAULT_SEARCH_LIMIT
 
 class SemanticSearch:
     def __init__(self) -> None:
@@ -40,6 +40,25 @@ class SemanticSearch:
         
         return self.build_embeddings(drs_docs)
 
+    def search(self, query: str, limit:int=DEFAULT_SEARCH_LIMIT) -> list[dict]:
+        if self.embeddings is None or self.embeddings.size == 0:
+            raise ValueError("No embeddings loaded. Call `load_or_create_embeddings` first.")
+        q_embedding = self.generate_embedding(query)
+        scores = []
+        for i, dr_embedding in enumerate(self.embeddings):
+            similarity_score = cosine_similarity(q_embedding, dr_embedding)
+            document = self.drs_docs[i]
+            scores.append((similarity_score, document))
+        sorted_scores = sorted(scores, key= lambda item: item[0], reverse=True)[:limit]
+        return [{"score": ss[0], "name": ss[1]['name'], "dr_info": f"Age: {ss[1]['age']}. Specialty: {ss[1]['specialty']}. Bio: {ss[1]['bio']} Availability: {ss[1]['availability']}"} for ss in sorted_scores]
+        
+
+def search_command(query: str, limit: int) -> list[dict]:
+    semantic_search = SemanticSearch()
+    drs_docs = load_doctors()
+    semantic_search.load_or_create_embeddings(drs_docs)
+    return semantic_search.search(query, limit)
+
 
 def embed_text(text: str) -> np.ndarray:
     semantic_search = SemanticSearch()
@@ -60,3 +79,22 @@ def verify_embeddings() -> None:
     embeddings = semantic_search.load_or_create_embeddings(drs_docs)
     print(f"Number of docs:   {len(drs_docs)}")
     print(f"Embeddings shape: {embeddings.shape[0]} vectors in {embeddings.shape[1]} dimensions")
+
+
+def embed_query_text(query: str) -> np.ndarray:
+    semantic_search = SemanticSearch()
+    embedding = semantic_search.generate_embedding(query)
+    print(f"Query: {query}")
+    print(f"First 5 dimensions: {embedding[:5]}")
+    print(f"Shape: {embedding.shape}")
+
+
+def cosine_similarity(vec1: np.ndarray, vec2: np.ndarray) -> float:
+    dot_product = np.dot(vec1, vec2)
+    norm1 = np.linalg.norm(vec1)
+    norm2 = np.linalg.norm(vec2)
+
+    if norm1 == 0 or norm2 == 0:
+        return 0.0
+
+    return dot_product / (norm1 * norm2)
