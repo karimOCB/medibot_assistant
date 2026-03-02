@@ -50,7 +50,7 @@ class SemanticSearch:
             document = self.drs_docs[i]
             scores.append((similarity_score, document))
         sorted_scores = sorted(scores, key= lambda item: item[0], reverse=True)[:limit]
-        return [{"score": ss[0], "name": ss[1]['name'], "dr_info": f"Age: {ss[1]['age']}. Specialty: {ss[1]['specialty']}. Bio: {ss[1]['bio']} Availability: {ss[1]['availability']}"} for ss in sorted_scores]
+        return [{"score": ss[0], "name": ss[1]['name'], "id": ss[1]['id'], "dr_info": f"Age: {ss[1]['age']}. Specialty: {ss[1]['specialty']}. Bio: {ss[1]['bio']} Availability: {ss[1]['availability']}"} for ss in sorted_scores]
         
 
 def search_command(query: str, limit: int) -> list[dict]:

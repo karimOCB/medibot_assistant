@@ -2,30 +2,52 @@ import os
 
 from .keyword_search import InvertedIndex
 from .semantic_search import SemanticSearch
-
+from .search_utils import HYBRID_A, DEFAULT_SEARCH_LIMIT, load_doctors
 
 class HybridSearch:
-    def __init__(self, documents: list[dict]):
-        self.documents = documents
+    def __init__(self, drs_docs: list[dict]) -> None:
+        self.drs_docs = drs_docs
         self.semantic_search = SemanticSearch()
-        self.semantic_search.load_or_create_embeddings(documents)
+        self.semantic_search.load_or_create_embeddings(drs_docs)
 
         self.idx = InvertedIndex()
         if not os.path.exists(self.idx.index_path):
             self.idx.build()
             self.idx.save()
 
-    def _bm25_search(self, query: str, limit: int) -> list[str]:
+    def _bm25_search(self, query: str, limit: int) -> list[dict]:
         self.idx.load()
         return self.idx.bm25_search(query, limit)
 
-    def weighted_search(self, query, alpha, limit=5):
-        raise NotImplementedError("Weighted hybrid search is not implemented yet.")
+    def weighted_search(self, query: str, alpha: float=HYBRID_A, limit: int=DEFAULT_SEARCH_LIMIT) -> list[dict]:
+        bm25_results = self._bm25_search(query, limit * 50)
+        semantic_results = self.semantic_search.search(query, limit * 50)
+        bm25_normalized_scores = normalize_command([result["score"] for result in bm25_results])
+        semantic_normalized_scores = normalize_command([result["score"] for result in semantic_results])
+        results = {}
+        for i, result in enumerate(bm25_results):
+            results[result["doc"]["id"]] = {
+                "doc": result["doc"],
+                "bm25_normalized": bm25_normalized_scores[i],
+                "semantic_normalized": semantic_normalized_scores[i],
+                "hybrid_score": self.hybrid_score(bm25_normalized_scores[i], semantic_normalized_scores[i], alpha)
+            }
+        results_sorted = sorted(results.items(), key=lambda item: item[1]["hybrid_score"], reverse=True)
+        return results_sorted[:limit]
+
+    def hybrid_score(self, bm25_score, semantic_score, alpha):
+            return alpha * bm25_score + (1 - alpha) * semantic_score    
 
     def rrf_search(self, query, k, limit=10):
         raise NotImplementedError("RRF hybrid search is not implemented yet.")
     
-def normalize_command(scores: list[float]) -> None:
+def weighted_search_command(query: str, alpha: float, limit: int) -> None:
+    drs_docs = load_doctors()
+    hybrid_search = HybridSearch(drs_docs)
+    return hybrid_search.weighted_search(query, alpha, limit)
+        
+
+def normalize_command(scores: list[float]) -> list[float]:
     if not scores or scores == []:
         return
     min_s = min(scores)

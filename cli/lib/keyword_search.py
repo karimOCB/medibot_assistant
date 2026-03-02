@@ -117,7 +117,7 @@ class InvertedIndex:
         bm25_idf = self.get_bm25_idf(term)
         return bm25_tf * bm25_idf
     
-    def bm25_search(self, query: str, limit: int) -> list[str]:
+    def bm25_search(self, query: str, limit: int) -> list[dict]:
         tokens = tokenization(query)
         scores = defaultdict(float)
         for token in tokens:
@@ -127,9 +127,12 @@ class InvertedIndex:
                     scores[doc_id] += bm25_score
         scores_limited = sorted(scores.items(), key=lambda item: item[1], reverse=True)[:limit]
         results = []
-        for i, score in enumerate(scores_limited, start=1):
-            name = self.docmap[score[0]]["name"]
-            results.append(f"{i}. {score[0]} {name} - Score: {score[1]:.4f}")
+        for doc_id, score in scores_limited:
+            formatted_result = {
+                "doc": self.docmap[doc_id],
+                "score": score
+            }
+            results.append(formatted_result)
         return results
 
 
@@ -190,7 +193,8 @@ def bm25tf_command(doc_id: str, term: str, k1: float, b: float) -> float:
 def bm25_search_command(query: str, limit: int) -> list[str]:
     idx = InvertedIndex()
     idx.load()
-    return idx.bm25_search(query, limit)
+    results = idx.bm25_search(query, limit)
+    return [(f"{i}. {result['doc']['id']} {result['doc']['name']} - Score: {result['score']:.4f}") for i, result in enumerate(results, start=1)]
 
 
 def tokenization(text: str) -> list[str]:
