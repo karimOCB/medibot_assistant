@@ -2,7 +2,7 @@ import os
 
 from .keyword_search import InvertedIndex
 from .semantic_search import SemanticSearch
-from .search_utils import HYBRID_A, DEFAULT_SEARCH_LIMIT, load_doctors
+from .search_utils import HYBRID_A, DEFAULT_SEARCH_LIMIT, load_doctors, RRF_K
 
 class HybridSearch:
     def __init__(self, drs_docs: list[dict]) -> None:
@@ -39,13 +39,32 @@ class HybridSearch:
             return alpha * bm25_score + (1 - alpha) * semantic_score    
 
     def rrf_search(self, query, k, limit=10):
-        raise NotImplementedError("RRF hybrid search is not implemented yet.")
-    
-def weighted_search_command(query: str, alpha: float, limit: int) -> None:
+        bm25_results = self._bm25_search(query, limit * 50)
+        semantic_results = self.semantic_search.search(query, limit * 50)
+        semantic_map = {ss["id"]: i for i, ss in enumerate(semantic_results)}
+        results = {}
+        for i, result in enumerate(bm25_results):
+            doc_id = result["doc"]["id"] 
+            results[doc_id] = {
+                "doc": result["doc"],
+                "bm25_rank": i,
+                "semantic_rank": semantic_map[doc_id],
+                "rrf_score": (1 / (k + i)) + (1 / (k + semantic_map[doc_id]))
+            }
+        return sorted(results.items(), key=lambda item: item[1]["rrf_score"], reverse=True)[:limit]
+
+
+def weighted_search_command(query: str, alpha: float, limit: int) -> list[dict]:
     drs_docs = load_doctors()
     hybrid_search = HybridSearch(drs_docs)
     return hybrid_search.weighted_search(query, alpha, limit)
-        
+
+
+def rrf_search_command(query: str, limit: int, k: int = RRF_K) -> list[tuple]:
+    drs_docs = load_doctors()
+    hybrid_search = HybridSearch(drs_docs)
+    return [result[1] for result in hybrid_search.rrf_search(query, k, limit)]
+
 
 def normalize_command(scores: list[float]) -> list[float]:
     if not scores or scores == []:
