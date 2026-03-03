@@ -23,8 +23,9 @@ def main() -> None:
                 print(f"* {n_s:.4f}")
         case "weighted-search":
             results = weighted_search_command(args.query, args.alpha, args.limit)
-            print(results)
-        case _:
+            for i, result in enumerate(results):
+                print(f"{i}. {result["doc"]["name"]}\n Hybrid Score: {result["hybrid_score"]} \n BM25: {result["bm25_normalized"]}, Semantic: {result["semantic_normalized"]} \n")
+        case _: 
             parser.print_help()
 
 

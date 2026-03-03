@@ -19,7 +19,7 @@ class HybridSearch:
         self.idx.load()
         return self.idx.bm25_search(query, limit)
 
-    def weighted_search(self, query: str, alpha: float=HYBRID_A, limit: int=DEFAULT_SEARCH_LIMIT) -> list[dict]:
+    def weighted_search(self, query: str, alpha: float, limit: int=DEFAULT_SEARCH_LIMIT) -> list[dict]:
         bm25_results = self._bm25_search(query, limit * 50)
         semantic_results = self.semantic_search.search(query, limit * 50)
         bm25_normalized_scores = normalize_command([result["score"] for result in bm25_results])
@@ -33,9 +33,9 @@ class HybridSearch:
                 "hybrid_score": self.hybrid_score(bm25_normalized_scores[i], semantic_normalized_scores[i], alpha)
             }
         results_sorted = sorted(results.items(), key=lambda item: item[1]["hybrid_score"], reverse=True)
-        return results_sorted[:limit]
+        return [result[1] for result in results_sorted[:limit]]
 
-    def hybrid_score(self, bm25_score, semantic_score, alpha):
+    def hybrid_score(self, bm25_score: float, float, semantic_score: float, alpha=HYBRID_A) -> float:
             return alpha * bm25_score + (1 - alpha) * semantic_score    
 
     def rrf_search(self, query, k, limit=10):
