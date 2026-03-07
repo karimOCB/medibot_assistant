@@ -28,12 +28,12 @@ def main() -> None:
             for n_s in normalized_scores:
                 print(f"* {n_s:.4f}")
         case "weighted-search":
-            results = weighted_search_command(args.query, args.alpha, args.limit)
+            results = weighted_search_command(args.query, args.alpha, args.enhance, args.limit)
             for i, result in enumerate(results):
                 print(f"{i}. {result["doc"]["name"]}\n Hybrid Score: {result["hybrid_score"]} \n BM25: {result["bm25_normalized"]}, Semantic: {result["semantic_normalized"]} \n")
         case "rrf-search":
-            results = rrf_search_command(args.query, args.limit, args.k)
-            for i, result in enumerate(results):
+            response = rrf_search_command(args.query, args.limit, args.k, args.enhance)
+            for i, result in enumerate(response["results"]):
                 print(f"{i}. {result["doc"]["name"]}\n RRF Score: {result["rrf_score"]:.4f} \n BM25 Rank: {result["bm25_rank"]}, Semantic Rank: {result["semantic_rank"]} \n")
         case _: 
             parser.print_help()

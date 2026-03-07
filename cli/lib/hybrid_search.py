@@ -3,6 +3,7 @@ import os
 from .keyword_search import InvertedIndex
 from .semantic_search import SemanticSearch
 from .search_utils import HYBRID_A, DEFAULT_SEARCH_LIMIT, load_doctors, RRF_K
+from .query_enhancement import enhance_query
 
 class HybridSearch:
     def __init__(self, drs_docs: list[dict]) -> None:
@@ -35,15 +36,15 @@ class HybridSearch:
         results_sorted = sorted(results.items(), key=lambda item: item[1]["hybrid_score"], reverse=True)
         return [result[1] for result in results_sorted[:limit]]
 
-    def hybrid_score(self, bm25_score: float, float, semantic_score: float, alpha=HYBRID_A) -> float:
+    def hybrid_score(self, bm25_score: float, semantic_score: float, alpha=HYBRID_A) -> float:
             return alpha * bm25_score + (1 - alpha) * semantic_score    
 
-    def rrf_search(self, query, k, limit=10):
+    def rrf_search(self, query, k: int, limit=10) -> list[tuple]:
         bm25_results = self._bm25_search(query, limit * 50)
         semantic_results = self.semantic_search.search(query, limit * 50)
-        semantic_map = {ss["id"]: i for i, ss in enumerate(semantic_results)}
+        semantic_map = {ss["id"]: i for i, ss in enumerate(semantic_results, start=1)}
         results = {}
-        for i, result in enumerate(bm25_results):
+        for i, result in enumerate(bm25_results, start=1):
             doc_id = result["doc"]["id"] 
             results[doc_id] = {
                 "doc": result["doc"],
@@ -60,10 +61,26 @@ def weighted_search_command(query: str, alpha: float, limit: int) -> list[dict]:
     return hybrid_search.weighted_search(query, alpha, limit)
 
 
-def rrf_search_command(query: str, limit: int, k: int = RRF_K) -> list[tuple]:
+def rrf_search_command(query: str, limit: int, k: int = RRF_K, enhance: str = None) -> list[dict]:
     drs_docs = load_doctors()
     hybrid_search = HybridSearch(drs_docs)
-    return [result[1] for result in hybrid_search.rrf_search(query, k, limit)]
+    
+    original_q = query
+    enhanced_q = None
+    if enhance:
+        enhanced_q = enhance_query(query, method=enhance)
+        query = enhanced_q
+
+    results = [result[1] for result in hybrid_search.rrf_search(query, k, limit)]
+    
+    return {
+        "original_query": original_q,
+        "enhanced_query": enhanced_q,
+        "enhance_method": enhance,
+        "query": query,
+        "k": k,
+        "results": results,
+    }
 
 
 def normalize_command(scores: list[float]) -> list[float]:
