@@ -4,6 +4,7 @@ from .keyword_search import InvertedIndex
 from .semantic_search import SemanticSearch
 from .search_utils import HYBRID_A, DEFAULT_SEARCH_LIMIT, load_doctors, RRF_K
 from .query_enhancement import enhance_query
+from .rerank import rerank_results
 
 class HybridSearch:
     def __init__(self, drs_docs: list[dict]) -> None:
@@ -61,7 +62,7 @@ def weighted_search_command(query: str, alpha: float, limit: int) -> list[dict]:
     return hybrid_search.weighted_search(query, alpha, limit)
 
 
-def rrf_search_command(query: str, limit: int, k: int = RRF_K, enhance: str = None) -> list[dict]:
+def rrf_search_command(query: str, limit: int, k: int = RRF_K, enhance: str = None, rerank: str = None) -> dict:
     drs_docs = load_doctors()
     hybrid_search = HybridSearch(drs_docs)
     
@@ -71,8 +72,11 @@ def rrf_search_command(query: str, limit: int, k: int = RRF_K, enhance: str = No
         enhanced_q = enhance_query(query, method=enhance)
         query = enhanced_q
 
-    results = [result[1] for result in hybrid_search.rrf_search(query, k, limit)]
+    results: list[dict] = [result[1] for result in hybrid_search.rrf_search(query, k, limit)]
     
+    if rerank:
+        results = rerank_results(results, query, rerank)
+
     return {
         "original_query": original_q,
         "enhanced_query": enhanced_q,

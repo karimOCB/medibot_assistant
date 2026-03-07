@@ -19,6 +19,7 @@ def main() -> None:
     rrf_search_parser.add_argument("--k", type=int, default=RRF_K, help="modifiable K parameter. Control the decline of scores of high vs low results")
     rrf_search_parser.add_argument("--limit", type=int, default=DEFAULT_SEARCH_LIMIT, help="limit of search results")
     rrf_search_parser.add_argument("--enhance", type=str, choices=["spell", "rewrite", "expand"], help="Query enhancement method",)
+    rrf_search_parser.add_argument("--rerank-method", type=str, choices=["individual"], help="Result rerank method")
 
     args = parser.parse_args()
 
@@ -35,12 +36,21 @@ def main() -> None:
                 print(f"{i}. {result["doc"]["name"]}\n Hybrid Score: {result["hybrid_score"]} \n BM25: {result["bm25_normalized"]}, Semantic: {result["semantic_normalized"]} \n")
         
         case "rrf-search":
-            response = rrf_search_command(args.query, args.limit, args.k, args.enhance)
+            limit = args.limit * 5 if args.rerank_method == "individual" else args.limit
+                
+            response = rrf_search_command(args.query, limit, args.k, args.enhance, args.rerank_method)
             if response["enhanced_query"]:
                 print(f"Enhanced query ({args.enhance}): '{args.query}' -> '{response["enhanced_query"]}'\n")
+            if args.rerank_method:
+                print(f"Re-ranking top {args.limit} results using individual method... Reciprocal Rank Fusion Results for '{args.query}' (k={args.k}):")
 
-            for i, result in enumerate(response["results"]):
-                print(f"{i}. {result["doc"]["name"]}\n RRF Score: {result["rrf_score"]:.4f} \n BM25 Rank: {result["bm25_rank"]}, Semantic Rank: {result["semantic_rank"]} \n")
+            for i, result in enumerate(response["results"][:args.limit]):
+                
+                print(f"""{i}. {result["doc"]["name"]}
+                      {f"Re-rank Score: {result["rerank_score"]}/10" if args.rerank_method else ""}
+                      RRF Score: {result["rrf_score"]:.4f}
+                      BM25 Rank: {result["bm25_rank"]}, Semantic Rank: {result["semantic_rank"]} \n
+                """)
        
         case _: 
             parser.print_help()
