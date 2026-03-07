@@ -18,23 +18,30 @@ def main() -> None:
     rrf_search_parser.add_argument("query", type=str, help="query for search")
     rrf_search_parser.add_argument("--k", type=int, default=RRF_K, help="modifiable K parameter. Control the decline of scores of high vs low results")
     rrf_search_parser.add_argument("--limit", type=int, default=DEFAULT_SEARCH_LIMIT, help="limit of search results")
-    rrf_search_parser.add_argument("--enhance", type=str, choices=["spell"], help="Query enhancement method",)
+    rrf_search_parser.add_argument("--enhance", type=str, choices=["spell", "rewrite", "expand"], help="Query enhancement method",)
 
     args = parser.parse_args()
+
 
     match args.command:
         case "normalize":
             normalized_scores = normalize_command(args.scores)
             for n_s in normalized_scores:
                 print(f"* {n_s:.4f}")
+
         case "weighted-search":
             results = weighted_search_command(args.query, args.alpha, args.enhance, args.limit)
             for i, result in enumerate(results):
                 print(f"{i}. {result["doc"]["name"]}\n Hybrid Score: {result["hybrid_score"]} \n BM25: {result["bm25_normalized"]}, Semantic: {result["semantic_normalized"]} \n")
+        
         case "rrf-search":
             response = rrf_search_command(args.query, args.limit, args.k, args.enhance)
+            if response["enhanced_query"]:
+                print(f"Enhanced query ({args.enhance}): '{args.query}' -> '{response["enhanced_query"]}'\n")
+
             for i, result in enumerate(response["results"]):
                 print(f"{i}. {result["doc"]["name"]}\n RRF Score: {result["rrf_score"]:.4f} \n BM25 Rank: {result["bm25_rank"]}, Semantic Rank: {result["semantic_rank"]} \n")
+       
         case _: 
             parser.print_help()
 
