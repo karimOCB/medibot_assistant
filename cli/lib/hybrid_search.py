@@ -13,12 +13,13 @@ class HybridSearch:
         self.semantic_search.load_or_create_embeddings(drs_docs)
 
         self.idx = InvertedIndex()
-        if not os.path.exists(self.idx.index_path):
+        self.idx.load()
+
+        if not os.path.exists(self.idx.index_path) or len(self.idx.docmap) != len(drs_docs):
             self.idx.build()
             self.idx.save()
 
     def _bm25_search(self, query: str, limit: int) -> list[dict]:
-        self.idx.load()
         return self.idx.bm25_search(query, limit)
 
     def weighted_search(self, query: str, alpha: float, limit: int=DEFAULT_SEARCH_LIMIT) -> list[dict]:
@@ -73,7 +74,7 @@ def rrf_search_command(query: str, limit: int, k: int = RRF_K, enhance: str = No
         query = enhanced_q
 
     results: list[dict] = [result[1] for result in hybrid_search.rrf_search(query, k, limit)]
-    
+
     if rerank:
         results = rerank_results(results, query, rerank)
 
