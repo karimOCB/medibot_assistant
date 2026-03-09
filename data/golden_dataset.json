@@ -1,0 +1,146 @@
+{
+  "test_cases": [
+    {
+      "query": "heart rhythm and hypertension specialist",
+      "relevant_docs": [
+        { "id": "DR001", "name": "Dr. Pedro Sanchez" },
+        { "id": "DR101", "name": "Dr. James Miller" }
+      ]
+    },
+    {
+      "query": "pediatric vaccines and infant nutrition",
+      "relevant_docs": [
+        { "id": "DR002", "name": "Dr. Elena Rodriguez" },
+        { "id": "DR102", "name": "Dr. Mary Wilson" }
+      ]
+    },
+    {
+      "query": "chronic migraines and sleep disorders",
+      "relevant_docs": [
+        { "id": "DR003", "name": "Dr. Marcus Thorne" },
+        { "id": "DR041", "name": "Dr. Galileo Galilei" }
+      ]
+    },
+    {
+      "query": "skin cancer screening and acne treatment",
+      "relevant_docs": [
+        { "id": "DR004", "name": "Dr. Sarah Jenkins" },
+        { "id": "DR104", "name": "Dr. Patricia Jones" }
+      ]
+    },
+    {
+      "query": "sports injuries and joint replacement surgery",
+      "relevant_docs": [
+        { "id": "DR005", "name": "Dr. Victor Wu" },
+        { "id": "DR105", "name": "Dr. Michael Brown" }
+      ]
+    },
+    {
+      "query": "anxiety and depression cognitive therapy",
+      "relevant_docs": [
+        { "id": "DR006", "name": "Dr. Amara Okafor" },
+        { "id": "DR025", "name": "Dr. Sigmund Freud" }
+      ]
+    },
+    {
+      "query": "digestive health and acid reflux expert",
+      "relevant_docs": [
+        { "id": "DR007", "name": "Dr. Julian Vance" },
+        { "id": "DR107", "name": "Dr. David Hernandez" }
+      ]
+    },
+    {
+      "query": "diabetes management and thyroid disorders",
+      "relevant_docs": [
+        { "id": "DR008", "name": "Dr. Sophia Lin" },
+        { "id": "DR108", "name": "Dr. Elizabeth Taylor" }
+      ]
+    },
+    {
+      "query": "cancer diagnosis and chemotherapy protocols",
+      "relevant_docs": [
+        { "id": "DR009", "name": "Dr. Robert Halloway" },
+        { "id": "DR032", "name": "Dr. Marie Curie" },
+        { "id": "DR109", "name": "Dr. Richard Moore" }
+      ]
+    },
+    {
+      "query": "vision correction and glaucoma specialist",
+      "relevant_docs": [
+        { "id": "DR010", "name": "Dr. Mia Kowalski" },
+        { "id": "DR110", "name": "Dr. Jennifer Anderson" }
+      ]
+    },
+    {
+      "query": "kidney stones and prostate health",
+      "relevant_docs": [
+        { "id": "DR011", "name": "Dr. Aaron Brooks" },
+        { "id": "DR111", "name": "Dr. William Thomas" }
+      ]
+    },
+    {
+      "query": "asthma and chronic lung disease treatment",
+      "relevant_docs": [
+        { "id": "DR012", "name": "Dr. Lisa Ray" },
+        { "id": "DR112", "name": "Dr. Barbara White" },
+        { "id": "DR118", "name": "Dr. Karen Rodriguez" }
+      ]
+    },
+    {
+      "query": "arthritis and autoimmune inflammatory disorders",
+      "relevant_docs": [
+        { "id": "DR013", "name": "Dr. Kevin Patel" },
+        { "id": "DR113", "name": "Dr. Joseph Harris" }
+      ]
+    },
+    {
+      "query": "prenatal care and high-risk pregnancy management",
+      "relevant_docs": [
+        { "id": "DR014", "name": "Dr. Nina Simone" },
+        { "id": "DR114", "name": "Dr. Susan Martin" }
+      ]
+    },
+    {
+      "query": "dialysis and renal transplant expert",
+      "relevant_docs": [
+        { "id": "DR015", "name": "Dr. David Klein" },
+        { "id": "DR115", "name": "Dr. Thomas Thompson" }
+      ]
+    },
+    {
+      "query": "emergency trauma care and life-saving interventions",
+      "relevant_docs": [
+        { "id": "DR046", "name": "Dr. Buzz Aldrin" },
+        { "id": "DR117", "name": "Dr. Charles Davis" },
+        { "id": "DR133", "name": "Dr. Andrew Mitchell" }
+      ]
+    },
+    {
+      "query": "elderly care and dementia support",
+      "relevant_docs": [
+        { "id": "DR019", "name": "Dr. Thomas Wright" },
+        { "id": "DR119", "name": "Dr. Christopher Lee" }
+      ]
+    },
+    {
+      "query": "childhood autism and ADHD behavioral health",
+      "relevant_docs": [
+        { "id": "DR022", "name": "Dr. Maria Montessori" },
+        { "id": "DR122", "name": "Dr. Nancy Young" }
+      ]
+    },
+    {
+      "query": "stomach ache and general stomach function",
+      "relevant_docs": [
+        { "id": "DR496", "name": "Dr. Paul Saladino" },
+        { "id": "DR497", "name": "Dr. Layne Norton" }
+      ]
+    },
+    {
+      "query": "rare and complex medical case diagnosis",
+      "relevant_docs": [
+        { "id": "DR082", "name": "Dr. Gregory House" }
+      ]
+    }
+  ]
+}

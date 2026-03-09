@@ -51,8 +51,8 @@ class HybridSearch:
             results[doc_id] = {
                 "doc": result["doc"],
                 "bm25_rank": i,
-                "semantic_rank": semantic_map[doc_id],
-                "rrf_score": (1 / (k + i)) + (1 / (k + semantic_map[doc_id]))
+                "semantic_rank": semantic_map.get("doc_id", 10000),
+                "rrf_score": (1 / (k + i)) + (1 / (k + semantic_map.get("doc_id", 10000)))
             }
         return sorted(results.items(), key=lambda item: item[1]["rrf_score"], reverse=True)[:limit]
 
