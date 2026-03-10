@@ -14,6 +14,8 @@ def main():
     for case in test_cases:
         print(f"- Query: {case["query"]}")
         print(f"- Precision@{limit}: {case["precision"]:.4f}")
+        print(f"- Recall@{limit}: {case["recall"]:.4f}")
+        print(f"- F1 Score: {case["f1"]:.4f}")
         print(f"- Retrieved: {", ".join(case["retrieved"])}")
         print(f"- Relevant: {", ".join(case["relevant"])}\n")
 

@@ -1,6 +1,7 @@
 import argparse
 from lib.hybrid_search import normalize_command, weighted_search_command, rrf_search_command
 from lib.search_utils import HYBRID_A, DEFAULT_SEARCH_LIMIT, RRF_K
+from lib.evaluation import llm_evaluation_command
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Hybrid Search CLI")
@@ -20,6 +21,7 @@ def main() -> None:
     rrf_search_parser.add_argument("--limit", type=int, default=DEFAULT_SEARCH_LIMIT, help="limit of search results")
     rrf_search_parser.add_argument("--enhance", type=str, choices=["spell", "rewrite", "expand"], help="Query enhancement method",)
     rrf_search_parser.add_argument("--rerank-method", type=str, choices=["individual", "batch", "cross_encoder"], help="Result rerank method")
+    rrf_search_parser.add_argument("--evaluate", action="store_true", help="LLM result evaluation")
 
     args = parser.parse_args()
 
@@ -56,7 +58,12 @@ def main() -> None:
                 print(f"    RRF Score: {result["rrf_score"]:.3f}")
                 print(f"    BM25 Rank: {result["bm25_rank"]}, Semantic Rank: {result["semantic_rank"]} \n")
             
-       
+            if args.evaluate:
+                formatted_results = [f"{i}. Name: {r["doc"]["name"]} - Age:{r["doc"]["age"]}. Specialty: {r["doc"]["specialty"]}. Bio: {r["doc"]["bio"]}. Availability: {r["doc"]["availability"]}" for i, r in enumerate(response["results"][:args.limit], 1)]
+                results = llm_evaluation_command(args.query, formatted_results)
+                for r in results:
+                    print(r)
+
         case _: 
             parser.print_help()
 
