@@ -15,9 +15,6 @@ client = genai.Client(api_key=api_key)
 
 def rag_command(query: str) -> tuple[list[tuple[str, dict]], str]:
     drs_docs = load_doctors()
-
-    semantic_search = SemanticSearch()
-    semantic_search.load_or_create_embeddings(drs_docs)
     hybryd_search = HybridSearch(drs_docs)   
     results = hybryd_search.rrf_search(query, k=60, limit=DEFAULT_SEARCH_LIMIT)
     docs = [f"{i}. Name: {r[1]["doc"]["name"]} - Age:{r[1]["doc"]["age"]}. Specialty: {r[1]["doc"]["specialty"]}. Bio: {r[1]["doc"]["bio"]}. Availability: {r[1]["doc"]["availability"]}" for i, r in enumerate(results)]
@@ -29,6 +26,34 @@ def rag_command(query: str) -> tuple[list[tuple[str, dict]], str]:
             {docs}
 
             Provide a comprehensive answer that addresses the query:"""
+    response = client.models.generate_content(
+    model='gemma-3-27b-it', contents=prompt)
+    corrected = (response.text or "").strip().strip('"')
+    return results, corrected if corrected else query
+
+def summarize_command(query: str, limit: int) -> tuple[list[tuple[str, dict]], str]:
+    drs_docs = load_doctors()
+    hybryd_search = HybridSearch(drs_docs)   
+    results = hybryd_search.rrf_search(query, k=60, limit=DEFAULT_SEARCH_LIMIT)
+    docs = [f"{i}. Name: {r[1]["doc"]["name"]} - Age:{r[1]["doc"]["age"]}. Specialty: {r[1]["doc"]["specialty"]}. Bio: {r[1]["doc"]["bio"]}. Availability: {r[1]["doc"]["availability"]}" for i, r in enumerate(results)]
+
+    prompt= f"""
+            You are a medical assistant for a hospital. Provide a helpful response to the patient's query by synthesizing 
+            information from the top doctor search results provided below.
+            
+            The goal is to explain which doctors are most relevant to the patient's symptoms or needs and why. 
+            Focus on their specific medical expertise, the conditions they treat (from their bios), and their availability.
+            
+            Your response must be professional, empathetic, and information-dense. Avoid medical advice; instead, 
+            focus on guiding the patient to the right specialist.
+            
+            Query: {query}
+            Search Results:{docs}
+            
+            Provide a comprehensive 3–4 sentence answer that summarizes the best matches and highlights 
+            key differences in their specialties or schedules:
+            """
+    
     response = client.models.generate_content(
     model='gemma-3-27b-it', contents=prompt)
     corrected = (response.text or "").strip().strip('"')
