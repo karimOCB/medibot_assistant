@@ -58,3 +58,63 @@ def summarize_command(query: str, limit: int) -> tuple[list[tuple[str, dict]], s
     model='gemma-3-27b-it', contents=prompt)
     corrected = (response.text or "").strip().strip('"')
     return results, corrected if corrected else query
+
+def citations_command(query: str, limit: int) -> tuple[list[tuple[str, dict]], str]:
+    drs_docs = load_doctors()
+    hybryd_search = HybridSearch(drs_docs)   
+    results = hybryd_search.rrf_search(query, k=60, limit=DEFAULT_SEARCH_LIMIT)
+    docs = [f"{i}. Name: {r[1]["doc"]["name"]} - Age:{r[1]["doc"]["age"]}. Specialty: {r[1]["doc"]["specialty"]}. Bio: {r[1]["doc"]["bio"]}. Availability: {r[1]["doc"]["availability"]}" for i, r in enumerate(results)]
+
+    prompt = f"""Answer the medical inquiry or provide specialist information based strictly on the provided doctor profiles.
+
+            This should be tailored to patients using the Medibot Assistant at our clinic. 
+
+            If the provided documents do not contain enough specific information to recommend a doctor for the patient's condition, state that clearly but offer the closest possible match while citing the profiles you have.
+
+            Query: {query}
+
+            Documents:
+            {docs}
+
+            Instructions:
+            - Provide a comprehensive answer that explains why specific doctors are a good fit for the patient's needs.
+            - Cite doctor names [Pedro], [Juan], etc, format when referencing their specific expertise or availability.
+            - If doctors have overlapping specialties but different availability, mention these differences to give the patient options.
+            - If the answer/specialty isn't found in the documents, say "I don't have enough information in our current directory."
+            - Be direct, professional, and informative.
+
+            Answer:"""
+        
+    response = client.models.generate_content(
+    model='gemma-3-27b-it', contents=prompt)
+    corrected = (response.text or "").strip().strip('"')
+    return results, corrected if corrected else query
+
+def question_command(question: str, limit: int) -> tuple[list[tuple[str, dict]], str]:
+    drs_docs = load_doctors()
+    hybryd_search = HybridSearch(drs_docs)   
+    results = hybryd_search.rrf_search(question, k=60, limit=DEFAULT_SEARCH_LIMIT)
+    docs = [f"{i}. Name: {r[1]["doc"]["name"]} - Age:{r[1]["doc"]["age"]}. Specialty: {r[1]["doc"]["specialty"]}. Bio: {r[1]["doc"]["bio"]}. Availability: {r[1]["doc"]["availability"]}" for i, r in enumerate(results)]
+
+    prompt = f"""Answer the patient's question based on the doctors available in our clinic directory.
+
+    This should be tailored to patients using the Medibot Assistant. We are a clinic helping people find the right specialist.
+
+    Question: {question}
+
+    Documents:
+    {docs}
+
+    Instructions:
+    - Answer questions directly and concisely.
+    - Be helpful and conversational, like a friendly receptionist.
+    - Avoid being overly clinical/robotic, but also don't be "hype-y" or "cringe."
+    - Talk like a normal person would in a helpful chat conversation.
+    - If we don't have a specific specialist, just let them know honestly.
+
+    Answer:"""
+        
+    response = client.models.generate_content(
+    model='gemma-3-27b-it', contents=prompt)
+    corrected = (response.text or "").strip().strip('"')
+    return results, corrected if corrected else question
