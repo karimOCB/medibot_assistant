@@ -14,7 +14,6 @@ stopwords_path = os.path.join(project_root_path, "data", "stopwords.txt")
 cache_path = os.path.join(project_root_path, "cache")
 golden_dataset_json_path = os.path.join(project_root_path, "data", "golden_dataset.json")
 
-
 def load_doctors() -> list[dict]: # Returns a list of dicts with string keys to Any values
     if not os.path.exists(doctors_json_path):
         raise FileNotFoundError(f"The doctor database was not found at: {doctors_json_path}")

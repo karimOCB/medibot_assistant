@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 from google import genai
 
 from .search_utils import load_doctors, DEFAULT_SEARCH_LIMIT
-from .semantic_search import SemanticSearch
 from .hybrid_search import HybridSearch
 
 load_dotenv()
