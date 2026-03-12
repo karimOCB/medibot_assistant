@@ -1,6 +1,7 @@
 import argparse, mimetypes, os
 from dotenv import load_dotenv
 from google import genai
+from google.genai import types
 
 
 def main():
@@ -23,13 +24,29 @@ def main():
     mime = mime or "image/jpeg"
 
     with open(args.image, "rb") as f:
-        f.read() #TODO
+        img = f.read() #TODO
 
-    promt = f"""
-            Given the included image and text query, rewrite the text query to improve search results from a movie database. Make sure to:
-            - Synthesize visual and textual information
-            - Focus on movie-specific details (actors, scenes, style, etc.)
-            - Return only the rewritten query, without any additional commentary
+    prompt = f"""
+            Given the included image and text query, rewrite the text query to improve search results from a medical professional database. 
+            Make sure to:
+            - Synthesize visual observations from the image (e.g., anatomical location, visible symptoms) with the text.
+            - Focus on clinical-specific details (symptoms, severity, related medical specialties).
+            - Use professional medical terminology where appropriate to improve search accuracy (e.g., 'dermatological' instead of 'skin').
+            - Return only the rewritten query, without any additional commentary.
             """
 
-    #TODO
+    parts = [
+    prompt,
+    types.Part.from_bytes(data=img, mime_type=mime),
+    args.query.strip(),
+    ]
+
+    response = client.models.generate_content(
+    model='gemma-3-27b-it', contents=parts)
+
+    print(f"Rewritten query: {response.text.strip()}")
+    if response.usage_metadata is not None:
+        print(f"Total tokens:    {response.usage_metadata.total_token_count}")
+
+if __name__ == "__main__":
+    main()
