@@ -89,31 +89,54 @@ def citations_command(query: str, limit: int) -> tuple[list[tuple[str, dict]], s
     corrected = (response.text or "").strip().strip('"')
     return results, corrected if corrected else query
 
-def question_command(question: str, limit: int) -> tuple[list[tuple[str, dict]], str]:
+def question_command(question: str, limit: int, chat_history: list[dict[str, str]]) -> tuple[list[tuple[str, dict]], str]:
     drs_docs = load_doctors()
     hybryd_search = HybridSearch(drs_docs)   
     results = hybryd_search.rrf_search(question, k=60, limit=DEFAULT_SEARCH_LIMIT)
     docs = [f"{i}. Name: {r[1]["doc"]["name"]} - Age:{r[1]["doc"]["age"]}. Specialty: {r[1]["doc"]["specialty"]}. Bio: {r[1]["doc"]["bio"]}. Availability: {r[1]["doc"]["availability"]}" for i, r in enumerate(results)]
+    history_string = "\n".join([
+        f"{i}. Patient: {turn['input']}\nAssistant: {turn['answer']}" 
+        for i, turn in enumerate(chat_history, 1)
+    ])
+    if not chat_history:
+        prompt = f"""Answer the patient's question based on the doctors available in our clinic directory.
 
-    prompt = f"""Answer the patient's question based on the doctors available in our clinic directory.
+        This should be tailored to patients using the Medibot Assistant. We are a clinic helping people find the right specialist.
 
-    This should be tailored to patients using the Medibot Assistant. We are a clinic helping people find the right specialist.
+        Question: {question}
 
-    Question: {question}
+        Documents:
+        {docs}
 
-    Documents:
-    {docs}
+        Instructions:
+        - Answer questions directly and concisely.
+        - Be helpful and conversational, like a friendly receptionist.
+        - Avoid being overly clinical/robotic, but also don't be "hype-y" or "cringe."
+        - Talk like a normal person would in a helpful chat conversation.
+        - If we don't have a specific specialist, just let them know honestly.
 
-    Instructions:
-    - Answer questions directly and concisely.
-    - Be helpful and conversational, like a friendly receptionist.
-    - Avoid being overly clinical/robotic, but also don't be "hype-y" or "cringe."
-    - Talk like a normal person would in a helpful chat conversation.
-    - If we don't have a specific specialist, just let them know honestly.
+        Answer:"""
+    else:
+        prompt = f"""You are the Medibot Assistant, a friendly and helpful receptionist for a medical clinic. 
+                Your goal is to help patients find the right specialist from our directory.
+                Relevant Documents:{docs}
+                
+                Conversation History: {history_string}
 
-    Answer:"""
+                Current Question: {question}
+
+                INSTRUCTIONS:
+                - Use the 'Conversation History' to understand context (e.g., who 'he' or 'she' refers to).
+                - Answer the 'Current Patient Question' directly and concisely based ONLY on the provided documents.
+                - Maintain a conversational, professional, and empathetic tone—like a real person.
+                - If the directory does not contain a suitable specialist, inform the patient honestly.
+                - Do not make up doctor names or availability if they are not in the documents.
+
+                Answer:
+                """
         
     response = client.models.generate_content(
     model='gemma-3-27b-it', contents=prompt)
     corrected = (response.text or "").strip().strip('"')
     return results, corrected if corrected else question
+

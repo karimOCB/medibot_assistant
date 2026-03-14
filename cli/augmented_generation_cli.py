@@ -21,6 +21,9 @@ def main():
     question_parser.add_argument("question", type=str, help="Question to response")
     question_parser.add_argument("--limit", type=int, default=DEFAULT_SEARCH_LIMIT, help="Search results limit")
 
+    conversation_parser = subparsers.add_parser("conversation", help="Start an interactive conversational chat session")
+    conversation_parser.add_argument("--limit", type=int, default=DEFAULT_SEARCH_LIMIT, help="Search results limit")
+
 
     args = parser.parse_args()
 
@@ -54,6 +57,28 @@ def main():
                 print(f"- Name: {r[1]["doc"]["name"]} - Specialty: {r[1]["doc"]["specialty"]}")
             print("\nLLM Answer:")
             print(answer)
+        case "conversation":
+            print("Medibot Assistant: Conversational Mode")
+            print("Type exit or quit to end the session. \n")
+
+            chat_history: list[dict[str, str]] = [] 
+            
+            while True:
+                user_input = input("You: ").strip()
+                
+                if user_input.lower() in ["exit", "quit"]:
+                    print("MediBot: Goodbye!")
+                    break
+                
+                if not user_input:
+                    continue
+
+                results, answer = question_command(user_input, DEFAULT_SEARCH_LIMIT, chat_history)
+                
+                print(f"\nMediBot: {answer}\n")
+                
+                chat_history.append({"input": user_input, "answer": answer})
+
         case _:
             parser.print_help()
 
