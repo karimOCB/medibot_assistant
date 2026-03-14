@@ -1,7 +1,7 @@
 import numpy as np
 import os
 from sentence_transformers import SentenceTransformer
-from lib.search_utils import cache_path, load_doctors, DEFAULT_SEARCH_LIMIT
+from lib.search_utils import cache_path, load_doctors, DEFAULT_SEARCH_LIMIT, cosine_similarity
 
 class SemanticSearch:
     def __init__(self) -> None:
@@ -89,12 +89,3 @@ def embed_query_text(query: str) -> np.ndarray:
     print(f"Shape: {embedding.shape}")
 
 
-def cosine_similarity(vec1: np.ndarray, vec2: np.ndarray) -> float:
-    dot_product = np.dot(vec1, vec2)
-    norm1 = np.linalg.norm(vec1)
-    norm2 = np.linalg.norm(vec2)
-
-    if norm1 == 0 or norm2 == 0:
-        return 0.0
-
-    return dot_product / (norm1 * norm2)
